@@ -1,0 +1,2164 @@
+[
+{
+    "model": "press.cooluser",
+    "pk": 36,
+    "fields": {
+        "user": 36,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 37,
+    "fields": {
+        "user": 37,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 38,
+    "fields": {
+        "user": 38,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 39,
+    "fields": {
+        "user": 39,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 40,
+    "fields": {
+        "user": 40,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 41,
+    "fields": {
+        "user": 41,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 42,
+    "fields": {
+        "user": 42,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 43,
+    "fields": {
+        "user": 43,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 44,
+    "fields": {
+        "user": 44,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 45,
+    "fields": {
+        "user": 45,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 46,
+    "fields": {
+        "user": 46,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 47,
+    "fields": {
+        "user": 47,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 48,
+    "fields": {
+        "user": 48,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 49,
+    "fields": {
+        "user": 49,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 50,
+    "fields": {
+        "user": 50,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 51,
+    "fields": {
+        "user": 51,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 52,
+    "fields": {
+        "user": 52,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 53,
+    "fields": {
+        "user": 53,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 54,
+    "fields": {
+        "user": 54,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 55,
+    "fields": {
+        "user": 55,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 56,
+    "fields": {
+        "user": 56,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 57,
+    "fields": {
+        "user": 57,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 58,
+    "fields": {
+        "user": 58,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 59,
+    "fields": {
+        "user": 59,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 60,
+    "fields": {
+        "user": 60,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 61,
+    "fields": {
+        "user": 61,
+        "github_profile": null,
+        "gh_stars": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.category",
+    "pk": 1,
+    "fields": {
+        "label": "Uncategorized News",
+        "slug": "general"
+    }
+},
+{
+    "model": "press.category",
+    "pk": 2,
+    "fields": {
+        "label": "Business News",
+        "slug": "business"
+    }
+},
+{
+    "model": "press.category",
+    "pk": 3,
+    "fields": {
+        "label": "Entertainment News",
+        "slug": "entertainment"
+    }
+},
+{
+    "model": "press.category",
+    "pk": 4,
+    "fields": {
+        "label": "Health News",
+        "slug": "health"
+    }
+},
+{
+    "model": "press.category",
+    "pk": 5,
+    "fields": {
+        "label": "Science News",
+        "slug": "science"
+    }
+},
+{
+    "model": "press.category",
+    "pk": 6,
+    "fields": {
+        "label": "Sports News",
+        "slug": "sports"
+    }
+},
+{
+    "model": "press.category",
+    "pk": 7,
+    "fields": {
+        "label": "Technology News",
+        "slug": "technology"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 61,
+    "fields": {
+        "title": "Nebenwirkungen und Tipps: Was Sie zur Auffrischimpfung gegen Covid-19 wissen müssen",
+        "body": "Vor allem älteren Menschen holen sich in diesen Tagen ihre dritte Impfung gegen Covid-19 ab. Sie soll ihrem Immunsystem einen weiteren Schub geben und so besser vor Sars-CoV-2 schützen. Wir beantworten die wichtigsten Fragen zur Auffrischimpfung.",
+        "image_link": "https://rp-online.de/imgs/32/1/1/5/9/6/7/7/2/5/tok_e434fe946d5388c2a1ea7bc77b81770b/w950_h950_x1500_y1085_DPA_bfunk_dpa_5FA6820063E1B643-965ca1545ac945db.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://rp-online.de/panorama/coronavirus/auffrischimpung-gegen-covid-19-nebenwirkungen-und-tipps_aid-63337491",
+        "source_label": "RP Onlione Gesundheit",
+        "status": "PostStatus.PUBLISHED",
+        "author": 36,
+        "category": 4,
+        "creation_date": "2021-10-05T15:10:40.012Z",
+        "last_update": "2021-10-05T15:10:40.012Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 62,
+    "fields": {
+        "title": "Corona-Newsblog: Preise für Selbstzahler-Tests sind immer noch unklar",
+        "body": "Ab kommenden Montag sind die Corona-Schnelltests, die vor allem Ungeimpfte noch brauchen, kostenpflichtig. Wie teuer sie werden, ist jedoch nicht bekannt. Derweil hat die EMA grünes Licht für die dritte Impfung mit Biontech gegeben. Alle Corona-News im Blog.",
+        "image_link": "https://rp-online.de/imgs/32/7/8/7/9/2/9/0/5/tok_dab334c3edd45c5b49e1fe85a54bbdc2/w950_h950_x1500_y1076_DPA_bfunk_dpa_5FA68A006BC65515-89c8e14d592fbcf2.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://rp-online.de/panorama/coronavirus/corona-newsblog-preis-fuer-selbstzahler-test-noch-immer-unklar_aid-49194351",
+        "source_label": "RP Onlione Gesundheit",
+        "status": "PostStatus.PUBLISHED",
+        "author": 37,
+        "category": 4,
+        "creation_date": "2021-10-05T15:10:40.019Z",
+        "last_update": "2021-10-05T15:10:40.019Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 63,
+    "fields": {
+        "title": "Corona-Newsblog: EMA gibt grünes Licht für dritte Impfung mit Biontech",
+        "body": "Die Auffrischungen kommen laut EMA für Menschen ab 18 Jahren in Betracht. Die Universitäten in NRW rechnen wegen des langen Online-Unterrichts während der Pandemie mit Problemen von Schülern beim Wechsel ins Studium. Alle Corona-News im Blog.",
+        "image_link": "https://rp-online.de/imgs/32/7/8/7/9/2/9/0/5/tok_e434fe946d5388c2a1ea7bc77b81770b/w950_h950_x1500_y1085_DPA_bfunk_dpa_5FA6820063E1B643-965ca1545ac945db.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://rp-online.de/panorama/coronavirus/corona-newsblog-ema-gibt-gruenes-licht-fuer-auffrischungsimpfung-mit-biontech_aid-49194351",
+        "source_label": "RP Onlione Gesundheit",
+        "status": "PostStatus.PUBLISHED",
+        "author": 37,
+        "category": 4,
+        "creation_date": "2021-10-05T15:10:40.023Z",
+        "last_update": "2021-10-05T15:10:40.023Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 64,
+    "fields": {
+        "title": "A ‘Pacemaker for the Brain’: No Treatment Helped Her Depression — Until This",
+        "body": "It’s the first study of individualized brain stimulation to treat severe depression. Sarah’s case raises the possibility the method may help people who don’t respond to other therapies.",
+        "image_link": "https://static01.nyt.com/images/2021/10/05/science/04sci-depression1/04sci-depression1-moth.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.nytimes.com/2021/10/04/health/depression-treatment-deep-brain-stimulation.html",
+        "source_label": "The New York Times",
+        "status": "PostStatus.PUBLISHED",
+        "author": 38,
+        "category": 4,
+        "creation_date": "2021-10-05T15:12:22.449Z",
+        "last_update": "2021-10-05T15:12:22.449Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 65,
+    "fields": {
+        "title": "How Depression and Anxiety Affect Your Physical Health",
+        "body": "Mind and body form a two-way street.",
+        "image_link": "https://static01.nyt.com/images/2021/10/05/science/04SCI-BRODY-MIND-BODY/04SCI-BRODY-MIND-BODY-moth.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.nytimes.com/2021/10/04/well/mind/depression-anxiety-physical-health.html",
+        "source_label": "The New York Times",
+        "status": "PostStatus.PUBLISHED",
+        "author": 39,
+        "category": 4,
+        "creation_date": "2021-10-05T15:12:22.457Z",
+        "last_update": "2021-10-05T15:12:22.457Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 66,
+    "fields": {
+        "title": "CDC renews recommendation for virtual holiday celebrations",
+        "body": "As the U.S. enters the colder holiday seasons amid the coronavirus pandemic, updated federal health guidance is encouraging virtual celebrations and outdoor gatherings to reduce the spread of COVID-19.",
+        "image_link": "https://static.foxnews.com/foxnews.com/content/uploads/2020/12/CDC_resized.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "http://feeds.foxnews.com/~r/foxnews/health/~3/c3unsbEZmYM/cdc-issues-holiday-guidance-amid-covid-19",
+        "source_label": "FOX News - Health",
+        "status": "PostStatus.PUBLISHED",
+        "author": 40,
+        "category": 4,
+        "creation_date": "2021-10-05T15:12:22.464Z",
+        "last_update": "2021-10-05T15:12:22.464Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 67,
+    "fields": {
+        "title": "Fauci defends California school vaccine mandate: Not a 'novel' requirement",
+        "body": "Dr. Anthony Fauci has praised California Gov. Gavin Newsom’s mandate for all students to get a COVID-19 vaccine, arguing that this is not a \"novel\" approach for schools. ",
+        "image_link": "https://static.foxnews.com/foxnews.com/content/uploads/2021/09/FAUCI.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "http://feeds.foxnews.com/~r/foxnews/health/~3/N9olIACAR6o/fauci-defends-california-school-vaccine-mandate",
+        "source_label": "FOX News - Health",
+        "status": "PostStatus.PUBLISHED",
+        "author": 41,
+        "category": 4,
+        "creation_date": "2021-10-05T15:12:22.471Z",
+        "last_update": "2021-10-05T15:12:22.471Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 68,
+    "fields": {
+        "title": "How I Knew I Needed to Quit Instagram",
+        "body": "Just like with alcohol, social media left me feeling anxious and removed from myself.",
+        "image_link": "https://static01.nyt.com/images/2021/09/29/well/29-well-performing-life/29-well-performing-life-moth.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.nytimes.com/2021/10/01/well/mind/instagram-quit.html",
+        "source_label": "The New York Times",
+        "status": "PostStatus.PUBLISHED",
+        "author": 42,
+        "category": 4,
+        "creation_date": "2021-10-05T15:12:22.477Z",
+        "last_update": "2021-10-05T15:12:22.477Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 69,
+    "fields": {
+        "title": "Nearly 2M COVID booster shots administered in first week, White House says",
+        "body": "Nearly 2 million COVID-19 vaccine booster shots were administered over the last week, White House COVID-19 Response Coordinator Jeff Zients announced at a briefing Friday.",
+        "image_link": "https://static.foxnews.com/foxnews.com/content/uploads/2021/09/Booster-Shot.png",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "http://feeds.foxnews.com/~r/foxnews/health/~3/t9NAOpwPjMY/nearly-2m-covid-booster-shots-white-house",
+        "source_label": "FOX News - Health",
+        "status": "PostStatus.PUBLISHED",
+        "author": 40,
+        "category": 4,
+        "creation_date": "2021-10-05T15:12:22.481Z",
+        "last_update": "2021-10-05T15:12:22.481Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 70,
+    "fields": {
+        "title": "New study finds flu, COVID vaccines safe to administer at same time",
+        "body": "A new British study has determined it is safe to administer flu and COVID-19 vaccines at the same time.",
+        "image_link": "https://static.foxnews.com/foxnews.com/content/uploads/2021/08/pfizer-vaccine.jpeg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "http://feeds.foxnews.com/~r/foxnews/health/~3/44FJeiQ_7p4/new-study-flu-covid-vaccines-safe",
+        "source_label": "FOX News - Health",
+        "status": "PostStatus.PUBLISHED",
+        "author": 41,
+        "category": 4,
+        "creation_date": "2021-10-05T15:12:22.485Z",
+        "last_update": "2021-10-05T15:12:22.485Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 71,
+    "fields": {
+        "title": "What to Do if Your Doctor's Notes Hurt Your Feelings",
+        "body": "Are you a “poor historian,” “well nourished” or in need of a “time out”? As patients gain access to their own medical records, the notes left by doctors can sting.",
+        "image_link": "https://static01.nyt.com/images/2021/09/30/well/30Well-NL1/30Well-NL1-moth.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.nytimes.com/2021/09/30/well/live/medical-records-misunderstanding.html",
+        "source_label": "The New York Times",
+        "status": "PostStatus.PUBLISHED",
+        "author": 43,
+        "category": 4,
+        "creation_date": "2021-10-05T15:12:22.492Z",
+        "last_update": "2021-10-05T15:12:22.492Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 72,
+    "fields": {
+        "title": "How My Desire to Run Again Pushed Me to Walk",
+        "body": "After recovering from a traumatic brain injury, a writer seeks to reclaim the mental transcendence that comes from running.",
+        "image_link": "https://static01.nyt.com/images/2021/09/29/well/29well-running/29well-running-moth.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.nytimes.com/2021/09/30/well/move/running-walking-jogging.html",
+        "source_label": "The New York Times",
+        "status": "PostStatus.PUBLISHED",
+        "author": 44,
+        "category": 4,
+        "creation_date": "2021-10-05T15:12:22.499Z",
+        "last_update": "2021-10-05T15:12:22.499Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 73,
+    "fields": {
+        "title": "Youth Vaping Declined Sharply for Second Year, New Data Show",
+        "body": "Now that it has stopped selling most flavored pods, Juul has become far less popular with teens than brands offering disposable fruit- and candy-flavored devices.",
+        "image_link": "https://static01.nyt.com/images/2021/09/30/science/30vaping/30vaping-moth.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.nytimes.com/2021/09/30/health/youth-vaping-decline.html",
+        "source_label": "The New York Times",
+        "status": "PostStatus.PUBLISHED",
+        "author": 45,
+        "category": 4,
+        "creation_date": "2021-10-05T15:12:22.505Z",
+        "last_update": "2021-10-05T15:12:22.505Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 74,
+    "fields": {
+        "title": "5 arrested in Kingston drug trafficking investigation: police",
+        "body": "Police say they found fentanyl, cash and several unauthorized weapons at a home on Barrie Street last week during a drug trafficking investigation.",
+        "image_link": "https://globalnews.ca/wp-content/uploads/2021/10/CP132396796-1.jpg?quality=85&strip=all&w=720&h=480&crop=1",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://globalnews.ca/news/8243940/5-arrested-kingston-drug-trafficking/",
+        "source_label": "globalwinnipeg",
+        "status": "PostStatus.PUBLISHED",
+        "author": 46,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:07.133Z",
+        "last_update": "2021-10-05T15:19:07.133Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 75,
+    "fields": {
+        "title": "Schumer: Talks with WHouse on Biden agenda making good progress",
+        "body": "WASHINGTON &#8212; U.S. Senate Majority Leader Chuck Schumer said on Tuesday that talks between Democratic leaders in Congress and the White House on President Joe Biden&#8217;s social spending plan are making &#8220;good progress&#8221; and will continue later this week. Schumer also said the Senate will vote on Wednesday on a Democratic measure to suspend the [&#8230;]",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://nationalpost.com/pmn/news-pmn/crime-pmn/schumer-talks-with-whouse-on-biden-agenda-making-good-progress-2",
+        "source_label": "nationalpost",
+        "status": "PostStatus.PUBLISHED",
+        "author": 47,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:07.141Z",
+        "last_update": "2021-10-05T15:19:07.141Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 76,
+    "fields": {
+        "title": "Police looking for suspect involved in a deadly shooting outside Arbor Pointe Apartments",
+        "body": "COLORADO SPRINGS, Colo. (KRDO) -- Colorado Springs Police are looking for the suspect involved in a deadly shooting outside an apartment complex on Monday. The shooting happened at Arbor Pointe Apartments on the city's southeast side. Neighbors say they heard a single gunshot in the area. A man was found dead at the scene. AThe post Police looking for suspect involved in a deadly shooting outside Arbor Pointe Apartments appeared first on KRDO.",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://krdo.com/news/2021/10/05/police-looking-for-suspect-involved-in-a-deadly-shooting-outside-arbor-pointe-apartments/",
+        "source_label": "krdo",
+        "status": "PostStatus.PUBLISHED",
+        "author": 48,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:07.148Z",
+        "last_update": "2021-10-05T15:19:07.148Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 77,
+    "fields": {
+        "title": "Irish sexual violence center shares some advice for perpetrators",
+        "body": "Following victim-blaming seen around Sarah Everard's rape and murder case, Cork social media post goes viral.",
+        "image_link": "http://www.irishcentral.com/uploads/article-v2/2021/10/148487/cropped_MI_Sexual_Violence_Centre_Cork_via_Twitter_SVCCork.jpg?t=1633445429",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.irishcentral.com/news/irish-sexual-violence-center-advice-perpetrators",
+        "source_label": "IrishCentral",
+        "status": "PostStatus.PUBLISHED",
+        "author": 49,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.548Z",
+        "last_update": "2021-10-05T15:19:34.548Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 78,
+    "fields": {
+        "title": "Certain schools to open on Oct. 21",
+        "body": "It has been decided to re-open the primary classes (Grade 1-5) of schools with less than 200 students from Oct. 21.3,000 schools are to be reopened in the first phase of reopening schools, Minister of Education - Dinesh Gunawardena said.Related News :3,000 schools to re-open during first stage&nbsp;",
+        "image_link": "https://srilankamirror.com/media/k2/items/cache/efae504f81f491102453ddd0ce4f58d0_S.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://srilankamirror.com/news/news-in-brief/25143-certain-schools-to-open-on-oct-21",
+        "source_label": "Sri Lanka Mirror",
+        "status": "PostStatus.PUBLISHED",
+        "author": 50,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.556Z",
+        "last_update": "2021-10-05T15:19:34.556Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 79,
+    "fields": {
+        "title": "Biden reverses and lifts abortion referral ban from a Trump-era restriction",
+        "body": "The Biden Administration is reversing a ban on abortion referrals by federally funded family planning clinics.The post Biden reverses and lifts abortion referral ban from a Trump-era restriction appeared first on KYMA.",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://kyma.com/decision-2022/national-politics/2021/10/05/biden-reverses-and-lifts-abortion-referral-ban-from-a-trump-era-restriction/",
+        "source_label": "kyma",
+        "status": "PostStatus.PUBLISHED",
+        "author": 51,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.566Z",
+        "last_update": "2021-10-05T15:19:34.566Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 80,
+    "fields": {
+        "title": "Museum volunteer in action [Image 5 of 5]",
+        "body": "Chris Page, a volunteer docent at the Hampton Roads Naval Museum, interacts with visitors in the museum’s gallery. Page served in the U.S. Navy during the Vietnam War, and is pictured providing some meaningful interpretation to some of the museum’s artifacts in their exhibit “The Ten Thousand-Day War at Sea: The U.S. Navy in Vietnam, 1950-1975.” (US Navy Photo by Max Lonzanida/Released).",
+        "image_link": "https://cdn.dvidshub.net/media/thumbs/photos/2110/6873668/250x166_q75.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.dvidshub.net/image/6873668/museum-volunteer-action",
+        "source_label": "dvidshub",
+        "status": "PostStatus.PUBLISHED",
+        "author": 52,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.573Z",
+        "last_update": "2021-10-05T15:19:34.573Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 81,
+    "fields": {
+        "title": "Adele is BACK! Singer FINALLY unveils her long-awaited new music",
+        "body": "The singer took to Twitter on Tuesday to reveal her new son is called Easy On Me and is set for release on 15 October",
+        "image_link": "https://i.dailymail.co.uk/1s/2021/10/05/15/48790841-0-image-m-102_1633443974539.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.dailymail.co.uk/tvshowbiz/article-10061399/Adele-Singer-FINALLY-unveils-long-awaited-new-music.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+        "source_label": "dailymail",
+        "status": "PostStatus.PUBLISHED",
+        "author": 53,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.580Z",
+        "last_update": "2021-10-05T15:19:34.580Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 82,
+    "fields": {
+        "title": "Woman gets 10-year jail sentence for N5.5m land scam in Kaduna",
+        "body": "Tribune OnlineWoman gets 10-year jail sentence for N5.5m land scam in KadunaThe conviction and sentencing of Hajiya Binta Balarabe Kubau to 10 years imprisonment before Justice M.T.M Aliyu of the Kaduna State High Court, Kaduna, has been secured by the Kaduna Zonal Command of the Economic and Financial Crimes Commission (EFCC). The judgement, given on Monday, was on a one-count charge of cheating which Kubau was [&#8230;]Woman gets 10-year jail sentence for N5.5m land scam in KadunaTribune Online",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://tribuneonlineng.com/woman-gets-10-year-jail-sentence-for-n5-5m-land-scam-in-kaduna/",
+        "source_label": "tribune",
+        "status": "PostStatus.PUBLISHED",
+        "author": 54,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.587Z",
+        "last_update": "2021-10-05T15:19:34.587Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 83,
+    "fields": {
+        "title": "Museum volunteer in action [Image 4 of 5]",
+        "body": "Chris Page, a volunteer docent at the Hampton Roads Naval Museum, interacts with visitors in the museum’s gallery. Page served in the U.S. Navy during the Vietnam War, and is pictured providing some meaningful interpretation to some of the museum’s artifacts in their exhibit “The Ten Thousand-Day War at Sea: The U.S. Navy in Vietnam, 1950-1975.” (US Navy Photo by Max Lonzanida/Released).",
+        "image_link": "https://cdn.dvidshub.net/media/thumbs/photos/2110/6873666/250x166_q75.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.dvidshub.net/image/6873666/museum-volunteer-action",
+        "source_label": "dvidshub",
+        "status": "PostStatus.PUBLISHED",
+        "author": 52,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.591Z",
+        "last_update": "2021-10-05T15:19:34.591Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 84,
+    "fields": {
+        "title": "Museum volunteer in action [Image 3 of 5]",
+        "body": "Chris Page, a volunteer docent at the Hampton Roads Naval Museum, interacts with visitors in the museum’s gallery. Page served in the U.S. Navy during the Vietnam War, and is pictured providing some meaningful interpretation to some of the museum’s artifacts in their exhibit “The Ten Thousand-Day War at Sea: The U.S. Navy in Vietnam, 1950-1975.” (US Navy Photo by Max Lonzanida/Released).",
+        "image_link": "https://cdn.dvidshub.net/media/thumbs/photos/2110/6873665/250x171_q75.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.dvidshub.net/image/6873665/museum-volunteer-action",
+        "source_label": "dvidshub",
+        "status": "PostStatus.PUBLISHED",
+        "author": 52,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.595Z",
+        "last_update": "2021-10-05T15:19:34.595Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 85,
+    "fields": {
+        "title": "Museum Volunteer in action [Image 2 of 5]",
+        "body": "Chris Page, a volunteer docent at the Hampton Roads Naval Museum, interacts with visitors in the museum’s gallery. Page served in the U.S. Navy during the Vietnam War, and is pictured providing some meaningful interpretation to some of the museum’s artifacts in their exhibit “The Ten Thousand-Day War at Sea: The U.S. Navy in Vietnam, 1950-1975.” (US Navy Photo by Max Lonzanida/Released).",
+        "image_link": "https://cdn.dvidshub.net/media/thumbs/photos/2110/6873664/250x164_q75.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.dvidshub.net/image/6873664/museum-volunteer-action",
+        "source_label": "dvidshub",
+        "status": "PostStatus.PUBLISHED",
+        "author": 52,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.599Z",
+        "last_update": "2021-10-05T15:19:34.599Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 86,
+    "fields": {
+        "title": "U.S. Bancorp launches cryptocurrency custody service for investment managers",
+        "body": "U.S. Bancorp said on Tuesday it had launched a cryptocurrency custody service for institutional investment managers who have private funds in the United States and Cayman Islands. The fifth largest U.S. bank said bitcoin-focused financial services firm NYDIG will act as a sub-custodian and the service will soon support cryptocurrencies besides bitcoin as well. &#8220;Investor [&#8230;]",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://nationalpost.com/pmn/news-pmn/u-s-bancorp-launches-cryptocurrency-custody-service-for-investment-managers",
+        "source_label": "nationalpost",
+        "status": "PostStatus.PUBLISHED",
+        "author": 47,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.603Z",
+        "last_update": "2021-10-05T15:19:34.603Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 87,
+    "fields": {
+        "title": "How Ghanaian security agents detained me for four hours, by Rep member",
+        "body": "By Tony Akowe, Abuja A member of House Representatives, Ben Igbakpa (PDP Delta) has recalled how Ghanaian security agents held him for four hours in the airport last weekend. He said he was held on the account of President Muhammadu Buhari’s allegation that some members of the National Assembly were sponsors of terrorism. He asked [&#8230;]The post How Ghanaian security agents detained me for four hours, by Rep member appeared first on The Nation Newspaper.",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://thenationonlineng.net/how-ghanaian-security-agents-detained-me-for-four-hours-by-rep-member/",
+        "source_label": "thenationonlineng",
+        "status": "PostStatus.PUBLISHED",
+        "author": 55,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.610Z",
+        "last_update": "2021-10-05T15:19:34.610Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 88,
+    "fields": {
+        "title": "Museum Volunteer in action [Image 1 of 5]",
+        "body": "Chris Page, a volunteer docent at the Hampton Roads Naval Museum, interacts with visitors in the museum’s gallery. Page served in the U.S. Navy during the Vietnam War, and is pictured providing some meaningful interpretation to some of the museum’s artifacts in their exhibit “The Ten Thousand-Day War at Sea: The U.S. Navy in Vietnam, 1950-1975.” (US Navy Photo by Max Lonzanida/Released).",
+        "image_link": "https://cdn.dvidshub.net/media/thumbs/photos/2110/6873663/250x192_q75.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.dvidshub.net/image/6873663/museum-volunteer-action",
+        "source_label": "dvidshub",
+        "status": "PostStatus.PUBLISHED",
+        "author": 52,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.614Z",
+        "last_update": "2021-10-05T15:19:34.614Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 89,
+    "fields": {
+        "title": "Galesburg council approves donating land to Community Foundation",
+        "body": "The Galesburg City Council Monday night approved the donation of a parcel of land next to the former Rheinschmidt&#8217;s Carpet building. The building was purchased by the Galesburg Community Foundation to be renovated and leased to the",
+        "image_link": "https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/522/2021/05/03194640/EE2BB4EB-373F-4387-8322-E28EDAE1F547-e1620089305317.jpeg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.wgil.com/2021/10/05/galesburg-council-approves-donating-land-to-community-foundation/",
+        "source_label": "wgil",
+        "status": "PostStatus.PUBLISHED",
+        "author": 56,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.623Z",
+        "last_update": "2021-10-05T15:19:34.623Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 90,
+    "fields": {
+        "title": "Facebook whistleblower Frances Haugen to say former employer an ‘urgent threat’ to U.S.",
+        "body": "'The core of the issue is that no one can understand Facebook's destructive choices better than Facebook'",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://nationalpost.com/news/world/facebook-whistleblower-frances-haugen-to-say-former-employer-an-urgent-threat-to-u-s",
+        "source_label": "nationalpost",
+        "status": "PostStatus.PUBLISHED",
+        "author": 47,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.628Z",
+        "last_update": "2021-10-05T15:19:34.628Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 91,
+    "fields": {
+        "title": "Virtual leadership coaching: How to assess and coach for success",
+        "body": "(marketscreener.com) especially in a virtual workplace. 3. Offer necessary resources Coaching is a skill. If you're not able to coach a manager, find a qualified professional who can or a resource that can assist. Perhaps a manager may benefit from a mentorship with a more senior manager. ...https://www.marketscreener.com/quote/stock/INSPERITY-INC-7549422/news/Virtual-leadership-coaching-How-to-assess-and-coach-for-success-36607158/?utm_medium=RSS&utm_content=20211005",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.marketscreener.com/quote/stock/INSPERITY-INC-7549422/news/Virtual-leadership-coaching-How-to-assess-and-coach-for-success-36607158/?utm_medium=RSS&utm_content=20211005",
+        "source_label": "4-traders",
+        "status": "PostStatus.PUBLISHED",
+        "author": 53,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.632Z",
+        "last_update": "2021-10-05T15:19:34.632Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 92,
+    "fields": {
+        "title": "LiveVox : How People with Disabilities are Positively impacting Contact Centers",
+        "body": "(marketscreener.com) October is National Disability Employment Awareness Month and we're thinking about the many ways this often underrepresented population makes an impact. Over 60 million American adults identify as disabled. That's more than the populations of our two largest...https://www.marketscreener.com/quote/stock/LIVEVOX-HOLDING-INC-124007856/news/LiveVox-How-People-with-Disabilities-are-Positively-impacting-Contact-Centers-36607157/?utm_medium=RSS&utm_content=20211005",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.marketscreener.com/quote/stock/LIVEVOX-HOLDING-INC-124007856/news/LiveVox-How-People-with-Disabilities-are-Positively-impacting-Contact-Centers-36607157/?utm_medium=RSS&utm_content=20211005",
+        "source_label": "4-traders",
+        "status": "PostStatus.PUBLISHED",
+        "author": 53,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.636Z",
+        "last_update": "2021-10-05T15:19:34.636Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 93,
+    "fields": {
+        "title": "Tecsys : Stagflation &ndash; Is It Here to Stay or Just Passing Through?",
+        "body": "(marketscreener.com) The economists are saying that we're in a period of stagflation, a term coined by politician Ian McCleod in his speech to Parliament in the late 1960s: &quot;We now have the worst of both worlds - not just inflation on the one side or stagnation on the other, but both of them together. We have a sort of...https://www.marketscreener.com/quote/stock/TECSYS-INC-1411885/news/Tecsys-Stagflation-ndash-Is-It-Here-to-Stay-or-Just-Passing-Through-36607156/?utm_medium=RSS&utm_content=20211005",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.marketscreener.com/quote/stock/TECSYS-INC-1411885/news/Tecsys-Stagflation-ndash-Is-It-Here-to-Stay-or-Just-Passing-Through-36607156/?utm_medium=RSS&utm_content=20211005",
+        "source_label": "4-traders",
+        "status": "PostStatus.PUBLISHED",
+        "author": 53,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.640Z",
+        "last_update": "2021-10-05T15:19:34.640Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 94,
+    "fields": {
+        "title": "CommScope : Speaks at SCTE 2021",
+        "body": "(marketscreener.com) CommScope Speaks at SCTE 2021 This year's SCTE Cable-Tec Expo conference will be virtual, making the topics all the more relevant, as we discuss the key technologies and initiatives driving the future of cable networks-from 10G to Wi-Fi 6 and IoT. CommScope's Massimo Disabato shares what we can expect from CommScope. ...https://www.marketscreener.com/quote/stock/COMMSCOPE-HOLDING-COMPANY-14688863/news/CommScope-Speaks-at-SCTE-2021-36607155/?utm_medium=RSS&utm_content=20211005",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.marketscreener.com/quote/stock/COMMSCOPE-HOLDING-COMPANY-14688863/news/CommScope-Speaks-at-SCTE-2021-36607155/?utm_medium=RSS&utm_content=20211005",
+        "source_label": "4-traders",
+        "status": "PostStatus.PUBLISHED",
+        "author": 53,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.644Z",
+        "last_update": "2021-10-05T15:19:34.644Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 95,
+    "fields": {
+        "title": "3rd edition of the UfM Trade and Investment Forum 2021: registrations are now open!",
+        "body": "(marketscreener.com) UNIMED is glad to share an important initiative organised by the Union for the Mediterranean. On 11 November 2021, the Union for the Mediterranean will organise the 3rd edition of the UfM Trade and Investment Forum 2021, that will be online from 10:00 to 14:00 CET. Regional economic...https://www.marketscreener.com/news/latest/3rd-edition-of-the-UfM-Trade-and-Investment-Forum-2021-registrations-are-now-open--36607152/?utm_medium=RSS&utm_content=20211005",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.marketscreener.com/news/latest/3rd-edition-of-the-UfM-Trade-and-Investment-Forum-2021-registrations-are-now-open--36607152/?utm_medium=RSS&utm_content=20211005",
+        "source_label": "4-traders",
+        "status": "PostStatus.PUBLISHED",
+        "author": 53,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.648Z",
+        "last_update": "2021-10-05T15:19:34.648Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 96,
+    "fields": {
+        "title": "Fiera Milano : Ordinary and Extraordinary Shareholders' Meeting proposals approved",
+        "body": "(marketscreener.com) FIERA MILANO: ORDINARY AND EXTRAORDINARY SHAREHOLDERS' MEETING PROPOSALS APPROVED Ordinary Meeting Approved - Partial amendment of the Incentive Plan pursuant to Article 114-bis of Legislative Decree 58/98 Extraordinary...https://www.marketscreener.com/quote/stock/FIERA-MILANO-SPA-100156/news/Fiera-Milano-Ordinary-and-Extraordinary-Shareholders-Meeting-proposals-approved-36607151/?utm_medium=RSS&utm_content=20211005",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.marketscreener.com/quote/stock/FIERA-MILANO-SPA-100156/news/Fiera-Milano-Ordinary-and-Extraordinary-Shareholders-Meeting-proposals-approved-36607151/?utm_medium=RSS&utm_content=20211005",
+        "source_label": "4-traders",
+        "status": "PostStatus.PUBLISHED",
+        "author": 53,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.652Z",
+        "last_update": "2021-10-05T15:19:34.652Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 97,
+    "fields": {
+        "title": "Micro Focus Consulting: A Great Professional Service",
+        "body": "(marketscreener.com) 0 I am Dr. James D. Borderick, and I look after the Competitive Benchmark research for Micro Focus, which I have been doing for over five years. I wish to share some very interesting statistics with our followers regarding satisfaction with consulting. How do we Measure Consulting? Micro...https://www.marketscreener.com/quote/stock/MICRO-FOCUS-INTERNATIONAL-57802294/news/Micro-Focus-Consulting-A-Great-Professional-Service-36607149/?utm_medium=RSS&utm_content=20211005",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.marketscreener.com/quote/stock/MICRO-FOCUS-INTERNATIONAL-57802294/news/Micro-Focus-Consulting-A-Great-Professional-Service-36607149/?utm_medium=RSS&utm_content=20211005",
+        "source_label": "4-traders",
+        "status": "PostStatus.PUBLISHED",
+        "author": 53,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.656Z",
+        "last_update": "2021-10-05T15:19:34.656Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 98,
+    "fields": {
+        "title": "Report: Suns Reluctant to Offer Deandre Ayton Maximum Contract Extension",
+        "body": "Deandre Ayton's contract extension discussions with the Suns have hit a snag as opening night approaches.",
+        "image_link": "http://www.si.com/.image/c_limit%2Ccs_srgb%2Cfl_progressive%2Ch_1200%2Cq_auto:good%2Cw_1200/MTg0MzUwNjA3ODY2MzQwODQy/deandre-ayton-suns.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.si.com/nba/2021/10/05/deandre-ayton-maximum-contract-extension-suns-reluctant",
+        "source_label": "Sports Illustrated",
+        "status": "PostStatus.PUBLISHED",
+        "author": 57,
+        "category": 6,
+        "creation_date": "2021-10-05T15:19:34.664Z",
+        "last_update": "2021-10-05T15:19:34.664Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 99,
+    "fields": {
+        "title": "Turnaround Tuesday, Pepsi’s Inflation Warning, Dollar Rebounds, Nothing Stopping Oil, Gold Lower",
+        "body": "US stocks are rebounding as investors find value in beaten up tech stocks and are coming to the realization that the global natural gas crisis is good news for energy stocks. Yesterday, the Nasdaq selloff brought the recent slide to 8.5% from recent record highs. US growth exceptionalism will be the theme for the next [&#8230;]The post Turnaround Tuesday, Pepsi&#8217;s Inflation Warning, Dollar Rebounds, Nothing Stopping Oil, Gold Lower appeared first on Action Forex.",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.actionforex.com/contributors/fundamental-analysis/407442-turnaround-tuesday-pepsis-inflation-warning-dollar-rebounds-nothing-stopping-oil-gold-lower/",
+        "source_label": "actionforex",
+        "status": "PostStatus.PUBLISHED",
+        "author": 58,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.671Z",
+        "last_update": "2021-10-05T15:19:34.671Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 100,
+    "fields": {
+        "title": "Christmas will be ‘considerably better’ than last year, promises Boris",
+        "body": "Even though there are fears over fuel and food shortages, soaring energy bills, tax rises and a potential livestock cull...",
+        "image_link": "https://metro.co.uk/wp-content/uploads/2021/10/PRC_203494335.jpg?quality=90&strip=all",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://metro.co.uk/2021/10/05/christmas-will-be-considerably-better-than-last-year-promises-boris-15358416/",
+        "source_label": "Metro",
+        "status": "PostStatus.PUBLISHED",
+        "author": 59,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.678Z",
+        "last_update": "2021-10-05T15:19:34.678Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 101,
+    "fields": {
+        "title": "Jana Kramer Says It Can Be 'Very Hard' Coparenting with Ex-Husband Mike Caussin",
+        "body": "\"I just kind of bite my lip a lot.\" Jana Kramer and Mike Caussin may have called it quits in April 2021, but they're stuck with each other for life thanks to their children; Jolie, 5, and Jace, 2. Speaking with Us Weekly, Kramer opened up a bit about coparenting with her ex-husband and the struggles she goes through trying to navigate those sometimes tricky waters. \"It's very hard. I have no problem saying, like, the other day, I didn't do it perfectly. I was upset and I was like, 'I didn't want this. I didn't ask for this,'\" Kramer told the publication, saying sometimes her kids miss their dad...",
+        "image_link": "https://images.toofab.com/image/b1/o/2021/10/05/b161955abaa6469ab66b150fc74e56a8_md.jpg",
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://toofab.com/2021/10/05/jana-kramer-mike-caussin-coparenting/",
+        "source_label": "toofab",
+        "status": "PostStatus.PUBLISHED",
+        "author": 60,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.685Z",
+        "last_update": "2021-10-05T15:19:34.685Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 102,
+    "fields": {
+        "title": "45,536 Shares in Verizon Communications Inc. (NYSE:VZ) Purchased by Karp Capital Management Corp",
+        "body": "45,536 Shares in Verizon Communications Inc. (NYSE:VZ) Purchased by Karp Capital Management Corp",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.americanbankingnews.com/2021/10/05/45536-shares-in-verizon-communications-inc-nysevz-purchased-by-karp-capital-management-corp.html",
+        "source_label": "americanbankingnews",
+        "status": "PostStatus.PUBLISHED",
+        "author": 61,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.692Z",
+        "last_update": "2021-10-05T15:19:34.692Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 103,
+    "fields": {
+        "title": "Karp Capital Management Corp Grows Position in Okta, Inc. (NASDAQ:OKTA)",
+        "body": "Karp Capital Management Corp Grows Position in Okta, Inc. (NASDAQ:OKTA)",
+        "image_link": null,
+        "chart_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.americanbankingnews.com/2021/10/05/karp-capital-management-corp-grows-position-in-okta-inc-nasdaqokta.html",
+        "source_label": "americanbankingnews",
+        "status": "PostStatus.PUBLISHED",
+        "author": 61,
+        "category": 1,
+        "creation_date": "2021-10-05T15:19:34.697Z",
+        "last_update": "2021-10-05T15:19:34.697Z"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2021-10-04T17:38:33.642Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "1",
+        "object_repr": "CoolUser object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2021-10-04T18:20:31.334Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "Category object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2021-10-04T18:22:12.662Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "Post object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2021-10-05T10:43:48.696Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "1",
+        "object_repr": "general",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Label\", \"Slug\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2021-10-05T10:44:02.582Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "business",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2021-10-05T10:44:04.479Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "2",
+        "object_repr": "business",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2021-10-05T10:44:14.312Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "3",
+        "object_repr": "entertainment",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2021-10-05T10:44:23.629Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "4",
+        "object_repr": "health",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2021-10-05T10:44:33.170Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "5",
+        "object_repr": "science",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2021-10-05T10:44:41.596Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "6",
+        "object_repr": "sports",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2021-10-05T10:44:53.038Z",
+        "user": 1,
+        "content_type": 9,
+        "object_id": "7",
+        "object_repr": "technology",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2021-10-05T14:26:43.648Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "10",
+        "object_repr": "Best affordable LED TVs UK: cheap TVs with great resolution, from Samsung, Sony and LG - by AndrewWilliams",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 1,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 1,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 1,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 1,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 2,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 2,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 2,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 2,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 3,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 3,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 3,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 3,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 4,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 4,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 4,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 4,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 5,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 5,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 5,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 5,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 6,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 6,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 6,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 6,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add post",
+        "content_type": 7,
+        "codename": "add_post"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change post",
+        "content_type": 7,
+        "codename": "change_post"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete post",
+        "content_type": 7,
+        "codename": "delete_post"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view post",
+        "content_type": 7,
+        "codename": "view_post"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add cool user",
+        "content_type": 8,
+        "codename": "add_cooluser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change cool user",
+        "content_type": 8,
+        "codename": "change_cooluser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete cool user",
+        "content_type": 8,
+        "codename": "delete_cooluser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view cool user",
+        "content_type": 8,
+        "codename": "view_cooluser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add category",
+        "content_type": 9,
+        "codename": "add_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change category",
+        "content_type": 9,
+        "codename": "change_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete category",
+        "content_type": 9,
+        "codename": "delete_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view category",
+        "content_type": 9,
+        "codename": "view_category"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$H2pOAAaaSUeYFdNmRxoI9g$AaW3Hzc3LIcUBW9Q+pr543I+cbx4CbPct7lpH00iGT4=",
+        "last_login": "2021-10-04T07:56:12.897Z",
+        "is_superuser": true,
+        "username": "oscar",
+        "first_name": "",
+        "last_name": "",
+        "email": "tuxskar@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2021-10-04T07:53:25.475Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 36,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "rhartleb@noemail.com",
+        "first_name": "Regina",
+        "last_name": "Hartleb",
+        "email": "rhartleb@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:10:40.005Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 37,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "mjarjour@noemail.com",
+        "first_name": "Marcel",
+        "last_name": "Jarjour",
+        "email": "mjarjour@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:10:40.014Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 38,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "pbelluck@noemail.com",
+        "first_name": "Pam",
+        "last_name": "Belluck",
+        "email": "pbelluck@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:12:22.440Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 39,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "je.brody@noemail.com",
+        "first_name": "Jane",
+        "last_name": "E. Brody",
+        "email": "je.brody@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:12:22.452Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 40,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "krivas@noemail.com",
+        "first_name": "Kayla",
+        "last_name": "Rivas",
+        "email": "krivas@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:12:22.459Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 41,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "paitken@noemail.com",
+        "first_name": "Peter",
+        "last_name": "Aitken",
+        "email": "paitken@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:12:22.466Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 42,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "lmckowen@noemail.com",
+        "first_name": "Laura",
+        "last_name": "McKowen",
+        "email": "lmckowen@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:12:22.473Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 43,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "tparker-pope@noemail.com",
+        "first_name": "Tara",
+        "last_name": "Parker-Pope",
+        "email": "tparker-pope@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:12:22.487Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 44,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "erosenthal@noemail.com",
+        "first_name": "Elisabeth",
+        "last_name": "Rosenthal",
+        "email": "erosenthal@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:12:22.494Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 45,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "mrichtel@noemail.com",
+        "first_name": "Matt",
+        "last_name": "Richtel",
+        "email": "mrichtel@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:12:22.500Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 46,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "amazur@noemail.com",
+        "first_name": "Alexandra",
+        "last_name": "Mazur",
+        "email": "amazur@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:07.125Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 47,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "reuters@noemail.com",
+        "first_name": "Reuters",
+        "last_name": "",
+        "email": "reuters@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:07.135Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 48,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "jgood@noemail.com",
+        "first_name": "Jordan",
+        "last_name": "Good",
+        "email": "jgood@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:07.143Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 49,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "info@irishcentral.com",
+        "first_name": "IrishCentral Staff",
+        "last_name": "",
+        "email": "info@irishcentral.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:34.542Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 50,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "e(shanika)@noemail.com",
+        "first_name": "editor@srilankamirror.com",
+        "last_name": "(shanika)",
+        "email": "e(shanika)@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:34.551Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 51,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "nnews@noemail.com",
+        "first_name": "NBC",
+        "last_name": "News",
+        "email": "nnews@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:34.558Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 52,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "mlonzanida@noemail.com",
+        "first_name": "Max",
+        "last_name": "Lonzanida",
+        "email": "mlonzanida@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:34.568Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 53,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "anonymous@noemail.com",
+        "first_name": "anonymous",
+        "last_name": "",
+        "email": "anonymous@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:34.575Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 54,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "omalik@noemail.com",
+        "first_name": "Oluwatoyin",
+        "last_name": "Malik",
+        "email": "omalik@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:34.582Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 55,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "tnation@noemail.com",
+        "first_name": "The",
+        "last_name": "Nation",
+        "email": "tnation@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:34.605Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 56,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "nick@noemail.com",
+        "first_name": "Nick",
+        "last_name": "",
+        "email": "nick@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:34.617Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 57,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "mshapiro@noemail.com",
+        "first_name": "Michael",
+        "last_name": "Shapiro",
+        "email": "mshapiro@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:34.658Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 58,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "marketpulse@noemail.com",
+        "first_name": "MarketPulse",
+        "last_name": "",
+        "email": "marketpulse@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:34.666Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 59,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "aradnedge@noemail.com",
+        "first_name": "Aidan",
+        "last_name": "Radnedge",
+        "email": "aradnedge@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:34.673Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 60,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "info@toofab.com",
+        "first_name": "TooFab Staff",
+        "last_name": "",
+        "email": "info@toofab.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:34.680Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 61,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "info@abmn.com",
+        "first_name": "ABMN Staff",
+        "last_name": "",
+        "email": "info@abmn.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-05T15:19:34.687Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "press",
+        "model": "post"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "press",
+        "model": "cooluser"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "press",
+        "model": "category"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "4k4wtus5cim212j1w7irmeivjrrvadcb",
+    "fields": {
+        "session_data": ".eJxVjMEOwiAQRP-FsyFAF4oevfsNZGEXqRqalPZk_Hdp0oPeJm_ezFsE3NYStsZLmEhchBanXxYxPbnuBT2w3meZ5rouU5S7Io-2ydtM_Loe7t9BwVb62mnHmoHdGbNRenSRUGVvSXlt0dBoQEUHDhj10AN4hoFVZ5ZToiw-X9KvN78:1mXIpY:vwKfhSDxvfnVu8J71R6C4vy5rKBTIRnDK6jMtg3Uelg",
+        "expire_date": "2021-10-18T07:56:12.899Z"
+    }
+}
+]

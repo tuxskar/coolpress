@@ -1,3 +1,5 @@
+from enum import Enum
+
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -18,18 +20,21 @@ class Category(models.Model):
         verbose_name_plural = "categories"
 
     label = models.CharField(max_length=200)
+    slug = models.CharField(max_length=200)
 
     def __str__(self):
-        return f'{self.label}'
+        return f'{self.slug}'
 
 
-class Post(models.Model):
+class PostStatus(Enum):
     DRAFT = 'DRAFT'
     PUBLISHED = 'PUBLISHED'
 
+
+class Post(models.Model):
     STATUS = [
-        (DRAFT, 'Draft'),
-        (PUBLISHED, 'Published post'),
+        (PostStatus.DRAFT, 'Draft'),
+        (PostStatus.PUBLISHED, 'Published post'),
     ]
 
     title = models.CharField(max_length=400)
@@ -45,7 +50,7 @@ class Post(models.Model):
     status = models.CharField(
         max_length=32,
         choices=STATUS,
-        default=DRAFT,
+        default=PostStatus.DRAFT,
     )
 
     author = models.ForeignKey(CoolUser, on_delete=models.CASCADE)

@@ -44,7 +44,7 @@ admin.site.register(CoolUser, CoolUserAdmin)
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('label', 'view_post_link')
+    list_display = ('slug', 'label', 'view_post_link')
 
     def view_post_link(self, obj):
         count = obj.post_set.count()
@@ -64,7 +64,7 @@ admin.site.register(Category, CategoryAdmin)
 
 class PostAdmin(admin.ModelAdmin):
     date_hierarchy = 'creation_date'
-    list_filter = ('author', 'category', 'status')
+    list_filter = ('category', 'status')
     search_fields = ("title", "body")
     list_display = ('title', 'author', 'last_update', 'status', 'category')
 

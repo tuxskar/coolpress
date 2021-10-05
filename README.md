@@ -77,6 +77,22 @@ Create manually the:
  * Groups of permissions such "Editor", "Viewer"
 
 
+## Get API news
+
+In order to get more information from the API mediastack you need to provide the API_KEY and run the command get_api_news
+ 
+```bash
+export MEDIASTACK_KEY=<api_key>
+python manage.py get_api_news health,sports,general --limit=30
+```
+
+## Dump and load information
+
+```bash
+python manage.py dumpdata --all --indent 4 --output sample_posts
+python manage.py loaddata sample_posts
+```
+
 ## Troubleshooting
 
 Error importing coolpress:
