@@ -20,6 +20,22 @@
                     <a class="dropdown-item" href="#">General</a>
                 </div>
             </li>
+
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navUser" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ user.username }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navUser">
+                    <a class="btn btn-danger" href="{% url 'logout' %}">Log Out</a>
+                </div>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="btn btn-primary" href="{% url 'login' %}">Log In</a>
+            </li>
+            {% endif %}
         </ul>
     </div>
 </nav>

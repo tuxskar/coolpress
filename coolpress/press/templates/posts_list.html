@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if user.is_authenticated %}
+<div class="text-right">
+    <a class="btn btn-info new-post-btn" role="button" target='_blank' href="{% url 'post_update' %}">New
+        Post</a>
+</div>
+{% endif %}
+
 {% for post in post_list %}
 <div class="card mb-3 post">
     <div class="row no-gutters">

@@ -9,9 +9,12 @@
 {% endif %}
 <p class="post-detail-body text-center">{{post_obj.body}}</p>
 
+{% if post_obj.source_link and post_obj.source_label %}
 <div class="text-center">
-    <a class="btn btn-info " role="button" target='_blank' href="{{post_obj.source_link}}">Check at: {{post_obj.source_label}}</a>
+    <a class="btn btn-info " role="button" target='_blank' href="{{post_obj.source_link}}">Check
+        at: {{post_obj.source_label}}</a>
 </div>
+{% endif %}
 
 
 <div class="row">

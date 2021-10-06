@@ -33,8 +33,8 @@ class PostStatus(Enum):
 
 class Post(models.Model):
     STATUS = [
-        (PostStatus.DRAFT, 'Draft'),
-        (PostStatus.PUBLISHED, 'Published post'),
+        (PostStatus.DRAFT.value, 'Draft'),
+        (PostStatus.PUBLISHED.value, 'Published post'),
     ]
 
     title = models.CharField(max_length=400)

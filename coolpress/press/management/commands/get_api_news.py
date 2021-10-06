@@ -29,7 +29,6 @@ class Command(BaseCommand):
             default=10
         )
 
-
     def handle(self, *args, **options):
         categories = options['categories']
         limit = int(options['limit'])
@@ -66,7 +65,8 @@ def insert_post(post_info):
         author = get_or_create_author(post_info)
         post = Post(title=title, author=author, body=post_info['description'],
                     source_label=post_info['source'], image_link=post_info['image'],
-                    category=category, source_link=post_info['url'], status=PostStatus.PUBLISHED)
+                    category=category, source_link=post_info['url'],
+                    status=PostStatus.PUBLISHED.value)
         post.save()
         return post
 
