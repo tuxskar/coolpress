@@ -20,7 +20,7 @@
                 <p class="card-text"><small class="text-muted">{{post.author}}</small></p>
             </div>
             <div class="card-footer bg-transparent border-success">
-                <a href="#" class="btn btn-primary">Details {{post.id}}</a>
+                <a href="{% url 'posts_detail' post.id %}" class="btn btn-primary">Details</a>
             </div>
         </div>
     </div>

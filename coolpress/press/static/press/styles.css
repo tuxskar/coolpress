@@ -13,3 +13,16 @@
     max-width: 100%;
     padding: 10px;
 }
+
+.post-detail-image {
+    text-align: center;
+    margin: 25px;
+}
+
+.post-detail-image img {
+    max-height: 300px;
+}
+
+.post-detail-body {
+    text-align: center;
+}
