@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
-from django.http import HttpResponse
+from press.models import PostStatus, Post
 
 
-def index(request):
-    return HttpResponse("Hello, world. This will be the best press app ever :)")
+def post_list(request):
+    post_list = Post.objects.filter(status=PostStatus.PUBLISHED).order_by('last_update')[:15]
+    return render(request, 'posts_list.html', {'post_list': post_list})

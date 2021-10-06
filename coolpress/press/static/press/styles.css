@@ -1,0 +1,15 @@
+#main-navbar {
+    background-color: #d5fffd;
+}
+
+#navbarSupportedContent > ul {
+    flex-grow: inherit;
+}
+
+.post {
+    margin: 10px 5px 10px 5px;
+}
+.post-image {
+    max-width: 100%;
+    padding: 10px;
+}
