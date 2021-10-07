@@ -3,7 +3,7 @@
 {% block content %}
 {% if user.is_authenticated %}
 <div class="text-right">
-    <a class="btn btn-info new-post-btn" role="button" target='_blank' href="{% url 'post_update' %}">New
+    <a class="btn btn-info new-post-btn" role="button" target='_blank' href="{% url 'post_new' %}">New
         Post</a>
 </div>
 {% endif %}
