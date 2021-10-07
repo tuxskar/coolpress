@@ -93,6 +93,29 @@ python manage.py dumpdata --all --indent 4 --output sample_posts
 python manage.py loaddata sample_posts
 ```
 
+## Testing and coverage
+
+In order to run the tests you can run the next command:
+```bash
+python manage.py test
+```
+
+And to run the coverage you can run:
+
+```bash
+coverage run manage.py test
+coverage html
+```
+
+or directly:
+```bash
+coverage run manage.py test && coverage html && open htmlcov/index.html
+```
+
+Now you would have a a web page under the file: `coolpress/htmlcov/index.html` with the 
+current coverage of the project
+
+
 ## Troubleshooting
 
 Error importing coolpress:
