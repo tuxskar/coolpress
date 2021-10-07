@@ -9,9 +9,18 @@
 .post {
     margin: 10px 5px 10px 5px;
 }
+
+.post-image-box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 300px;
+}
+
 .post-image {
     max-width: 100%;
     padding: 10px;
+    align-self: center;
 }
 
 .post-detail-image {

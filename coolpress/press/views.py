@@ -2,13 +2,15 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponseBadRequest
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
+from django.views.generic import TemplateView
 
 from press.forms import PostForm
 from press.models import PostStatus, Post, CoolUser
 
 
 def post_list(request):
-    post_list = Post.objects.filter(status=PostStatus.PUBLISHED.value).order_by('-last_update')[:20]
+    post_list = Post.objects.filter(status=PostStatus.PUBLISHED.value).order_by('-last_update')[
+                :20]
     return render(request, 'posts_list.html', {'post_list': post_list})
 
 
@@ -27,7 +29,7 @@ def post_update(request, post_id=None):
 
     if request.method == 'POST':
         # create a form instance and populate it with data from the request:
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, instance=post)
         # check whether it's valid:
         if form.is_valid():
             instance = form.save(commit=False)
@@ -41,3 +43,5 @@ def post_update(request, post_id=None):
     return render(request, 'posts_update.html', {'form': form})
 
 
+class AboutView(TemplateView):
+    template_name = "about.html"

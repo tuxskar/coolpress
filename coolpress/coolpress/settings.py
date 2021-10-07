@@ -122,3 +122,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 HOME_INDEX = 'posts_list'
 LOGIN_REDIRECT_URL = HOME_INDEX
 LOGOUT_REDIRECT_URL = HOME_INDEX
+
+TEMPLATES[0]['OPTIONS']['context_processors'].append(
+    "press.context_processors.categories_processor")
