@@ -1,7 +1,7 @@
 from django import forms
 from django.forms import ModelForm
 
-from press.models import Post
+from press.models import Post, Category
 
 
 class PostForm(ModelForm):
@@ -14,4 +14,14 @@ class PostForm(ModelForm):
             'image_link': forms.TextInput(attrs={'class': 'form-control'}),
             'category': forms.Select(attrs={'class': 'form-control'}),
             'status': forms.Select(attrs={'class': 'form-control'}),
+        }
+
+
+class CategoryForm(ModelForm):
+    class Meta:
+        model = Category
+        fields = ['slug', 'label']
+        widgets = {
+            'slug': forms.TextInput(attrs={'class': 'form-control'}),
+            'label': forms.TextInput(attrs={'class': 'form-control'}),
         }

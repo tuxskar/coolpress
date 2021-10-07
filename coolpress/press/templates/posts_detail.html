@@ -28,7 +28,7 @@
 {% if user.is_authenticated and post_obj.author.user.username == user.username %}
 <div class="text-right">
     <a class="btn btn-info new-post-btn" role="button"
-       target='_blank' href="{% url 'post_update' post_obj.id %}">Update Post</a>
+       target='_blank' href="{% url 'post-update' post_obj.id %}">Update Post</a>
 </div>
 {% endif %}
 

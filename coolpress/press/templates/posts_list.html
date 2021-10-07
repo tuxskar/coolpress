@@ -1,12 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+{% if post_list %}
+<h1>{{post_list.0.category.label}}</h1>
+{% endif %}
+
 {% if user.is_authenticated %}
 <div class="text-right">
-    <a class="btn btn-info new-post-btn" role="button" target='_blank' href="{% url 'post_new' %}">New
-        Post</a>
+    <a class="btn btn-info new-post-btn" role="button" target='_blank' href="{% url 'post-add' %}">
+        New Post</a>
 </div>
 {% endif %}
+
 
 {% for post in post_list %}
 <div class="card mb-3 post">
@@ -27,11 +33,17 @@
                 <p class="card-text"><small class="text-muted">{{post.author}}</small></p>
             </div>
             <div class="card-footer bg-transparent border-success">
-                <a href="{% url 'posts_detail' post.id %}" class="btn btn-primary">Details</a>
+                <a href="{% url 'posts-detail' post.id %}" class="btn btn-primary">Details</a>
             </div>
         </div>
     </div>
 </div>
+{% empty %}
+
+<p class="text-center font-weight-bold">
+    There are no posts yet for this category, let's create some :D
+</p>
+
 {% endfor %}
 
 {% endblock %}

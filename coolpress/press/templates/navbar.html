@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'posts_list' %}">News</span></a>
+                <a class="nav-link" href="{% url 'posts-list' %}">News</span></a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -18,8 +18,13 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     {% for category in categories %}
-                        <a class="dropdown-item" href="#">{{category.label}}</a>
+                    <a class="dropdown-item"
+                       href="{% url 'posts-list-by-category' category.slug %}">{{category.label}}</a>
                     {% endfor %}
+
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'category-list' %}">Category List</a>
+
                 </div>
             </li>
 

@@ -119,7 +119,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-HOME_INDEX = 'posts_list'
+HOME_INDEX = 'posts-list'
 LOGIN_REDIRECT_URL = HOME_INDEX
 LOGOUT_REDIRECT_URL = HOME_INDEX
 
