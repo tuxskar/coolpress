@@ -23,6 +23,9 @@ class Category(models.Model):
     label = models.CharField(max_length=200)
     slug = models.CharField(max_length=200)
 
+    def get_absolute_url(self):
+        return reverse('posts-list-by-category', kwargs=dict(category_slug=self.slug))
+
     def __str__(self):
         return f'{self.slug}'
 
