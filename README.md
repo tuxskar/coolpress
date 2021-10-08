@@ -1,3 +1,6 @@
+![Coolpress Tests](https://github.com/tuxskar/coolpress/actions/workflows/django.yml/badge.svg)
+
+
 # CoolPress Project
 
 CoolPress is an application to show the power of web development using Django
@@ -98,8 +101,13 @@ python manage.py loaddata sample_posts
 
 Setup on the repository and link it on the UI
 
-Once everyghing is setup we need to create the superuser such:
+You can check the logs with:
+```bash
+heroku logs --tail -a coolpress
 ```
+
+Once everything is setup we need to create the superuser such:
+```bash
 heroku run python coolpress/manage.py createsuperuser -a coolpress
 ```
 
