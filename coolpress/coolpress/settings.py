@@ -1,3 +1,5 @@
+import django_heroku
+
 """
 Django settings for coolpress project.
 
@@ -128,3 +130,5 @@ TEMPLATES[0]['OPTIONS']['context_processors'].append(
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'
+
+django_heroku.settings(locals())
