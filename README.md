@@ -93,6 +93,20 @@ python manage.py dumpdata --all --indent 4 --output sample_posts
 python manage.py loaddata sample_posts
 ```
 
+
+## Deploying on heroku
+
+Setup on the repository and link it on the UI
+
+Once everyghing is setup we need to create the superuser such:
+```
+heroku run python coolpress/manage.py createsuperuser -a coolpress
+```
+
+Remember to add the CoolUser associated to the superuser, otherwise there will be some surprised while adding some posts
+
+Now you can check the information at: https://coolpress.herokuapp.com/
+
 ## Testing and coverage
 
 In order to run the tests you can run the next command:
