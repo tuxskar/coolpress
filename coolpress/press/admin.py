@@ -24,8 +24,8 @@ admin.site.register(User, UserAdmin)
 
 class CoolUserAdmin(admin.ModelAdmin):
     list_display = (
-        'user', 'github_profile', 'view_post_link', 'gh_stars', 'gh_repositories', 'gravatar_link')
-    list_filter = ('gh_stars', 'gh_repositories')
+        'user', 'github_profile', 'view_post_link', 'gh_repositories', 'gravatar_link')
+    list_filter = ('gh_repositories',)
 
     def view_post_link(self, obj):
         count = obj.post_set.count()

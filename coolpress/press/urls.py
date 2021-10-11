@@ -2,7 +2,7 @@ from django.urls import path
 
 from . import views
 from .views import AboutView, CategoryListView, PostClassBasedListView, PostClassFilteringListView, \
-    CategoryCreateView, CategoryUpdateView, CategoryFormView
+    CategoryCreateView, CategoryUpdateView, CategoryFormView, DetailCoolUser
 
 urlpatterns = [
     path('', views.post_list, name='posts-list'),
@@ -17,4 +17,5 @@ urlpatterns = [
     path('category/add/', CategoryCreateView.as_view(), name='category-add'),
     path('category/sample-add/', CategoryFormView.as_view(), name='category-sample-add'),
     path('category/<int:pk>/', CategoryUpdateView.as_view(), name='category-update'),
+    path('user/<int:pk>/', DetailCoolUser.as_view(), name='user-detail'),
 ]

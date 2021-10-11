@@ -125,6 +125,8 @@ LOGOUT_REDIRECT_URL = HOME_INDEX
 
 TEMPLATES[0]['OPTIONS']['context_processors'].append(
     "press.context_processors.categories_processor")
+TEMPLATES[0]['OPTIONS']['context_processors'].append(
+    "press.context_processors.cooluser_processor")
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'static'

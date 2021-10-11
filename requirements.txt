@@ -1,2 +1,6 @@
-django
+django~=3.2.7
 coverage
+libgravatar~=1.0.0
+requests~=2.26.0
+pip~=21.2.4
+beautifulsoup4~=4.10.0
