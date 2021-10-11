@@ -18,3 +18,10 @@ class UserManagementTest(TestCase):
         user = CoolUser.objects.create(user=random_user, github_profile='epythonista')
         self.assertIs(user.gravatar_link, None)
         self.assertEqual(user.gh_repositories, 0)
+
+    def test_creation_incorrect(self):
+        random_user = User.objects.create(username='randomtestUser',
+                                          email='juanita@noemailandrandom.com')
+        user = CoolUser.objects.create(user=random_user, github_profile='someevenmorerandomuser')
+        self.assertIs(user.gravatar_link, None)
+        self.assertEqual(user.gh_repositories, None)
