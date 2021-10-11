@@ -30,7 +30,7 @@
                 <h5 class="card-title">{{post.title}}</h5>
                 <p class="card-text">{{post.body}}</p>
                 <p class="card-text"><small class="text-muted">{{post.last_update}}</small></p>
-                <p class="card-text"><small class="text-muted">{{post.author}}</small></p>
+                <p class="card-text"><a href="{% url 'user-detail' post.author.id %}"><small class="text-muted">{{post.author}}</small></a></p>
             </div>
             <div class="card-footer bg-transparent border-success">
                 <a href="{% url 'posts-detail' post.id %}" class="btn btn-primary">Details</a>

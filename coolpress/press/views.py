@@ -3,7 +3,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponseRedirect, HttpResponseBadRequest
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
-from django.views.generic import TemplateView, ListView, FormView, CreateView, UpdateView
+from django.views.generic import TemplateView, ListView, FormView, CreateView, UpdateView, \
+    DetailView
 
 from press.forms import PostForm, CategoryForm
 from press.models import PostStatus, Post, CoolUser, Category
@@ -78,3 +79,7 @@ class CategoryCreateView(LoginRequiredMixin, CreateView):
 class CategoryUpdateView(LoginRequiredMixin, UpdateView):
     model = Category
     form_class = CategoryForm
+
+
+class DetailCoolUser(DetailView):
+    model = CoolUser

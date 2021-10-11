@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+
+    <h2>Username: {{object.user.username}}</h2>
+    <div class="row">
+        <div class="{% if object.gravatar_link%}col-8{%else%}col-12{%endif%}">
+            <p><strong>First name:</strong> {{object.user.first_name}}</p>
+            <p><strong>Last name:</strong> {{object.user.last_name}}</p>
+            <p><strong>Email:</strong> {{object.user.email}}</p>
+        </div>
+
+        {% if object.gravatar_link %}
+        <div class="col-4">
+            <img src="{{object.gravatar_link}}" alt=""/>
+        </div>
+        {% endif %}
+    </div>
+
+    {% if object.github_profile %}
+    <div class="mt-5">
+        <h2>Github information</h2>
+        <p><strong>Github Username:</strong> {{object.github_profile}}</p>
+        <p><strong>Amount of repositories:</strong> {{object.gh_repositories|default:'Unknown'}}
+        </p>
+        <div>
+            <div class="pt-2">
+                <img src="https://img.shields.io/github/stars/{{object.github_profile}}.svg"
+                     alt="">
+            </div>
+            <div class="pt-2">
+
+                <img src="https://img.shields.io/github/followers/{{object.github_profile}}.svg?style=social&label=Follow&maxAge=2592000"
+                     alt="Github profile">
+            </div>
+            <div class="pt-2">
+                <a class="btn btn-info" target="_blank" href="https://github.com/{{object.github_profile}}/">Check
+                    on
+                    github</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+</div>
+{% endblock %}
