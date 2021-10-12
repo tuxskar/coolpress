@@ -23,7 +23,8 @@
     <div class="col-md-6 text-right"><small class="text-muted">Updated at:
         {{post_obj.last_update|date:'Y-d-m'}}</small></div>
 </div>
-<p class="text-right stretched-link"><a href="{% url 'user-detail' post_obj.author.id %}">by: <strong>{{post_obj.author}}</strong></a></p>
+<p class="text-right stretched-link"><a href="{% url 'user-detail' post_obj.author.id %}">by:
+    <strong>{{post_obj.author}}</strong></a></p>
 
 {% if user.is_authenticated and post_obj.author.user.username == user.username %}
 <div class="text-right">
@@ -31,5 +32,10 @@
        target='_blank' href="{% url 'post-update' post_obj.id %}">Update Post</a>
 </div>
 {% endif %}
+
+<div class="text-center">
+    {{stats.all.word_cloud_svg|safe}}
+</div>
+
 
 {% endblock %}
