@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.test import TestCase
 
 from press.models import CoolUser, Post, Category, PostStatus
-from press.stats_manager import StatsDict, extract_posts_stats
+from press.stats_manager import StatsDict, extract_posts_stats, word_cloud_to_filename
 
 
 class UserManagementTest(TestCase):
@@ -71,6 +71,21 @@ class StatsManagementTest(TestCase):
 
     def test_global_stats(self):
         pass  # to be done by the students
+
+    def test_word_cloud_creation(self):
+        category = self.tech_category
+        posts = Post.objects.filter(category=category)
+        post_stats = extract_posts_stats(posts)
+
+        for vals, filename in ((post_stats.titles, 'press/test_titles_wc.jpg'),
+                               (post_stats.bodies, 'press/test_bodies_wc.jpg'),
+                               (post_stats.all, 'press/test_all_wc.jpg'),
+                               ):
+            new_filename = word_cloud_to_filename(vals, filename)
+            self.assertIsNot(new_filename, None)
+
+            self.assertIsNot(vals.word_cloud_svg(), None)
+
 
 
 TITLES = [

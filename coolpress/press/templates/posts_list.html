@@ -30,7 +30,8 @@
                 <h5 class="card-title">{{post.title}}</h5>
                 <p class="card-text">{{post.body}}</p>
                 <p class="card-text"><small class="text-muted">{{post.last_update}}</small></p>
-                <p class="card-text"><a href="{% url 'user-detail' post.author.id %}"><small class="text-muted">{{post.author}}</small></a></p>
+                <p class="card-text"><a href="{% url 'user-detail' post.author.id %}"><small
+                        class="text-muted">{{post.author}}</small></a></p>
             </div>
             <div class="card-footer bg-transparent border-success">
                 <a href="{% url 'posts-detail' post.id %}" class="btn btn-primary">Details</a>
@@ -45,5 +46,21 @@
 </p>
 
 {% endfor %}
+
+{% if stats %}
+<div class="mb-4">
+
+    <h2>Word Clouds</h2>
+    <div class="text-center">
+        <div><p>Titles</p></div>
+        {{stats.titles.word_cloud_svg|safe}}
+    </div>
+    <div class="text-center">
+        <div><p>Bodies</p></div>
+        {{stats.bodies.word_cloud_svg|safe}}
+    </div>
+</div>
+{% endif %}
+
 
 {% endblock %}

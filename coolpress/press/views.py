@@ -8,6 +8,7 @@ from django.views.generic import TemplateView, ListView, FormView, CreateView, U
 
 from press.forms import PostForm, CategoryForm
 from press.models import PostStatus, Post, CoolUser, Category
+from press.stats_manager import extract_posts_stats
 
 
 def post_list(request):
@@ -18,7 +19,9 @@ def post_list(request):
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
-    return render(request, 'posts_detail.html', {'post_obj': post})
+    qs_post = Post.objects.filter(pk=post_id)
+    stats = extract_posts_stats(qs_post)
+    return render(request, 'posts_detail.html', {'post_obj': post, 'stats': stats})
 
 
 @login_required
@@ -64,6 +67,12 @@ class PostClassFilteringListView(PostClassBasedListView):
         category = get_object_or_404(Category, slug=self.kwargs['category_slug'])
         return Post.objects.filter(status=PostStatus.PUBLISHED.value, category=category).order_by(
             '-last_update')[:self.limit]
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(PostClassFilteringListView, self).get_context_data(*args, **kwargs)
+        stats = extract_posts_stats(context['object_list'])
+        context['stats'] = stats
+        return context
 
 
 class CategoryFormView(FormView):
