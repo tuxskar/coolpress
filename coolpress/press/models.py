@@ -38,7 +38,7 @@ class Category(models.Model):
         verbose_name_plural = "categories"
 
     label = models.CharField(max_length=200)
-    slug = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200)
 
     def get_absolute_url(self):
         return reverse('posts-list-by-category', kwargs=dict(category_slug=self.slug))
@@ -62,7 +62,6 @@ class Post(models.Model):
     body = models.TextField()
     image_link = models.CharField(max_length=400, null=True, blank=True)
 
-    chart_link = models.CharField(max_length=400, null=True, blank=True)
     word_cloud_link = models.CharField(max_length=400, null=True, blank=True)
 
     source_link = models.CharField(max_length=400, null=True, blank=True)
