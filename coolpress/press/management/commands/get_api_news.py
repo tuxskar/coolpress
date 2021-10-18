@@ -39,7 +39,7 @@ class Command(BaseCommand):
             'access_key': api_key,
             'categories': ','.join(categories),
             'sort': 'published_desc',
-            'date': date,
+            # 'date': date,
             'limit': limit,
             'languages': 'en'
         }
@@ -75,8 +75,8 @@ def get_or_create_category(post_info):
     slug = post_info['category']
     try:
         category = Category.objects.get(slug=slug)
-    except CoolUser.DoesNotExist as e:
-        category = Category(slug=slug, label=slug.capitalize())
+    except Category.DoesNotExist as e:
+        category = Category.objects.create(slug=slug, label=slug.capitalize())
     return category
 
 

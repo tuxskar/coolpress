@@ -28,7 +28,7 @@
             </div>
             <div class="card-body">
                 <h5 class="card-title">{{post.title}}</h5>
-                <p class="card-text">{{post.body}}</p>
+                <p class="card-text">{{post.body|urlize}}</p>
                 <p class="card-text"><small class="text-muted">{{post.last_update}}</small></p>
                 <p class="card-text"><a href="{% url 'user-detail' post.author.id %}"><small
                         class="text-muted">{{post.author}}</small></a></p>
@@ -47,6 +47,32 @@
 
 {% endfor %}
 
+{% if is_paginated %}
+<nav>
+    <ul class="pagination justify-content-center">
+        <li class="page-item {% if page_obj.number == 1 %}disabled{% endif %}">
+            <a class="page-link" href="?page=1">&laquo; First</a>
+        </li>
+
+        <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
+            <a class="page-link"
+               href="{% if page_obj.has_previous %}
+               ?page={{ page_obj.previous_page_number}}
+               {%else%}
+               #
+               {% endif %}">
+                Previous
+            </a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">{{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</a></li>
+        <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
+            <a class="page-link" href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% else %}#{% endif %}">Next</a>
+        </li>
+        <li class="page-item {% if page_obj.number == page_obj.paginator.num_pages %}disabled{% endif %}"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+    </ul>
+</nav>
+{% endif %}
+
 {% if stats %}
 <div class="mb-4">
 
@@ -61,6 +87,5 @@
     </div>
 </div>
 {% endif %}
-
 
 {% endblock %}

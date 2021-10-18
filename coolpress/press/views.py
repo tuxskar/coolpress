@@ -1,12 +1,15 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import HttpResponseRedirect, HttpResponseBadRequest
+from django.http import HttpResponseRedirect, HttpResponseBadRequest, HttpResponseForbidden, \
+    JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views.generic import TemplateView, ListView, FormView, CreateView, UpdateView, \
     DetailView
+from django.views.generic.detail import SingleObjectMixin, BaseDetailView
 
 from press.forms import PostForm, CategoryForm
+from press.mixin import JSONResponseMixin
 from press.models import PostStatus, Post, CoolUser, Category
 from press.stats_manager import extract_posts_stats
 
@@ -62,11 +65,16 @@ class PostClassBasedListView(ListView):
     template_name = 'posts_list.html'
 
 
-class PostClassFilteringListView(PostClassBasedListView):
+class PostClassBasedPaginatedListView(PostClassBasedListView):
+    paginate_by = 2
+    queryset = Post.objects.filter(status=PostStatus.PUBLISHED.value).order_by('-last_update')
+
+
+class PostClassFilteringListView(PostClassBasedPaginatedListView):
     def get_queryset(self):
+        queryset = super(PostClassFilteringListView, self).get_queryset()
         category = get_object_or_404(Category, slug=self.kwargs['category_slug'])
-        return Post.objects.filter(status=PostStatus.PUBLISHED.value, category=category).order_by(
-            '-last_update')[:self.limit]
+        return queryset.filter(category=category)
 
     def get_context_data(self, *args, **kwargs):
         context = super(PostClassFilteringListView, self).get_context_data(*args, **kwargs)
@@ -92,3 +100,20 @@ class CategoryUpdateView(LoginRequiredMixin, UpdateView):
 
 class DetailCoolUser(DetailView):
     model = CoolUser
+
+
+def category_api(request, slug):
+    cat = get_object_or_404(Category, slug=slug)
+    return JsonResponse(
+        dict(slug=cat.slug, label=cat.label)
+    )
+
+
+def categories_list(request):
+    cats = {}
+    for cat in Category.objects.all():
+        cats[cat.id] = dict(slug=cat.slug, label=cat.label)
+
+    return JsonResponse(
+        cats
+    )

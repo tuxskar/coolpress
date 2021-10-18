@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
+from press.user_info_manager import get_github_repositories, get_gravatar_image
+
 
 from press.user_info_manager import get_github_repositories, get_gravatar_image
 
@@ -32,13 +34,34 @@ class CoolUser(models.Model):
                 self.gh_repositories = repositories
                 self.save()
 
+    def save(self, *args, **kwargs):
+        super(CoolUser, self).save(*args, **kwargs)
+
+        email = self.user.email
+        if self.gravatar_link is None and email:
+            image_link = get_gravatar_image(email)
+            if image_link:
+                self.gravatar_link = image_link
+                self.save()
+        if self.gh_repositories is None and self.github_profile:
+            repositories = get_github_repositories(self.github_profile)
+            if repositories is not None:
+                self.gh_repositories = repositories
+                self.save()
+
 
 class Category(models.Model):
     class Meta:
         verbose_name_plural = "categories"
 
     label = models.CharField(max_length=200)
-    slug = models.CharField(max_length=200)
+    slug = models.SlugField(max_length=200)
+
+    def get_absolute_url(self):
+        return reverse('posts-list-by-category', kwargs=dict(category_slug=self.slug))
+
+    def toJson(self):
+        return dict(slug=self.slug, label=self.label)
 
     def get_absolute_url(self):
         return reverse('posts-list-by-category', kwargs=dict(category_slug=self.slug))
@@ -52,17 +75,17 @@ class PostStatus(Enum):
     PUBLISHED = 'PUBLISHED'
 
 
-class Post(models.Model):
-    STATUS = [
-        (PostStatus.DRAFT.value, 'Draft'),
-        (PostStatus.PUBLISHED.value, 'Published post'),
-    ]
+POST_LABELED_STATUS = [
+    (PostStatus.DRAFT.value, 'Draft'),
+    (PostStatus.PUBLISHED.value, 'Published post'),
+]
 
+
+class Post(models.Model):
     title = models.CharField(max_length=400)
     body = models.TextField()
     image_link = models.CharField(max_length=400, null=True, blank=True)
 
-    chart_link = models.CharField(max_length=400, null=True, blank=True)
     word_cloud_link = models.CharField(max_length=400, null=True, blank=True)
 
     source_link = models.CharField(max_length=400, null=True, blank=True)
@@ -70,7 +93,7 @@ class Post(models.Model):
 
     status = models.CharField(
         max_length=32,
-        choices=STATUS,
+        choices=POST_LABELED_STATUS,
         default=PostStatus.DRAFT,
     )
 

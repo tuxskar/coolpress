@@ -1,0 +1,1824 @@
+[
+{
+    "model": "press.cooluser",
+    "pk": 1,
+    "fields": {
+        "user": 2,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 2,
+    "fields": {
+        "user": 3,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 3,
+    "fields": {
+        "user": 4,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 4,
+    "fields": {
+        "user": 5,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 5,
+    "fields": {
+        "user": 6,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 6,
+    "fields": {
+        "user": 7,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 7,
+    "fields": {
+        "user": 8,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 8,
+    "fields": {
+        "user": 9,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 9,
+    "fields": {
+        "user": 10,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 10,
+    "fields": {
+        "user": 11,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 11,
+    "fields": {
+        "user": 12,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 12,
+    "fields": {
+        "user": 13,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 13,
+    "fields": {
+        "user": 14,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 14,
+    "fields": {
+        "user": 15,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 15,
+    "fields": {
+        "user": 16,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 16,
+    "fields": {
+        "user": 17,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 17,
+    "fields": {
+        "user": 18,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 18,
+    "fields": {
+        "user": 19,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 19,
+    "fields": {
+        "user": 20,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 20,
+    "fields": {
+        "user": 21,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 21,
+    "fields": {
+        "user": 22,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 22,
+    "fields": {
+        "user": 23,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 23,
+    "fields": {
+        "user": 24,
+        "github_profile": null,
+        "gh_repositories": null,
+        "gravatar_link": null
+    }
+},
+{
+    "model": "press.cooluser",
+    "pk": 24,
+    "fields": {
+        "user": 1,
+        "github_profile": "tuxskar",
+        "gh_repositories": 34,
+        "gravatar_link": "https://www.gravatar.com/avatar/139f76ac09f8b9d3a2392b45b7ad5f4c"
+    }
+},
+{
+    "model": "press.category",
+    "pk": 1,
+    "fields": {
+        "label": "Health",
+        "slug": "health"
+    }
+},
+{
+    "model": "press.category",
+    "pk": 2,
+    "fields": {
+        "label": "General",
+        "slug": "general"
+    }
+},
+{
+    "model": "press.category",
+    "pk": 3,
+    "fields": {
+        "label": "Technology",
+        "slug": "technology"
+    }
+},
+{
+    "model": "press.category",
+    "pk": 4,
+    "fields": {
+        "label": "Entertainment",
+        "slug": "entertainment"
+    }
+},
+{
+    "model": "press.category",
+    "pk": 5,
+    "fields": {
+        "label": "Events News",
+        "slug": "event"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 1,
+    "fields": {
+        "title": "Flu season 2021: What to know",
+        "body": "As temperatures cool and students return to classrooms amidst the ongoing COVID-19 pandemic, flu season has arrived once again.",
+        "image_link": "https://static.foxnews.com/foxnews.com/content/uploads/2021/10/Flu-Shot.jpg",
+        "word_cloud_link": null,
+        "source_link": "http://feeds.foxnews.com/~r/foxnews/health/~3/WTKTJ3Ewn0Q/flu-season-2021-what-to-know",
+        "source_label": "FOX News - Health",
+        "status": "PUBLISHED",
+        "author": 1,
+        "category": 1,
+        "creation_date": "2021-10-14T10:43:38.592Z",
+        "last_update": "2021-10-14T10:43:38.592Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 2,
+    "fields": {
+        "title": "Fauci says COVID-19 pandemic uncontrolled as 66M remain unvaccinated",
+        "body": "With the U.S. averaging nearly 90,000 new COVID-19 infections each day and some 66 million Americans remaining unvaccinated, Dr. Anthony Fauci, President Biden’s chief medical adviser, said the country needs to gain control to approach normalcy.",
+        "image_link": "https://static.foxnews.com/foxnews.com/content/uploads/2020/08/gettyimages-Fauci-.jpg",
+        "word_cloud_link": null,
+        "source_link": "http://feeds.foxnews.com/~r/foxnews/health/~3/HtOxMqaaeW4/fauci-covid-pandemic-control",
+        "source_label": "FOX News - Health",
+        "status": "PUBLISHED",
+        "author": 2,
+        "category": 1,
+        "creation_date": "2021-10-14T10:43:40.558Z",
+        "last_update": "2021-10-14T10:43:40.558Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 3,
+    "fields": {
+        "title": "What Do You Like to Do During a Mental Health Day?",
+        "body": "We’re seeking inspiration from our readers.",
+        "image_link": "https://static01.nyt.com/images/2021/10/12/well/Well-MentalHealthDay/Well-MentalHealthDay-moth.jpg",
+        "word_cloud_link": null,
+        "source_link": "https://www.nytimes.com/2021/10/13/well/mind/mental-health-day-ideas.html",
+        "source_label": "The New York Times",
+        "status": "PUBLISHED",
+        "author": 3,
+        "category": 1,
+        "creation_date": "2021-10-14T10:43:42.346Z",
+        "last_update": "2021-10-14T10:43:42.346Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 4,
+    "fields": {
+        "title": "WHO announces committee to probe COVID-19 pandemic origins",
+        "body": "The World Health Organization (WHO) announced 26 proposed members to an advisory committee aimed to steer studies into the origin of the COVID-19 pandemic and other pathogens of epidemic potential.",
+        "image_link": "https://static.foxnews.com/foxnews.com/content/uploads/2020/12/WHO_resized.jpg",
+        "word_cloud_link": null,
+        "source_link": "http://feeds.foxnews.com/~r/foxnews/health/~3/6NmhX2B3qV0/who-announces-committee-coronavirus-origins",
+        "source_label": "FOX News - Health",
+        "status": "PUBLISHED",
+        "author": 1,
+        "category": 1,
+        "creation_date": "2021-10-14T10:43:42.350Z",
+        "last_update": "2021-10-14T10:43:42.350Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 5,
+    "fields": {
+        "title": "F.D.A. Authorizes E-Cigarettes to Stay on U.S. Market for the First Time",
+        "body": "The agency approved three Vuse vaping products and said their benefits in helping smokers quit outweighed the risks of hooking youths.",
+        "image_link": "https://static01.nyt.com/images/2021/10/12/science/12vaping/12vaping-moth.jpg",
+        "word_cloud_link": null,
+        "source_link": "https://www.nytimes.com/2021/10/12/health/ecigarettes-fda-vuse.html",
+        "source_label": "The New York Times",
+        "status": "PUBLISHED",
+        "author": 4,
+        "category": 1,
+        "creation_date": "2021-10-14T10:43:43.989Z",
+        "last_update": "2021-10-14T10:43:43.989Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 6,
+    "fields": {
+        "title": "Stocks And Gold Recover As Fed Path Gets Recalibrated",
+        "body": "Expectations of earlier but shallower Fed rate path revive optimism Dollar retreats, stocks and gold recover as long-dated yields drop China’s factory prices soar, central bank speakers in focus Fed repricing Investors are having second thoughts about the structure of the Fed’s rate hike cycle. The latest moves in the bond market suggest the FOMC [&#8230;]The post Stocks And Gold Recover As Fed Path Gets Recalibrated appeared first on Action Forex.",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.actionforex.com/contributors/fundamental-analysis/409115-stocks-and-gold-recover-as-fed-path-gets-recalibrated/",
+        "source_label": "actionforex",
+        "status": "PUBLISHED",
+        "author": 5,
+        "category": 2,
+        "creation_date": "2021-10-14T10:44:02.808Z",
+        "last_update": "2021-10-14T10:44:02.808Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 7,
+    "fields": {
+        "title": "Convention Center will get a steel clad and polycarbonate facelift.",
+        "body": "Earlier this week Erie County Executive Mark Poloncarz announced that the Buffalo Niagara Convention Center would be getting a facade makeover. This announcement comes at [&#8230;]",
+        "image_link": "https://www.buffalorising.com/wp-content/uploads/2021/10/FBgTKBjWUAEZCGV-300x195.jpg",
+        "word_cloud_link": null,
+        "source_link": "https://www.buffalorising.com/2021/10/convention-center-will-get-a-steel-clad-and-polycarbonate-facelift/",
+        "source_label": "buffalorising",
+        "status": "PUBLISHED",
+        "author": 6,
+        "category": 2,
+        "creation_date": "2021-10-14T10:44:04.413Z",
+        "last_update": "2021-10-14T10:44:04.413Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 8,
+    "fields": {
+        "title": "How this scientist went from intern to technical specialist",
+        "body": "Having started as an intern at MSD, Fiona Hennessy urges other interns to take whatever opportunities come their way.The post How this scientist went from intern to technical specialist appeared first on Silicon Republic.",
+        "image_link": "https://www.siliconrepublic.com/wp-content/uploads/2021/10/Fiona-Henessy-330x251.jpg",
+        "word_cloud_link": null,
+        "source_link": "https://www.siliconrepublic.com/people/msd-intern-technical-specialist-fiona-hennessy",
+        "source_label": "siliconrepublic",
+        "status": "PUBLISHED",
+        "author": 7,
+        "category": 2,
+        "creation_date": "2021-10-14T10:44:06.294Z",
+        "last_update": "2021-10-14T10:44:06.294Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 9,
+    "fields": {
+        "title": "UP Min announces Rs 50 lakh, govt job for kin of Sepoy Saraj Singh killed in Poonch encounter",
+        "body": "Shahjahanpur (Uttar Pradesh) , Uttar Pradesh Minister Suresh Kumar Khanna on Thursday announced Rs 50 lakhs as financial assistance and a government job for a family member of Sepoy Saraj Singh, who lost his life in Poonch encounter on Monday.We have given Rs 50 lakhs as financial assistance to the family. A road will be [&#8230;]The post UP Min announces Rs 50 lakh, govt job for kin of Sepoy Saraj Singh killed in Poonch encounter appeared first on The DayAfter.",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://dayafterindia.com/2021/10/14/up-min-announces-rs-50-lakh-govt-job-for-kin-of-sepoy-saraj-singh-killed-in-poonch-encounter/",
+        "source_label": "dayafterindia",
+        "status": "PUBLISHED",
+        "author": 8,
+        "category": 2,
+        "creation_date": "2021-10-14T10:44:09.844Z",
+        "last_update": "2021-10-14T10:44:09.844Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 10,
+    "fields": {
+        "title": "Roger Hunt: Funeral of Liverpool legend and England 1966 World Cup winner takes place on Merseyside",
+        "body": "Hunt, who is the second-highest scorer in Liverpool club history with a staggering 285 goals, passed away peacefully at home at the age of 83 last month.",
+        "image_link": "https://i.dailymail.co.uk/1s/2021/10/14/10/49160011-0-image-m-66_1634203959258.jpg",
+        "word_cloud_link": null,
+        "source_link": "https://www.dailymail.co.uk/sport/sportsnews/article-10091079/Funeral-Liverpool-legend-England-1966-World-Cup-winner-Roger-Hunt-takes-place-Merseyside.html?ns_mchannel=rss&ito=1490&ns_campaign=1490",
+        "source_label": "dailymail",
+        "status": "PUBLISHED",
+        "author": 9,
+        "category": 2,
+        "creation_date": "2021-10-14T10:44:12.881Z",
+        "last_update": "2021-10-14T10:44:12.881Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 11,
+    "fields": {
+        "title": "Outschool’s after-school enrichment marketplace is now valued at $3 billion",
+        "body": "In the last 12 months, Outschool, a marketplace for kid-friendly enrichment classes, has raised its Series B, Series C and, now, it&#8217;s Series D. The startup announced today that its latest round, a $110 million tranche of capital, brings its valuation to $3 billion just four months after hitting unicorn status. The fast infusion of [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://techcrunch.com/2021/10/14/outschools-after-school-enrichment-marketplace-is-now-valued-at-3-billion/",
+        "source_label": "TechCrunch",
+        "status": "PUBLISHED",
+        "author": 10,
+        "category": 3,
+        "creation_date": "2021-10-14T10:44:47.698Z",
+        "last_update": "2021-10-14T10:44:47.698Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 12,
+    "fields": {
+        "title": "Cannabis commerce company Dutchie doubles valuation following new funding round",
+        "body": "The industry will continue to see adoption across all areas, especially as more people are educated on finding the right product and modality and more states legalize cannabis.",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://techcrunch.com/2021/10/14/cannabis-commerce-company-dutchie-doubles-valuation-following-new-funding-round/",
+        "source_label": "TechCrunch",
+        "status": "PUBLISHED",
+        "author": 11,
+        "category": 3,
+        "creation_date": "2021-10-14T10:44:49.467Z",
+        "last_update": "2021-10-14T10:44:49.467Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 13,
+    "fields": {
+        "title": "Modular Framework laptop gets a marketplace for all those modules",
+        "body": "Framework, makers of the modular 13.5-inch Framework laptop that’s designed to be easily repaired and upgraded, has launched a dedicated marketplace filled with replacement parts and upgrades for its portable computer. Writing in a blog post, the company said the marketplace is currently focused on replacement parts and expansion cards, but that it hopes to add more customization modules like additional language keyboards later this year, as well as third-party and community developed modules in 2022.It’s an important step for the modular laptop, which has been shipping for a little over...",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.theverge.com/2021/10/14/22725935/framework-laptop-modular-marketplace-launches-spare-parts-upgrades-expansions",
+        "source_label": "The Verge",
+        "status": "PUBLISHED",
+        "author": 12,
+        "category": 3,
+        "creation_date": "2021-10-14T10:44:51.229Z",
+        "last_update": "2021-10-14T10:44:51.229Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 14,
+    "fields": {
+        "title": "The transport industry isn’t doing enough to halt climate change, report says",
+        "body": "Despite a global push towards cleaner forms of energy, we are not on track to battle global warming, the International Energy Agency (IEA) warns in its World Energy Outlook 2021 report. Even more alarmingly, the scenarios mapped out in the report show that announced pledges fall far short of the emission reductions needed to limit the temperature rises to 1.5 Celsius degrees — beyond which the worst impacts of climate change will be felt. Feeling depressed yet? Me too. Transport at the core of the problem Not surprisingly, transport is expectedly a focal point of the report, as it has&#8230;...",
+        "image_link": "https://img-cdn.tnwcdn.com/image?fit=796%2C417&url=https%3A%2F%2Fcdn0.tnwcdn.com%2Fwp-content%2Fblogs.dir%2F1%2Ffiles%2F2021%2F10%2FUntitled-design-24-1.jpg&signature=f81aac1940afa7467f0d3d5adb714a0a",
+        "word_cloud_link": null,
+        "source_link": "http://feedproxy.google.com/~r/TheNextWeb/~3/aHeoNG38JEQ/transport-industry-isnt-doing-enough-halt-climate-change-iea-report-says",
+        "source_label": "The Next Web",
+        "status": "PUBLISHED",
+        "author": 13,
+        "category": 3,
+        "creation_date": "2021-10-14T10:44:52.991Z",
+        "last_update": "2021-10-14T10:44:52.991Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 15,
+    "fields": {
+        "title": "Uzoma Dozie’s Sparkle raises $3.1M for personal, business neobank play in Nigeria",
+        "body": "The neobank wave is beginning to take shape in Africa, particularly in Nigeria, where new fintechs are trying to take on legacy banks by providing cheaper and more personalized banking services. Sparkle, founded by an ex-CEO of a former Nigerian incumbent bank, is one such fintech, and it has closed a seed round of $3.1 [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://techcrunch.com/2021/10/14/uzoma-dozies-sparkle-raises-3-1m-for-personal-business-neobank-play-in-nigeria/",
+        "source_label": "TechCrunch",
+        "status": "PUBLISHED",
+        "author": 14,
+        "category": 3,
+        "creation_date": "2021-10-14T10:44:54.490Z",
+        "last_update": "2021-10-14T10:44:54.490Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 16,
+    "fields": {
+        "title": "Airline association boss Willie Walsh slams ongoing PCR testing ‘rip-off’",
+        "body": "Compulsory travel tests are a ‘state-sponsored rip-off’, says Iata chief",
+        "image_link": "https://static.independent.co.uk/2021/10/14/10/51549890381_0c8607b547_c.jpg?width=1024&auto=webp",
+        "word_cloud_link": null,
+        "source_link": "https://www.independent.co.uk/travel/news-and-advice/pcr-tests-iata-willie-walsh-b1938261.html",
+        "source_label": "The Independent - Travel",
+        "status": "PUBLISHED",
+        "author": 15,
+        "category": 4,
+        "creation_date": "2021-10-14T10:45:23.084Z",
+        "last_update": "2021-10-14T10:45:23.084Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 17,
+    "fields": {
+        "title": "Laughable Tracey Boakye Turns Herself Into A Cartoon In Highly Edited and Photoshopped PHOTO",
+        "body": "Tracey Boakye has magically turned into a cartoon in a photo that is so laughably edited and photoshopped, it takes one second to spot it. The desperation from the &#8216;ashawobrity&#8217; class to escape from their real selves has no end. They fake everything online &#8211; their wealth, their homes, their cars &#8211; whatever you see ... Read moreThe post Laughable Tracey Boakye Turns Herself Into A Cartoon In Highly Edited and Photoshopped PHOTO appeared first on GhanaCelebrities.Com.",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "http://feedproxy.google.com/~r/Ghanacelebritiescom/~3/InT2cUnJPWk/",
+        "source_label": "GhanaCelebrities.com",
+        "status": "PUBLISHED",
+        "author": 16,
+        "category": 4,
+        "creation_date": "2021-10-14T10:45:24.734Z",
+        "last_update": "2021-10-14T10:45:24.734Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 18,
+    "fields": {
+        "title": "Meet the Whiteman Who Speaks Better Twi than Mzbel – Watch Their Interview",
+        "body": "Mzbel has been left in shock after meeting a Greek in London who speaks Twi even better than she does. The Ghanaian singer was recently in the United Kingdom to appear at the Ghana Music Awards UK. She performed at the show but is still in the UK chilling before she returns to Ghana. In ... Read moreThe post Meet the Whiteman Who Speaks Better Twi than Mzbel &#8211; Watch Their Interview appeared first on GhanaCelebrities.Com.",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "http://feedproxy.google.com/~r/Ghanacelebritiescom/~3/DYPP_Gr-3Y0/",
+        "source_label": "GhanaCelebrities.com",
+        "status": "PUBLISHED",
+        "author": 16,
+        "category": 4,
+        "creation_date": "2021-10-14T10:45:24.739Z",
+        "last_update": "2021-10-14T10:45:24.739Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 19,
+    "fields": {
+        "title": "Tell T a Joke | Anna Sui",
+        "body": "The fashion designer and famed maximalist delivers a wisecrack about hoarding.",
+        "image_link": "https://static01.nyt.com/images/2021/10/11/t-magazine/11tmag-jokes/11tmag-jokes-moth.jpg",
+        "word_cloud_link": null,
+        "source_link": "https://www.nytimes.com/video/t-magazine/100000007990218/tell-t-a-joke-anna-sui.html",
+        "source_label": "The New York Times",
+        "status": "PUBLISHED",
+        "author": 17,
+        "category": 4,
+        "creation_date": "2021-10-14T10:45:26.390Z",
+        "last_update": "2021-10-14T10:45:26.390Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 20,
+    "fields": {
+        "title": "Dele Alli is eager to learn more about plant-based food and sustainability",
+        "body": "The Tottenham footballer has been considering how diet can impact your health and the environment",
+        "image_link": "https://static.independent.co.uk/2021/10/14/10/13134543-937800e4-5322-4269-aecf-8050dd519b49.jpg?width=1024&auto=webp",
+        "word_cloud_link": null,
+        "source_link": "https://www.independent.co.uk/life-style/health-and-families/dele-alli-harry-kane-milton-keynes-eric-dier-ben-davies-b1938246.html",
+        "source_label": "The Independent - Life and Style",
+        "status": "PUBLISHED",
+        "author": 18,
+        "category": 4,
+        "creation_date": "2021-10-14T10:45:28.049Z",
+        "last_update": "2021-10-14T10:45:28.049Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 21,
+    "fields": {
+        "title": "3 simple (but difficult) steps to grow your startup ecosystem",
+        "body": "Growing a startup ecosystem can sound daunting — you’ve got to attract talent, streamline regulations, build capacity, ensure sufficient capital — and a quick glance at the Global Startup Ecosystem Report from my organization, Startup Genome, might not disabuse you of the notion. For our latest edition, released September 22nd, we analyzed 280 ecosystems, crunched data on 3 million startups, and used more than 100 metrics to quantify their performance.  As Startup Genome’s founder and CEO I’m here to offer a simplified view of startup ecosystem building. But, keep in mind, although...",
+        "image_link": "https://img-cdn.tnwcdn.com/image?fit=796%2C417&url=https%3A%2F%2Fcdn0.tnwcdn.com%2Fwp-content%2Fblogs.dir%2F1%2Ffiles%2F2021%2F10%2FUntitled-design-25.jpg&signature=c262a0ef4fe87d5d78bfe3cd148e0f07",
+        "word_cloud_link": null,
+        "source_link": "http://feedproxy.google.com/~r/TheNextWeb/~3/zlW4-PjOJ18/3-simple-but-difficult-steps-to-grow-your-startup-ecosystem",
+        "source_label": "The Next Web",
+        "status": "PUBLISHED",
+        "author": 19,
+        "category": 3,
+        "creation_date": "2021-10-14T10:45:50.916Z",
+        "last_update": "2021-10-14T10:45:50.917Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 22,
+    "fields": {
+        "title": "Wow, there’s an actual use for blockchain? Helium can democratize internet connectivity",
+        "body": "I’m always looking for good blockchain use cases. There are only a few companies that I rate. One is Helium, who calls itself “The People’s Network.” It was co-founded by Shawn Fanning (Napster co-creator) and Amir Haleem in 2013 with a mighty mission: to democratize access to the internet. They achieve this by creating their own P2P internet network. This is a radical shift to wide area networks and internet connectivity. I spoke to Frank Mong, Helium’s COO to find out more about the company, their tech, and their latest partnership. How does it all work? What underpins Helium is a...",
+        "image_link": "https://img-cdn.tnwcdn.com/image?fit=796%2C417&url=https%3A%2F%2Fcdn0.tnwcdn.com%2Fwp-content%2Fblogs.dir%2F1%2Ffiles%2F2021%2F10%2FUntitled-design.jpeg&signature=9f9412f914e9d6f2034244bde6eb945e",
+        "word_cloud_link": null,
+        "source_link": "http://feedproxy.google.com/~r/TheNextWeb/~3/5zM_qf1LDWQ/helium-powers-internet-connectivity-with-blockhain-technology",
+        "source_label": "The Next Web",
+        "status": "PUBLISHED",
+        "author": 20,
+        "category": 3,
+        "creation_date": "2021-10-14T10:45:52.778Z",
+        "last_update": "2021-10-14T10:45:52.778Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 23,
+    "fields": {
+        "title": "Volvo reveals its first vehicle made of fossil-free steel",
+        "body": "A few months ago, Volvo teamed up with Swedish steel producer SSAB to develop a type of steel it can use for its vehicles that doesn&#39;t use fossil fuels. Now, the automaker has revealed what it says is the world&#39;s first vehicle made of fossil-free steel: A four wheeled fully electric load carrier made for quarrying and mining. In addition to having no greenhouse gas emission, it&#39;s also autonomous and can follow a pre-programmed route to transport materials at a job site.SSAB produces fossil-free steel by replacing the coal used during the manufacturing process with hydrogen from...",
+        "image_link": "https://s.yimg.com/os/creatr-uploaded-images/2021-10/35b64780-2caf-11ec-b5af-c36e4b669756",
+        "word_cloud_link": null,
+        "source_link": "https://www.engadget.com/volvo-first-vehicle-fossil-free-steel-055542393.html?src=rss",
+        "source_label": "Engadget",
+        "status": "PUBLISHED",
+        "author": 21,
+        "category": 3,
+        "creation_date": "2021-10-14T10:45:54.325Z",
+        "last_update": "2021-10-14T10:45:54.325Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 24,
+    "fields": {
+        "title": "European point of sale provider SumUp acquires customer loyalty startup Fivestars for $317M",
+        "body": "SumUp, a European-based competitor to Square, PayPal/iZettle and others that provide mobile-powered card readers and other sales technology to merchants and small businesses, has made an acquisition in the U.S. to dig deeper into that market, and to expand the kinds of services that it provides to customers globally. The company has acquired Fivestars, which [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://techcrunch.com/2021/10/13/european-point-of-sale-provider-sumup-acquires-customer-loyalty-startup-fivestars-for-317m/",
+        "source_label": "TechCrunch",
+        "status": "PUBLISHED",
+        "author": 22,
+        "category": 3,
+        "creation_date": "2021-10-14T10:45:56.112Z",
+        "last_update": "2021-10-14T10:45:56.112Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 25,
+    "fields": {
+        "title": "Healthcare of Ontario Pension Plan Trust Fund Acquires Shares of 87,400 Old National Bancorp (NASDAQ:ONB)",
+        "body": "Healthcare of Ontario Pension Plan Trust Fund acquired a new stake in shares of Old National Bancorp (NASDAQ:ONB) during the second quarter, according to its most recent Form 13F filing with the SEC. The fund acquired 87,400 shares of the bank&#8217;s stock, valued at approximately $1,539,000. Healthcare of Ontario Pension Plan Trust Fund owned 0.05% [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.americanbankingnews.com/2021/10/14/healthcare-of-ontario-pension-plan-trust-fund-acquires-shares-of-87400-old-national-bancorp-nasdaqonb.html",
+        "source_label": "americanbankingnews",
+        "status": "PUBLISHED",
+        "author": 23,
+        "category": 2,
+        "creation_date": "2021-10-14T10:46:17.730Z",
+        "last_update": "2021-10-14T10:46:17.730Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 26,
+    "fields": {
+        "title": "Cintas Co. (NASDAQ:CTAS) Shares Sold by Healthcare of Ontario Pension Plan Trust Fund",
+        "body": "Healthcare of Ontario Pension Plan Trust Fund decreased its holdings in Cintas Co. (NASDAQ:CTAS) by 71.4% during the 2nd quarter, according to the company in its most recent disclosure with the SEC. The institutional investor owned 4,005 shares of the business services provider&#8217;s stock after selling 10,000 shares during the quarter. Healthcare of Ontario Pension [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.americanbankingnews.com/2021/10/14/cintas-co-nasdaqctas-shares-sold-by-healthcare-of-ontario-pension-plan-trust-fund.html",
+        "source_label": "americanbankingnews",
+        "status": "PUBLISHED",
+        "author": 23,
+        "category": 2,
+        "creation_date": "2021-10-14T10:46:17.737Z",
+        "last_update": "2021-10-14T10:46:17.737Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 27,
+    "fields": {
+        "title": "Healthcare of Ontario Pension Plan Trust Fund Buys New Shares in Veritex Holdings, Inc. (NASDAQ:VBTX)",
+        "body": "Healthcare of Ontario Pension Plan Trust Fund bought a new stake in Veritex Holdings, Inc. (NASDAQ:VBTX) during the 2nd quarter, according to the company in its most recent 13F filing with the Securities and Exchange Commission (SEC). The fund bought 38,800 shares of the financial services provider&#8217;s stock, valued at approximately $1,374,000. Healthcare of Ontario [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.americanbankingnews.com/2021/10/14/healthcare-of-ontario-pension-plan-trust-fund-buys-new-shares-in-veritex-holdings-inc-nasdaqvbtx.html",
+        "source_label": "americanbankingnews",
+        "status": "PUBLISHED",
+        "author": 23,
+        "category": 2,
+        "creation_date": "2021-10-14T10:46:17.741Z",
+        "last_update": "2021-10-14T10:46:17.741Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 28,
+    "fields": {
+        "title": "Healthcare of Ontario Pension Plan Trust Fund Has $1.46 Million Holdings in Santander Consumer USA Holdings Inc. (NYSE:SC)",
+        "body": "Healthcare of Ontario Pension Plan Trust Fund lowered its stake in Santander Consumer USA Holdings Inc. (NYSE:SC) by 9.5% in the second quarter, according to its most recent disclosure with the Securities and Exchange Commission (SEC). The fund owned 40,235 shares of the financial services provider&#8217;s stock after selling 4,231 shares during the period. Healthcare [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.americanbankingnews.com/2021/10/14/healthcare-of-ontario-pension-plan-trust-fund-has-1-46-million-holdings-in-santander-consumer-usa-holdings-inc-nysesc.html",
+        "source_label": "americanbankingnews",
+        "status": "PUBLISHED",
+        "author": 23,
+        "category": 2,
+        "creation_date": "2021-10-14T10:46:17.745Z",
+        "last_update": "2021-10-14T10:46:17.745Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 29,
+    "fields": {
+        "title": "Healthcare of Ontario Pension Plan Trust Fund Acquires New Stake in iShares Global Materials ETF (NYSEARCA:MXI)",
+        "body": "Healthcare of Ontario Pension Plan Trust Fund bought a new stake in iShares Global Materials ETF (NYSEARCA:MXI) in the 2nd quarter, according to its most recent 13F filing with the Securities and Exchange Commission. The institutional investor bought 16,100 shares of the company&#8217;s stock, valued at approximately $1,464,000. Healthcare of Ontario Pension Plan Trust Fund [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.americanbankingnews.com/2021/10/14/healthcare-of-ontario-pension-plan-trust-fund-acquires-new-stake-in-ishares-global-materials-etf-nysearcamxi.html",
+        "source_label": "americanbankingnews",
+        "status": "PUBLISHED",
+        "author": 23,
+        "category": 2,
+        "creation_date": "2021-10-14T10:46:17.750Z",
+        "last_update": "2021-10-14T10:46:17.750Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 30,
+    "fields": {
+        "title": "Healthcare of Ontario Pension Plan Trust Fund Takes Position in Perficient, Inc. (NASDAQ:PRFT)",
+        "body": "Healthcare of Ontario Pension Plan Trust Fund bought a new stake in shares of Perficient, Inc. (NASDAQ:PRFT) in the second quarter, according to its most recent Form 13F filing with the Securities and Exchange Commission. The institutional investor bought 16,900 shares of the digital transformation consultancy&#8217;s stock, valued at approximately $1,359,000. Healthcare of Ontario Pension [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.americanbankingnews.com/2021/10/14/healthcare-of-ontario-pension-plan-trust-fund-takes-position-in-perficient-inc-nasdaqprft.html",
+        "source_label": "americanbankingnews",
+        "status": "PUBLISHED",
+        "author": 23,
+        "category": 2,
+        "creation_date": "2021-10-14T10:46:17.754Z",
+        "last_update": "2021-10-14T10:46:17.754Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 31,
+    "fields": {
+        "title": "Healthcare of Ontario Pension Plan Trust Fund Takes Position in GeoPark Limited (NYSE:GPRK)",
+        "body": "Healthcare of Ontario Pension Plan Trust Fund acquired a new stake in shares of GeoPark Limited (NYSE:GPRK) during the 2nd quarter, according to the company in its most recent filing with the Securities and Exchange Commission (SEC). The institutional investor acquired 102,900 shares of the oil and gas company&#8217;s stock, valued at approximately $1,302,000. Healthcare [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.americanbankingnews.com/2021/10/14/healthcare-of-ontario-pension-plan-trust-fund-takes-position-in-geopark-limited-nysegprk.html",
+        "source_label": "americanbankingnews",
+        "status": "PUBLISHED",
+        "author": 23,
+        "category": 2,
+        "creation_date": "2021-10-14T10:46:17.758Z",
+        "last_update": "2021-10-14T10:46:17.759Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 32,
+    "fields": {
+        "title": "Healthcare of Ontario Pension Plan Trust Fund Cuts Position in Northwest Bancshares, Inc. (NASDAQ:NWBI)",
+        "body": "Healthcare of Ontario Pension Plan Trust Fund decreased its holdings in Northwest Bancshares, Inc. (NASDAQ:NWBI) by 63.4% in the 2nd quarter, according to its most recent Form 13F filing with the SEC. The institutional investor owned 96,000 shares of the savings and loans company&#8217;s stock after selling 166,000 shares during the quarter. Healthcare of Ontario [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.americanbankingnews.com/2021/10/14/healthcare-of-ontario-pension-plan-trust-fund-cuts-position-in-northwest-bancshares-inc-nasdaqnwbi.html",
+        "source_label": "americanbankingnews",
+        "status": "PUBLISHED",
+        "author": 23,
+        "category": 2,
+        "creation_date": "2021-10-14T10:46:17.763Z",
+        "last_update": "2021-10-14T10:46:17.763Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 33,
+    "fields": {
+        "title": "Dimensional Fund Advisors LP Sells 5,222 Shares of Masonite International Co. (NYSE:DOOR)",
+        "body": "Dimensional Fund Advisors LP lessened its holdings in shares of Masonite International Co. (NYSE:DOOR) by 0.8% during the second quarter, according to the company in its most recent filing with the Securities and Exchange Commission. The institutional investor owned 679,431 shares of the company&#8217;s stock after selling 5,222 shares during the period. Dimensional Fund Advisors [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.americanbankingnews.com/2021/10/14/dimensional-fund-advisors-lp-sells-5222-shares-of-masonite-international-co-nysedoor.html",
+        "source_label": "americanbankingnews",
+        "status": "PUBLISHED",
+        "author": 23,
+        "category": 2,
+        "creation_date": "2021-10-14T10:46:17.767Z",
+        "last_update": "2021-10-14T10:46:17.767Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 34,
+    "fields": {
+        "title": "Healthcare of Ontario Pension Plan Trust Fund Buys Shares of 150,000 COVA Acquisition Corp. (NASDAQ:COVA)",
+        "body": "Healthcare of Ontario Pension Plan Trust Fund bought a new stake in COVA Acquisition Corp. (NASDAQ:COVA) in the 2nd quarter, according to its most recent disclosure with the SEC. The fund bought 150,000 shares of the company&#8217;s stock, valued at approximately $1,454,000. Healthcare of Ontario Pension Plan Trust Fund owned approximately 0.40% of COVA Acquisition [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.americanbankingnews.com/2021/10/14/healthcare-of-ontario-pension-plan-trust-fund-buys-shares-of-150000-cova-acquisition-corp-nasdaqcova.html",
+        "source_label": "americanbankingnews",
+        "status": "PUBLISHED",
+        "author": 23,
+        "category": 2,
+        "creation_date": "2021-10-14T10:46:17.771Z",
+        "last_update": "2021-10-14T10:46:17.771Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 35,
+    "fields": {
+        "title": "ACI Worldwide, Inc. (NASDAQ:ACIW) Position Boosted by Healthcare of Ontario Pension Plan Trust Fund",
+        "body": "Healthcare of Ontario Pension Plan Trust Fund increased its holdings in ACI Worldwide, Inc. (NASDAQ:ACIW) by 169.3% in the second quarter, according to its most recent 13F filing with the Securities and Exchange Commission (SEC). The institutional investor owned 41,200 shares of the technology company&#8217;s stock after buying an additional 25,900 shares during the quarter. [&#8230;]",
+        "image_link": null,
+        "word_cloud_link": null,
+        "source_link": "https://www.americanbankingnews.com/2021/10/14/aci-worldwide-inc-nasdaqaciw-position-boosted-by-healthcare-of-ontario-pension-plan-trust-fund.html",
+        "source_label": "americanbankingnews",
+        "status": "PUBLISHED",
+        "author": 23,
+        "category": 2,
+        "creation_date": "2021-10-14T10:46:17.775Z",
+        "last_update": "2021-10-14T10:46:17.775Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 36,
+    "fields": {
+        "title": "The Python event of the year!  PyConEs Online",
+        "body": "This year the PyCon in spain is again online so don't miss it and join many other developers and python lovers.\r\n\r\nOn this edition there is no limit ot assistance and the entrance is free.\r\n\r\nThe event will be online due to the current situation but this won't stop us to enjoy some time sharing ideas and latests news about this awesome language",
+        "image_link": "https://elpythonista.com/wp-content/uploads/2021/09/Pycones_21-1-768x432.jpg",
+        "word_cloud_link": null,
+        "source_link": null,
+        "source_label": null,
+        "status": "PUBLISHED",
+        "author": 24,
+        "category": 3,
+        "creation_date": "2021-10-14T10:53:07.690Z",
+        "last_update": "2021-10-14T10:53:07.690Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 37,
+    "fields": {
+        "title": "How to install Python - The great tutorial",
+        "body": "Python is the language of the present and the future, so checkout this great tutorial that will show you how to install it and become a pythonista in record time",
+        "image_link": "https://elpythonista.com/wp-content/uploads/2020/10/Instalar_Python-768x432.jpg",
+        "word_cloud_link": null,
+        "source_link": null,
+        "source_label": null,
+        "status": "PUBLISHED",
+        "author": 24,
+        "category": 3,
+        "creation_date": "2021-10-14T11:53:17.179Z",
+        "last_update": "2021-10-14T11:53:17.179Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 38,
+    "fields": {
+        "title": "Check the best Programming books!",
+        "body": "Check out the books section selected by and for programmers at:\r\n\r\nhttps://elpythonista.com/python-books",
+        "image_link": "https://elpythonista.com/wp-content/uploads/2020/10/Libros-de-Python-y-programacion-1024x683.jpg",
+        "word_cloud_link": null,
+        "source_link": null,
+        "source_label": null,
+        "status": "PUBLISHED",
+        "author": 24,
+        "category": 3,
+        "creation_date": "2021-10-14T11:53:51.261Z",
+        "last_update": "2021-10-14T11:53:51.261Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 39,
+    "fields": {
+        "title": "Released a review of the best seller Clean Code!",
+        "body": "Clean Code has become a reference book for the programmers around the world. It explains some techniques and concepts that would allow us to improve our programming skills making our code more maintainable and scalable. Also it provides many examples on how to improve some code and pieces of code on how to transform it.",
+        "image_link": "https://elpythonista.com/wp-content/uploads/2020/10/Clean_Code-portada-768x432.jpg",
+        "word_cloud_link": null,
+        "source_link": null,
+        "source_label": null,
+        "status": "PUBLISHED",
+        "author": 24,
+        "category": 3,
+        "creation_date": "2021-10-14T11:55:14.535Z",
+        "last_update": "2021-10-14T11:55:14.536Z"
+    }
+},
+{
+    "model": "press.post",
+    "pk": 40,
+    "fields": {
+        "title": "The Python event of the year!  PyConEs Online",
+        "body": "This year the PyCon in spain is again online so don't miss it and join many other developers and python lovers.\r\n\r\nOn this edition there is no limit ot assistance and the entrance is free.\r\n\r\nThe event will be online due to the current situation but this won't stop us to enjoy some time sharing ideas and latests news about this awesome language",
+        "image_link": "https://elpythonista.com/wp-content/uploads/2021/09/Pycones_21-1-768x432.jpg",
+        "word_cloud_link": null,
+        "source_link": null,
+        "source_label": null,
+        "status": "PUBLISHED",
+        "author": 24,
+        "category": 5,
+        "creation_date": "2021-10-14T11:55:54.843Z",
+        "last_update": "2021-10-14T11:55:54.843Z"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2021-10-14T10:52:44.889Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "1",
+        "object_repr": "oscar",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Email address\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2021-10-14T10:52:54.853Z",
+        "user": 1,
+        "content_type": 2,
+        "object_id": "24",
+        "object_repr": "  (oscar)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+        "name": "Can add category",
+        "content_type": 1,
+        "codename": "add_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+        "name": "Can change category",
+        "content_type": 1,
+        "codename": "change_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+        "name": "Can delete category",
+        "content_type": 1,
+        "codename": "delete_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+        "name": "Can view category",
+        "content_type": 1,
+        "codename": "view_category"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+        "name": "Can add cool user",
+        "content_type": 2,
+        "codename": "add_cooluser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+        "name": "Can change cool user",
+        "content_type": 2,
+        "codename": "change_cooluser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+        "name": "Can delete cool user",
+        "content_type": 2,
+        "codename": "delete_cooluser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+        "name": "Can view cool user",
+        "content_type": 2,
+        "codename": "view_cooluser"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+        "name": "Can add post",
+        "content_type": 3,
+        "codename": "add_post"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+        "name": "Can change post",
+        "content_type": 3,
+        "codename": "change_post"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+        "name": "Can delete post",
+        "content_type": 3,
+        "codename": "delete_post"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+        "name": "Can view post",
+        "content_type": 3,
+        "codename": "view_post"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": 4,
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": 4,
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": 4,
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": 4,
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+        "name": "Can add permission",
+        "content_type": 5,
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+        "name": "Can change permission",
+        "content_type": 5,
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": 5,
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+        "name": "Can view permission",
+        "content_type": 5,
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+        "name": "Can add group",
+        "content_type": 6,
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+        "name": "Can change group",
+        "content_type": 6,
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+        "name": "Can delete group",
+        "content_type": 6,
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+        "name": "Can view group",
+        "content_type": 6,
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+        "name": "Can add user",
+        "content_type": 7,
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+        "name": "Can change user",
+        "content_type": 7,
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+        "name": "Can delete user",
+        "content_type": 7,
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+        "name": "Can view user",
+        "content_type": 7,
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+        "name": "Can add content type",
+        "content_type": 8,
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+        "name": "Can change content type",
+        "content_type": 8,
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": 8,
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+        "name": "Can view content type",
+        "content_type": 8,
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+        "name": "Can add session",
+        "content_type": 9,
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+        "name": "Can change session",
+        "content_type": 9,
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+        "name": "Can delete session",
+        "content_type": 9,
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+        "name": "Can view session",
+        "content_type": 9,
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$DyKus19iCPWhGiciwMZuL4$61s5254IlyRV3lIhxx6tZMSLt3orKswW0Mp7alqbsbg=",
+        "last_login": "2021-10-14T10:42:11Z",
+        "is_superuser": true,
+        "username": "oscar",
+        "first_name": "",
+        "last_name": "",
+        "email": "tuxskar@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2021-10-14T10:39:36Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "jmusto@noemail.com",
+        "first_name": "Julia",
+        "last_name": "Musto",
+        "email": "jmusto@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:41:19.792Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "krivas@noemail.com",
+        "first_name": "Kayla",
+        "last_name": "Rivas",
+        "email": "krivas@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:43:38.594Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "ccaron@noemail.com",
+        "first_name": "Christina",
+        "last_name": "Caron",
+        "email": "ccaron@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:43:40.561Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "mrichtelandsheilakaplan@noemail.com",
+        "first_name": "Matt",
+        "last_name": "Richtel and Sheila Kaplan",
+        "email": "mrichtelandsheilakaplan@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:43:42.352Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "xm.com@noemail.com",
+        "first_name": "XM.com",
+        "last_name": "",
+        "email": "xm.com@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:44:01.207Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "queenseyes@noemail.com",
+        "first_name": "queenseyes",
+        "last_name": "",
+        "email": "queenseyes@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:44:02.810Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 8,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "silicon@noemail.com",
+        "first_name": "silicon",
+        "last_name": "",
+        "email": "silicon@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:44:04.415Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 9,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "jahmed@noemail.com",
+        "first_name": "Javed",
+        "last_name": "Ahmed",
+        "email": "jahmed@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:44:06.296Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 10,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "anonymous@noemail.com",
+        "first_name": "anonymous",
+        "last_name": "",
+        "email": "anonymous@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:44:09.847Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "nmascarenhas@noemail.com",
+        "first_name": "Natasha",
+        "last_name": "Mascarenhas",
+        "email": "nmascarenhas@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:44:45.682Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 12,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "chall@noemail.com",
+        "first_name": "Christine",
+        "last_name": "Hall",
+        "email": "chall@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:44:47.700Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 13,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "jporter@noemail.com",
+        "first_name": "Jon",
+        "last_name": "Porter",
+        "email": "jporter@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:44:49.485Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 14,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "ilykiardopoulou@noemail.com",
+        "first_name": "Ioanna",
+        "last_name": "Lykiardopoulou",
+        "email": "ilykiardopoulou@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:44:51.232Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 15,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "tkene-okafor@noemail.com",
+        "first_name": "Tage",
+        "last_name": "Kene-Okafor",
+        "email": "tkene-okafor@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:44:52.994Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 16,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "lthackray@noemail.com",
+        "first_name": "Lucy",
+        "last_name": "Thackray",
+        "email": "lthackray@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:45:21.705Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 17,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "nsmileybyte@noemail.com",
+        "first_name": "Nii",
+        "last_name": "Smiley Byte",
+        "email": "nsmileybyte@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:45:23.086Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 18,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "fhanitijo@noemail.com",
+        "first_name": "Flora",
+        "last_name": "Hanitijo",
+        "email": "fhanitijo@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:45:24.741Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 19,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "pwade@noemail.com",
+        "first_name": "Prudence",
+        "last_name": "Wade",
+        "email": "pwade@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:45:26.395Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 20,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "jgauthier@noemail.com",
+        "first_name": "JF",
+        "last_name": "Gauthier",
+        "email": "jgauthier@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:45:49.083Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 21,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "clawrence@noemail.com",
+        "first_name": "Cate",
+        "last_name": "Lawrence",
+        "email": "clawrence@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:45:50.919Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 22,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "mmoon@noemail.com",
+        "first_name": "Mariella",
+        "last_name": "Moon",
+        "email": "mmoon@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:45:52.780Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 23,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "ilunden@noemail.com",
+        "first_name": "Ingrid",
+        "last_name": "Lunden",
+        "email": "ilunden@noemail.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:45:54.327Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 24,
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "info@abmn.com",
+        "first_name": "ABMN Staff",
+        "last_name": "",
+        "email": "info@abmn.com",
+        "is_staff": false,
+        "is_active": false,
+        "date_joined": "2021-10-14T10:46:15.262Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+        "app_label": "press",
+        "model": "category"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+        "app_label": "press",
+        "model": "cooluser"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+        "app_label": "press",
+        "model": "post"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "tlci2iz1x8ro25432duzut7a82v5htee",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQRf-FtSHDo3R06d5vIMwAUjU0Ke3K-O_SpAvdnnPufQsftrX4raXFT1FchBKnX0aBn6nuIj5Cvc-S57ouE8k9kYdt8jbH9Loe7d9BCa30NaKFxC5zZDbEDjVkY4g0jirrs7OsOgZiTIhsDFhwMA5gIKehQ_H5Au2lN8c:1mayBf:2_8FoLqY6ipi1dJpAvASzZJ0CCycFytOTA0NOjaAIGk",
+        "expire_date": "2021-10-28T10:42:11.219Z"
+    }
+}
+]
