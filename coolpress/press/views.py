@@ -66,7 +66,7 @@ class PostClassBasedListView(ListView):
 
 
 class PostClassBasedPaginatedListView(PostClassBasedListView):
-    paginate_by = 2
+    paginate_by = 20
     queryset = Post.objects.filter(status=PostStatus.PUBLISHED.value).order_by('-last_update')
 
 
