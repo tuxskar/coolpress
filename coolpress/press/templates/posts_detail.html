@@ -15,7 +15,7 @@
     <img src="{{post_obj.image_link}}" alt="{{post_obj.title}}">
 </div>
 {% endif %}
-<p class="post-detail-body text-center">{{post_obj.body}}</p>
+<p class="post-detail-body text-center">{{post_obj.body|urlize}}</p>
 
 {% if post_obj.source_link and post_obj.source_label %}
 <div class="text-center">

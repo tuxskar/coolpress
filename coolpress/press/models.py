@@ -4,7 +4,6 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
-
 from press.user_info_manager import get_github_repositories, get_gravatar_image
 
 
@@ -16,7 +15,7 @@ class CoolUser(models.Model):
 
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name} ({self.user.username})'
-    
+
     def save(self, *args, **kwargs):
         super(CoolUser, self).save(*args, **kwargs)
 
@@ -43,6 +42,9 @@ class Category(models.Model):
     def get_absolute_url(self):
         return reverse('posts-list-by-category', kwargs=dict(category_slug=self.slug))
 
+    def toJson(self):
+        return dict(slug=self.slug, label=self.label)
+
     def __str__(self):
         return f'{self.slug}'
 
@@ -52,12 +54,13 @@ class PostStatus(Enum):
     PUBLISHED = 'PUBLISHED'
 
 
-class Post(models.Model):
-    STATUS = [
-        (PostStatus.DRAFT.value, 'Draft'),
-        (PostStatus.PUBLISHED.value, 'Published post'),
-    ]
+POST_LABELED_STATUS = [
+    (PostStatus.DRAFT.value, 'Draft'),
+    (PostStatus.PUBLISHED.value, 'Published post'),
+]
 
+
+class Post(models.Model):
     title = models.CharField(max_length=400)
     body = models.TextField()
     image_link = models.CharField(max_length=400, null=True, blank=True)
@@ -69,7 +72,7 @@ class Post(models.Model):
 
     status = models.CharField(
         max_length=32,
-        choices=STATUS,
+        choices=POST_LABELED_STATUS,
         default=PostStatus.DRAFT,
     )
 
