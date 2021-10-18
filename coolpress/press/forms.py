@@ -1,21 +1,7 @@
 from django import forms
 from django.forms import ModelForm
 
-from press.models import Post, Category, POST_LABELED_STATUS
-
-
-class PostCustomForm(forms.Form):
-    title = forms.TextInput(attrs={'class': 'form-control'})
-    body = forms.Textarea(attrs={'class': 'form-control'})
-    image_link = forms.TextInput(attrs={'class': 'form-control'})
-    category = forms.Select(attrs={'class': 'form-control'},
-                            choices=Category.objects.values_list('id', 'label'))
-    status = forms.Select(attrs={'class': 'form-control'}, choices=POST_LABELED_STATUS)
-
-    def save(self):
-        data = self.cleaned_data()
-        post = Post.objects.create(**data)
-        post.save()
+from press.models import Post, Category
 
 
 class PostForm(ModelForm):
