@@ -66,7 +66,7 @@ class PostAdmin(admin.ModelAdmin):
     date_hierarchy = 'creation_date'
     list_filter = ('category', 'status')
     search_fields = ("title", "body")
-    list_display = ('title', 'author', 'last_update', 'status', 'category')
+    list_display = ('title', 'author', 'last_update', 'status', 'category', 'image_link')
 
 
 admin.site.register(Post, PostAdmin)
