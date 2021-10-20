@@ -13,6 +13,15 @@ class UserManagementTest(TestCase):
         self.assertIsNot(user.gravatar_link, None)
         self.assertGreater(user.gh_repositories, 0)
 
+    def test_modify_user_email_keep_same_gravatar_link(self):
+        random_user = User.objects.create(username='randomtestUser', email='tuxskar@gmail.com')
+        user = CoolUser.objects.create(user=random_user, github_profile='tuxskar')
+        self.assertIsNot(user.gravatar_link, None)
+        previous_gravatar_link = user.gravatar_link
+        random_user.email = 'newwrongemail@gmail.com'
+        random_user.save()
+        self.assertEqual(user.gravatar_link, previous_gravatar_link)
+
     def test_creation_of_fake_user(self):
         random_user = User.objects.create(username='randomtestUser',
                                           email='pepito@noemailandrandom.com')
