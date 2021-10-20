@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-8_%j8i%lfqrtunn#2l!vor%odu4$5bukge!x-c^+3&j_8!f*7-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -128,5 +128,4 @@ TEMPLATES[0]['OPTIONS']['context_processors'].append(
 TEMPLATES[0]['OPTIONS']['context_processors'].append(
     "press.context_processors.cooluser_processor")
 
-STATIC_URL = '/static/'
-STATIC_ROOT = 'static'
+STATIC_ROOT = "/var/www/coolpress/static/"
