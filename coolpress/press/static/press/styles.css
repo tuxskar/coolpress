@@ -1,0 +1,46 @@
+#main-navbar {
+    background-color: #d5fffd;
+}
+
+#navbarSupportedContent > ul {
+    flex-grow: inherit;
+}
+
+.post {
+    margin: 10px 5px 10px 5px;
+}
+
+.post-image-box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.post-image {
+    max-width: 100%;
+    padding: 10px;
+    align-self: center;
+}
+
+.post-detail-image {
+    text-align: center;
+    margin: 25px;
+}
+
+.post-detail-image img {
+    max-height: 300px;
+}
+
+.post-detail-body {
+    text-align: center;
+}
+
+.new-post-btn {
+    margin-top: 10px;
+}
+
+.gravatar-navbar-icon {
+    max-height: 25px;
+    border-radius: 5px;
+}
