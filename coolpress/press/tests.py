@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.test import TestCase
+from django.urls import reverse
 
 from press.models import CoolUser, Post, Category, PostStatus
 from press.stats_manager import StatsDict, extract_posts_stats, word_cloud_to_filename
@@ -74,7 +75,7 @@ class StatsManagementTest(TestCase):
         posts = Post.objects.filter(category=category)
         post_stats = extract_posts_stats(posts)
 
-        self.assertEqual(post_stats.titles.top(2), {'Python': 2, '20': 1} )
+        self.assertEqual(post_stats.titles.top(2), {'Python': 2, '20': 1})
         self.assertEqual(post_stats.bodies.top(2), {'to': 16, 'a': 10})
         self.assertEqual(post_stats.all.top(5), {'to': 16, 'a': 10, 'the': 9, 'of': 8, 'and': 7})
 
@@ -95,6 +96,31 @@ class StatsManagementTest(TestCase):
 
             self.assertIsNot(vals.word_cloud_svg(), None)
 
+
+class SearchBoxTest(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        user = User.objects.create(username='juanito', first_name='Juan', last_name='Perez')
+        cu = CoolUser.objects.create(user=user)
+        tech_category = Category.objects.create(slug='tech', label='Technology')
+        events_category = Category.objects.create(slug='events', label='Events')
+        categories = [tech_category, tech_category, events_category]
+        for title, body, category in zip(TITLES, BODIES, categories):
+            post = Post.objects.create(title=title, author=cu, category=category,
+                                       status=PostStatus.PUBLISHED.value, body=body)
+            post.save()
+
+        cls.tech_category = tech_category
+
+    def test_search_no_results(self):
+        response = self.client.get(reverse('post-search'), data={'search-text': 'pocahontas'})
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context['post_list']), 0)
+
+    def test_search_with_results(self):
+        response = self.client.get(reverse('post-search'), data={'search-text': 'python'})
+        self.assertEqual(response.status_code, 200)
+        self.assertGreater(len(response.context['post_list']), 0)
 
 
 TITLES = [

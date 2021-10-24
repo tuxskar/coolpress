@@ -122,6 +122,8 @@ def categories_list(request):
 
 
 def search_posts(search_text: str, limit=15):
+    if not search_text:
+        return []
     is_in_title = Q(title__icontains=search_text)
     is_in_body = Q(body__icontains=search_text)
     is_in_username = Q(author__user__username__icontains=search_text)
