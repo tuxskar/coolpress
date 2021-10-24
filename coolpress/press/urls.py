@@ -21,4 +21,5 @@ urlpatterns = [
     path('user/<int:pk>/', DetailCoolUser.as_view(), name='user-detail'),
     path('api/category/<str:slug>/', category_api, name='category-json'),
     path('api/categories/', categories_list, name='categories-json'),
+    path('post-search/', views.search_post, name='post-search'),
 ]

@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Q
 from django.http import HttpResponseRedirect, HttpResponseBadRequest, HttpResponseForbidden, \
     JsonResponse
 from django.shortcuts import render, get_object_or_404
@@ -66,7 +67,7 @@ class PostClassBasedListView(ListView):
 
 
 class PostClassBasedPaginatedListView(PostClassBasedListView):
-    paginate_by = 20
+    paginate_by = 2
     queryset = Post.objects.filter(status=PostStatus.PUBLISHED.value).order_by('-last_update')
 
 
@@ -78,6 +79,7 @@ class PostClassFilteringListView(PostClassBasedPaginatedListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super(PostClassFilteringListView, self).get_context_data(*args, **kwargs)
+        context['category'] = Category.objects.get(slug=self.kwargs['category_slug']).label
         stats = extract_posts_stats(context['object_list'])
         context['stats'] = stats
         return context
@@ -117,3 +119,17 @@ def categories_list(request):
     return JsonResponse(
         cats
     )
+
+
+def search_posts(search_text: str, limit=15):
+    is_in_title = Q(title__icontains=search_text)
+    is_in_body = Q(body__icontains=search_text)
+    is_in_username = Q(author__user__username__icontains=search_text)
+    is_in_name = Q(author__user__first_name__icontains=search_text)
+    return Post.objects.filter(is_in_title | is_in_body | is_in_username | is_in_name)[:limit]
+
+
+def search_post(request):
+    search_text = request.GET.get('search-text')
+    post_list = search_posts(search_text)
+    return render(request, 'posts_list.html', {'post_list': post_list, 'search_text': search_text})

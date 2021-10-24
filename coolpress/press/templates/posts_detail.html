@@ -37,6 +37,23 @@
 <p class="text-right"><a href="{% url 'posts-list-by-category' post_obj.category.slug %}">Category:
     <strong>{{post_obj.category.label}}</strong></a></p>
 
+{% if stats %}
+    <table class="table table-striped text-center">
+        <thead>
+        <th>Word</th>
+        <th>Cardinality</th>
+        </thead>
+        <tbody>
+        {% for word, count in stats.all.top.items %}
+        <tr>
+            <td>{{word}}</td>
+            <td>{{count}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
 
 <div class="text-center">
     {{stats.all.word_cloud_svg|safe}}
