@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>List of categories</h1>
+
+{% if user.is_authenticated %}
+  <a class="btn btn-primary" href="{% url 'category-add' %}">New Category</a>
+{% endif %}
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Slug</th>
+      <th scope="col">Label</th>
+      <th scope="col">Count of Posts</th>
+      {% if user.is_authenticated %}
+      <th scope="col">Action</th>
+      {% endif %}
+    </tr>
+  </thead>
+  <tbody>
+  {% for cat in object_list %}
+    <tr>
+      <th scope="row">{{cat.id}}</th>
+      <td><a href="{% url 'category-detail' cat.pk %}">{{cat.slug}}</a></td>
+      <td>{{cat.label}}</td>
+      <td>{{cat.post_set.count}}</td>
+      {% if user.is_authenticated %}
+      <td><a class="btn btn-primary" href="{%url 'category-update' cat.pk%}">Update Category</a> </td>
+      {% endif %}
+
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}

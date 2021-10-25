@@ -4,9 +4,11 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from django.urls import reverse
-from press.models import Post, PostStatus
+from django.views.generic import TemplateView, DetailView, ListView, CreateView, UpdateView
 
-from press.forms import PostForm
+from press.models import Post, PostStatus, Category
+
+from press.forms import PostForm, CategoryForm
 
 
 def index(request):
@@ -61,3 +63,25 @@ def post_update(request, post_id=None):
         form = PostForm(instance=post)
 
     return render(request, 'posts_update.html', {'form': form})
+
+
+class AboutView(TemplateView):
+    template_name = "about.html"
+
+
+class CategoryDetail(DetailView):
+    model = Category
+
+
+class CategoryList(ListView):
+    model = Category
+
+
+class CategoryAdd(CreateView):
+    model = Category
+    form_class = CategoryForm
+
+
+class CategoryUpdate(UpdateView):
+    model = Category
+    form_class = CategoryForm

@@ -1,0 +1,23 @@
+<div class="card mb-3 post">
+    <div class="row no-gutters">
+        {% if post.image_link %}
+        <div class="col-md-4 post-image-box">
+            <img class="post-image" src="{{post.image_link}}" alt="{{post.title}}">
+        </div>
+        {% endif %}
+        <div class="{% if post.image_link %}col-md-8{% else %}col-md-12{% endif %}">
+            <div class="card-header">
+                {{post.category.slug}}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{post.title}}</h5>
+                <p class="card-text">{{post.body|urlize}}</p>
+                <p class="card-text"><small class="text-muted">{{post.last_update}}</small></p>
+                <p class="card-text">{{post.author.user.username}}</p>
+            </div>
+            <div class="card-footer bg-transparent border-success">
+                <a href="{% url 'posts-detail' post.id %}" class="btn btn-primary">Details</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,6 +3,9 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+    {% if subtitle %}
+{{subtitle}}
+{% endif %}
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav justify-content-end">
       <li class="nav-item active">
@@ -19,7 +22,7 @@
 
 
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Category List</a>
+            <a class="dropdown-item" href="{% url 'category-list' %}">Category List</a>
 
         </div>
       </li>

@@ -8,4 +8,9 @@ urlpatterns = [
     path('posts/', views.post_list, name='posts-list'),
     path('post/add/', views.post_update, name='post-add'),
     path('post/update/<int:post_id>', views.post_update, name='post-update'),
+    path('about/', views.AboutView.as_view(), name='about'),
+    path('category/<int:pk>/', views.CategoryDetail.as_view(), name='category-detail'),
+    path('categories/', views.CategoryList.as_view(), name='category-list'),
+    path('category/add/', views.CategoryAdd.as_view(), name='category-add'),
+    path('category/update/<int:pk>', views.CategoryUpdate.as_view(), name='category-update'),
 ]
