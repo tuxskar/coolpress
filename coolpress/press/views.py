@@ -7,10 +7,11 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views.generic import TemplateView, ListView, FormView, CreateView, UpdateView, \
     DetailView
-from django.views.generic.detail import SingleObjectMixin, BaseDetailView
+
+from rest_framework import viewsets
+from .serializers import PostSerializer
 
 from press.forms import PostForm, CategoryForm
-from press.mixin import JSONResponseMixin
 from press.models import PostStatus, Post, CoolUser, Category
 from press.stats_manager import extract_posts_stats
 
@@ -135,3 +136,12 @@ def search_post(request):
     search_text = request.GET.get('search-text')
     post_list = search_posts(search_text)
     return render(request, 'posts_list.html', {'post_list': post_list, 'search_text': search_text})
+
+
+class PostViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Post.objects.all().filter(status=PostStatus.PUBLISHED.value).order_by(
+        '-creation_date')
+    serializer_class = PostSerializer
