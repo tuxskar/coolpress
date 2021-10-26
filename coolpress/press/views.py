@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
@@ -85,3 +85,23 @@ class CategoryAdd(CreateView):
 class CategoryUpdate(UpdateView):
     model = Category
     form_class = CategoryForm
+
+
+class PostList(ListView):
+    model = Post
+    paginate_by = 2
+    context_object_name = 'post_list'
+    template_name = 'posts_list.html'
+
+    def get_queryset(self):
+        queryset = super(PostList, self).get_queryset()
+        category_slug = self.kwargs['category_slug']
+        category = get_object_or_404(Category, slug=category_slug)
+        return  queryset.filter(category=category)
+
+
+def category_api(request, slug):
+    cat = get_object_or_404(Category, slug=slug)
+    return JsonResponse(
+        dict(slug=cat.slug, label=cat.label)
+    )
