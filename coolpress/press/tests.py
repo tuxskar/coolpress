@@ -58,13 +58,14 @@ class CreatePostUsingForm(TestCase):
         self.client = Client()
 
     def test_check_others_updating_permissions(self):
-        update_juan_post = reverse('post-update', kwargs=dict(post_id=self.juan_post.id))
-        # is_logged_in = self.client.login(usename=self.juan.username, password='Holamundo')
-        is_logged = self.client.force_login(self.juan, backend=None)
+        update_juans_post = reverse('post-update', kwargs=dict(post_id=self.juan_post.id))
+        is_logged_in = self.client.login(username=self.juan.username, password=self.juan_pass)
+        self.assertTrue(is_logged_in)
 
-        response = self.client.get(update_juan_post)
+        response = self.client.get(update_juans_post)
         self.assertEqual(response.status_code, 200)
 
-        is_logged = self.client.force_login(self.maria, backend=None)
-        response = self.client.get(update_juan_post)
+        is_logged_in = self.client.login(username=self.maria.username, password=self.maria_pass)
+        self.assertTrue(is_logged_in)
+        response = self.client.get(update_juans_post)
         self.assertEqual(response.status_code, 400)
