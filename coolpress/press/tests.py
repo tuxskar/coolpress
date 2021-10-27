@@ -2,6 +2,9 @@ from django.contrib.auth.models import User
 from django.test import TestCase
 from django.urls import reverse
 
+from press.management.commands._api_sample import response_sample_info
+from press.management.commands.get_api_news import insert_post, get_and_insert_posts, \
+    insert_posts_response_data
 from press.models import CoolUser, Post, Category, PostStatus
 from press.stats_manager import StatsDict, extract_posts_stats, word_cloud_to_filename
 
@@ -36,6 +39,71 @@ class UserManagementTest(TestCase):
         user = CoolUser.objects.create(user=random_user, github_profile='someevenmorerandomuser')
         self.assertIs(user.gravatar_link, None)
         self.assertEqual(user.gh_repositories, None)
+
+
+class MediaStackTest(TestCase):
+
+    def test_get_sample_information(self):
+        sample_info = {'author': 'ABMN Staff',
+                       'title': 'BaaSid One Day Trading Volume Hits $156,568.00 (BAAS)',
+                       'description': 'BaaSid One Day Trading Volume Hits $156,568.00 (BAAS)',
+                       'url': 'https://www.americanbankingnews.com/2021/10/05/baasid-one-day-trading-volume-hits-156568-00-baas.html',
+                       'source': 'americanbankingnews', 'image': None, 'category': 'general',
+                       'language': 'en',
+                       'country': 'us', 'published_at': '2021-10-05T13:44:54+00:00'}
+        post_inserted = insert_post(sample_info)
+        self.assertIsNot(post_inserted, None)
+        self.assertGreater(post_inserted.id, 0)
+        self.assertEqual(post_inserted.author.user.first_name, 'ABMN Staff')
+        self.assertEqual(post_inserted.author.user.email, 'info@abmn.com')
+        self.assertEqual(post_inserted.author.user.username, 'info@abmn.com')
+
+    def test_get_sample_anonymous_information(self):
+        sample_info = {'author': None,
+                       'title': 'BaaSid One Day Trading Volume Hits $156,568.00 (BAAS)',
+                       'description': 'BaaSid One Day Trading Volume Hits $156,568.00 (BAAS)',
+                       'url': 'https://www.americanbankingnews.com/2021/10/05/baasid-one-day-trading-volume-hits-156568-00-baas.html',
+                       'source': None, 'image': None, 'category': 'general',
+                       'language': 'en',
+                       'country': 'us', 'published_at': '2021-10-05T13:44:54+00:00'}
+        post_inserted = insert_post(sample_info)
+        self.assertIsNot(post_inserted, None)
+        self.assertGreater(post_inserted.id, 0)
+        self.assertEqual(post_inserted.author.user.first_name, 'anonymous')
+        self.assertEqual(post_inserted.author.user.email, 'anonymous@noemail.com')
+        self.assertEqual(post_inserted.author.user.username, post_inserted.author.user.email)
+
+    def test_get_sample_simple_author_information(self):
+        sample_info = {'author': 'Jeff Parsons',
+                       'title': 'How to download Windows 11 and upgrade your computer for free',
+                       'description': 'The latest version of Microsoft Windows is available worldwide from today.',
+                       'url': 'https://metro.co.uk/2021/10/05/how-to-download-windows-11-and-upgrade-your-computer-for-free-15367639/',
+                       'source': 'Metro',
+                       'image': 'https://metro.co.uk/wp-content/uploads/2021/06/SEI_84548861.jpg?quality=90&strip=all',
+                       'category': 'general',
+                       'language': 'en',
+                       'country': 'gb',
+                       'published_at': '2021-10-05T13:44:53+00:00'}
+        post_inserted = insert_post(sample_info)
+        self.assertIsNot(post_inserted, None)
+        self.assertGreater(post_inserted.id, 0)
+        self.assertEqual(post_inserted.author.user.first_name, 'Jeff')
+        self.assertEqual(post_inserted.author.user.last_name, 'Parsons')
+        self.assertEqual(post_inserted.author.user.email, 'jparsons@noemail.com')
+        self.assertEqual(post_inserted.author.user.username, post_inserted.author.user.email)
+
+    def test_insert_multiple_posts_sample(self):
+        response_data = response_sample_info['data']
+        posts_inserted = insert_posts_response_data(response_data)
+        self.assertGreater(len(posts_inserted), 0)
+        for post in posts_inserted:
+            self.assertGreater(post.id, 0)
+
+    def test_gather_mediastack_info(self):
+        categories = ['sports', 'general']
+        limit = 10
+        added = get_and_insert_posts(categories, limit)
+        self.assertGreater(len(added), 0)
 
 
 class StatsManagementTest(TestCase):

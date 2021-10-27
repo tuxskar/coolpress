@@ -16,44 +16,50 @@ class Command(BaseCommand):
         parser.add_argument('categories', nargs='+', type=str)
 
         parser.add_argument(
-            '--date',
-            action='store_true',
-            help='Date when to check about the news. Default today',
-            default=datetime.datetime.utcnow().strftime('%Y-%m-%d')
-        )
-
-        parser.add_argument(
             '--limit',
             action='store',
             help='Change the default 10 news per execution',
-            default=10
+            default=10,
+            type=int
         )
 
     def handle(self, *args, **options):
         categories = options['categories']
-        limit = int(options['limit'])
-        date = options['date']
-        api_key = MEDIASTACK_API
+        limit = options['limit']
 
-        params = {
-            'access_key': api_key,
-            'categories': ','.join(categories),
-            'sort': 'published_desc',
-            # 'date': date,
-            'limit': limit,
-            'languages': 'en'
-        }
-        url = 'http://api.mediastack.com/v1/news'
-        response = requests.get(url, params=params)
-        added = []
-        response_data = response.json()['data']
-        for info in response_data:
-            inserted_post = insert_post(info)
-            if inserted_post:
-                added.append(inserted_post)
+        added = get_and_insert_posts(categories, limit)
 
         self.stdout.write(self.style.SUCCESS(
             f'Successfully added {len(added)} new news for categories {categories}'))
+
+
+def get_and_insert_posts(categories, limit, api_key=MEDIASTACK_API):
+    response = get_mediastack_news(categories, limit, api_key)
+    response_data = response.json()['data']
+    added = insert_posts_response_data(response_data)
+    return added
+
+
+def get_mediastack_news(categories, limit, api_key):
+    params = {
+        'access_key': api_key,
+        'categories': ','.join(categories),
+        'sort': 'published_desc',
+        'limit': limit,
+        'languages': 'en'
+    }
+    url = 'http://api.mediastack.com/v1/news'
+    response = requests.get(url, params=params)
+    return response
+
+
+def insert_posts_response_data(response_data):
+    added = []
+    for info in response_data:
+        inserted_post = insert_post(info)
+        if inserted_post:
+            added.append(inserted_post)
+    return added
 
 
 def insert_post(post_info):
