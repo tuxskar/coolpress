@@ -1,3 +1,5 @@
+import django_heroku
+
 """
 Django settings for coolpress project.
 
@@ -123,3 +125,5 @@ TEMPLATES[0]['OPTIONS']['context_processors'].append(
     "press.context_processors.cooluser_processor")
 TEMPLATES[0]['OPTIONS']['context_processors'].append(
     "press.context_processors.categories_processor")
+
+django_heroku.settings(locals())
