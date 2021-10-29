@@ -136,7 +136,8 @@ TEMPLATES[0]['OPTIONS']['context_processors'].append(
 
 STATIC_ROOT = "/var/www/coolpress/static/"
 
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') or 'oramirezpublic@gmail.com'
+fallback_email = 'oramirezpublic@gmail.com'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') or fallback_email
 if DEBUG is True:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     # EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
