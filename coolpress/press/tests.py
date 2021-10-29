@@ -5,6 +5,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 
 from press.models import Category, CoolUser, Post
+from press.user_management import get_gravatar_link
 
 
 class PostModelTest(TestCase):
@@ -69,3 +70,40 @@ class CreatePostUsingForm(TestCase):
         self.assertTrue(is_logged_in)
         response = self.client.get(update_juans_post)
         self.assertEqual(response.status_code, 400)
+
+
+class UserManagementTest(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.proper_email = 'tuxskar@gmail.com'
+        cls.wrong_email = 'tuxksarAlotofRandomThings@gmailRandomGoogleWhyNot.com'
+
+    def test_positive_creation_of(self):
+        random_user = User.objects.create(username='randomUser', email=self.proper_email)
+        user = CoolUser.objects.create(user=random_user)
+        self.assertIsNotNone(user.gravatar_link)
+
+    def test_negative_creation_of_gravatar_links(self):
+        random_user = User.objects.create(username='randomUser', email=self.wrong_email)
+        user = CoolUser.objects.create(user=random_user)
+        self.assertIsNone(user.gravatar_link)
+
+    def test_update_email(self):
+        random_user = User.objects.create(username='randomUser', email=self.wrong_email)
+        cool_user = CoolUser.objects.create(user=random_user)
+        self.assertIsNone(cool_user.gravatar_link)
+
+        cool_user.user.email = self.proper_email
+        cool_user.save()
+        self.assertIsNotNone(cool_user.gravatar_link)
+
+
+    def test_get_gravatar_positive(self):
+        gravatar_link = get_gravatar_link(self.proper_email)
+        self.assertIsNotNone(gravatar_link)
+        self.assertTrue(gravatar_link, 'https://www.gravatar.com/avatar/139f76ac09f8b9d3a2392b45b7ad5f4c')
+
+    def test_get_gravatar_negative(self):
+        gravatar_link = get_gravatar_link(self.wrong_email)
+        self.assertIsNone(gravatar_link)

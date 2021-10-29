@@ -4,6 +4,8 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
+from press.user_management import get_gravatar_link
+
 
 class CoolUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -14,6 +16,16 @@ class CoolUser(models.Model):
     def __str__(self):
         user = self.user
         return f'{user.first_name} {user.last_name} ({user.username})'
+
+    def save(self, *args, **kwargs):
+        super(CoolUser, self).save(*args, **kwargs)
+
+        if self.user.email:
+            email = self.user.email
+            gravatar_link = get_gravatar_link(email)
+            if gravatar_link != self.gravatar_link:
+                self.gravatar_link = gravatar_link
+                self.save()
 
 
 class Category(models.Model):
