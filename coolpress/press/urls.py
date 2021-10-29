@@ -27,4 +27,5 @@ urlpatterns = [
     path('api/categories/', categories_list, name='categories-json'),
     path('post-search/', views.search_post, name='post-search'),
     path('api/', include(router.urls)),
+    path('test-email/', views.test_send_email),
 ]

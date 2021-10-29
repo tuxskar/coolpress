@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from django.core import mail
 from django.test import TestCase
 from django.urls import reverse
 
@@ -220,3 +221,48 @@ In order to have some rules to have kind of similar code in Python when develope
     
     The code examples are written in Java but they are simple and clear, so they can be followed by any programmer. Although it is recommended to make a slow and careful reading because the there are many details showed on each example, so grab a coffee and crush the book """
 ]
+
+
+class SendPostEmailsManager(TestCase):
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.user = User.objects.create(username='juanito', first_name='Juan',
+                                       last_name='Valderrama')
+        cls.cu = CoolUser.objects.create(user=cls.user)
+        cls.cat = Category.objects.create(slug='randomTest', label='Testing random news')
+
+    def test_should_send_email(self):
+        post_with_covid = Post(title='Covid is again back', author=self.cu)
+        self.assertTrue(post_with_covid.should_send_email())
+
+        post_with_covid = Post(title='Some great health post',
+                               body='Hey are you sure CoviD is not back?', author=self.cu)
+        self.assertTrue(post_with_covid.should_send_email())
+
+        post_with_covid = Post(title='Python is awesome', author=self.cu)
+        self.assertFalse(post_with_covid.should_send_email())
+        post_with_covid = Post(title='Python is awesome',
+                               body='At least we have python to play with on another quarantine',
+                               author=self.cu)
+        self.assertFalse(post_with_covid.should_send_email())
+
+    def test_sending_emails(self):
+        self.assertEqual(len(mail.outbox), 0)
+        post = Post.objects.create(title='Nothing related with that word is again back',
+                                   author=self.cu, category=self.cat)
+        self.assertEqual(len(mail.outbox), 0)
+
+        post.title = 'Something talking about covid'
+        post.save()
+
+        self.assertEqual(len(mail.outbox), 1)
+        url_to_post = reverse('posts-detail', kwargs={'post_id': post.id})
+        email = mail.outbox[-1]
+        self.assertTrue(url_to_post in email.body)
+
+        post_triggering = Post.objects.create(title='Triggering the emails because of covid',
+                                              author=self.cu, category=self.cat)
+        url_to_post = reverse('posts-detail', kwargs={'post_id': post_triggering.id})
+        email = mail.outbox[-1]
+        self.assertTrue(url_to_post in email.body)

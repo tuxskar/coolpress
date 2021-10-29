@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.mail import send_mail
 from django.db.models import Q
 from django.http import HttpResponseRedirect, HttpResponseBadRequest, HttpResponseForbidden, \
     JsonResponse
@@ -9,6 +10,8 @@ from django.views.generic import TemplateView, ListView, FormView, CreateView, U
     DetailView
 
 from rest_framework import viewsets
+
+from coolpress.settings import EMAIL_HOST_USER
 from .serializers import PostSerializer
 
 from press.forms import PostForm, CategoryForm
@@ -145,3 +148,11 @@ class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all().filter(status=PostStatus.PUBLISHED.value).order_by(
         '-creation_date')
     serializer_class = PostSerializer
+
+
+def test_send_email(request):
+    send_mail('Testing subject',
+              'This is just a test of how would looks like an email from django',
+              recipient_list=['tuxskar@gmail.com', 'oramirezpublic@gmail.com'],
+              from_email=EMAIL_HOST_USER)
+    return render(request, 'sent_email.html')

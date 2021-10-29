@@ -1,6 +1,7 @@
 from enum import Enum
 
 from django.contrib.auth.models import User
+from django.core.mail import mail_admins
 from django.db import models
 from django.urls import reverse
 
@@ -79,5 +80,23 @@ class Post(models.Model):
     creation_date = models.DateTimeField(auto_now_add=True)
     last_update = models.DateTimeField(auto_now=True)
 
+    trigger_keyword = 'covid'.casefold()
+
     def __str__(self):
         return f'{self.title} - by {self.author.user.username}'
+
+    def should_send_email(self):
+        is_in_title = self.title and self.trigger_keyword in self.title.casefold()
+        is_in_body = self.body and self.trigger_keyword in self.body.casefold()
+        return is_in_title or is_in_body
+
+    def get_absolute_url(self):
+        return reverse('posts-detail', kwargs=dict(post_id=self.pk))
+
+    def save(self, *args, **kwargs):
+        super(Post, self).save(*args, **kwargs)
+        if self.should_send_email():
+            subject = f'Keyword {self.trigger_keyword} detected'
+
+            body = f'Dear admin\n {subject} on the post {self.get_absolute_url()}'
+            mail_admins(subject, body)
