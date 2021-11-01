@@ -6,7 +6,7 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views.generic import TemplateView, DetailView, ListView, CreateView, UpdateView
 
-from press.models import Post, PostStatus, Category
+from press.models import Post, PostStatus, Category, CoolUser
 
 from press.forms import PostForm, CategoryForm
 
@@ -97,7 +97,7 @@ class PostList(ListView):
         queryset = super(PostList, self).get_queryset()
         category_slug = self.kwargs['category_slug']
         category = get_object_or_404(Category, slug=category_slug)
-        return  queryset.filter(category=category)
+        return queryset.filter(category=category)
 
 
 def category_api(request, slug):
@@ -105,3 +105,11 @@ def category_api(request, slug):
     return JsonResponse(
         dict(slug=cat.slug, label=cat.label)
     )
+
+
+class CooluserDetail(DetailView):
+    model = CoolUser
+
+
+class CooluserList(ListView):
+    model = CoolUser

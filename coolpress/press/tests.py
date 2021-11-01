@@ -100,16 +100,15 @@ class UserManagementTest(TestCase):
         cool_user.save()
         self.assertIsNotNone(cool_user.gravatar_link)
 
-
     def test_get_gravatar_positive(self):
         gravatar_link = get_gravatar_link(self.proper_email)
         self.assertIsNotNone(gravatar_link)
-        self.assertTrue(gravatar_link, 'https://www.gravatar.com/avatar/139f76ac09f8b9d3a2392b45b7ad5f4c')
+        self.assertTrue(gravatar_link,
+                        'https://www.gravatar.com/avatar/139f76ac09f8b9d3a2392b45b7ad5f4c')
 
     def test_get_gravatar_negative(self):
         gravatar_link = get_gravatar_link(self.wrong_email)
         self.assertIsNone(gravatar_link)
-
 
 
 class GithubManager(TestCase):
@@ -121,6 +120,7 @@ class GithubManager(TestCase):
         full_path = os.path.join(dir_path, sample_path)
         with open(full_path, 'r') as fr:
             cls.sample_content = fr.read().encode()
+        cls.proper_email = 'tuxskar@gmail.com'
 
     def test_unit_extract_repositories_from_sample(self):
         repositories_cnt = extract_github_repositories(self.sample_content)
@@ -129,7 +129,7 @@ class GithubManager(TestCase):
     def test_get_github_repositories(self):
         random_user = User.objects.create(username='randomUser', email=self.proper_email)
         cool_user = CoolUser.objects.create(user=random_user, github_profile='tuxskar')
-        self.assertGreaterEqual(cool_user.gh_repositories, 34)
+        self.assertGreaterEqual(cool_user.gh_repositories, 1)
 
     def test_get_github_repositories_of_random_account(self):
         random_user = User.objects.create(username='randomUser', email=self.proper_email)
@@ -139,10 +139,18 @@ class GithubManager(TestCase):
 
     def test_github_repositories_updating(self):
         random_user = User.objects.create(username='randomUser', email=self.proper_email)
-        cool_user = CoolUser.objects.create(user=random_user, github_profile='tuxskar_some_random_username')
+        cool_user = CoolUser.objects.create(user=random_user,
+                                            github_profile='tuxskar_some_random_username')
         self.assertEqual(cool_user.gh_repositories, None)
 
         cool_user.github_profile = 'tuxskar'
         cool_user.save()
 
         self.assertGreaterEqual(cool_user.gh_repositories, 34)
+
+
+        cool_user.github_profile = 'tuxskar_some_random_username'
+        cool_user.save()
+        self.assertEqual(cool_user.gh_repositories, None)
+
+
