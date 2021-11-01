@@ -28,4 +28,5 @@ urlpatterns = [
     path('post-search/', views.search_post, name='post-search'),
     path('api/', include(router.urls)),
     path('test-email/', views.test_send_email),
+    path('signup/', views.signup, name='signup'),
 ]

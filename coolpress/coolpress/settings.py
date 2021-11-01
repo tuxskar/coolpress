@@ -153,3 +153,6 @@ else:
 
 EMAIL_SUBJECT_PREFIX = '[CoolPress] '
 ADMINS = [('Oscar', fallback_email), ]
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"

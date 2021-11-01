@@ -3,6 +3,8 @@ from enum import Enum
 from django.contrib.auth.models import User
 from django.core.mail import mail_admins
 from django.db import models
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 from django.urls import reverse
 
 from press.user_info_manager import get_github_repositories, get_gravatar_image
@@ -100,3 +102,12 @@ class Post(models.Model):
 
             body = f'Dear admin\n {subject} on the post {self.get_absolute_url()}'
             mail_admins(subject, body)
+
+
+@receiver(post_save, sender=User)
+def update_user_cooluser(sender, instance, created, **kwargs):
+    if created:
+        CoolUser.objects.create(user=instance)
+    instance.cooluser.save()
+
+
