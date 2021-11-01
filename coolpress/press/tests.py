@@ -7,6 +7,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 
 from press.models import Category, CoolUser, Post
+from press.stats_manager import StatsDict
 from press.user_management import get_gravatar_link, extract_github_repositories
 
 
@@ -148,9 +149,17 @@ class GithubManager(TestCase):
 
         self.assertGreaterEqual(cool_user.gh_repositories, 34)
 
-
         cool_user.github_profile = 'tuxskar_some_random_username'
         cool_user.save()
         self.assertEqual(cool_user.gh_repositories, None)
 
 
+class StatsManager(TestCase):
+    def test_stats_sample(self):
+        msg = 'science ' * 3 + 'art ' * 7 + 'cats ' * 7 + 'of ' * 10 + 'a ' * 10
+        sd = StatsDict.from_msg(msg)
+        self.assertEqual(sd.top(1), {'a': 10})
+        self.assertEqual(sd.top(2), {'a': 10, 'of': 10})
+        self.assertEqual(sd.top(10), {'a': 10, 'of': 10, 'art': 7, 'cats': 7, 'science': 3, '': 1})
+        from_sd = sd.top(5)
+        self.assertEqual(from_sd.top(2), {'a': 10, 'of': 10})
