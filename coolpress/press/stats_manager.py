@@ -1,4 +1,7 @@
 from collections import Counter
+from dataclasses import dataclass
+
+from press.models import Post
 
 
 class StatsDict(dict):
@@ -21,3 +24,18 @@ class StatsDict(dict):
     def from_msg(cls, msg: str):
         tokens = msg.casefold().split(' ')
         return cls(**Counter(tokens))
+
+@dataclass
+class Stats:
+    titles: StatsDict
+    bodies: StatsDict
+
+    @property
+    def all(self):
+        return StatsDict({**self.titles, **self.bodies})
+
+
+def extract_stats_from_single_post(post: Post) -> Stats:
+    titles = StatsDict.from_msg(post.title)
+    bodies = StatsDict.from_msg(post.body)
+    return Stats(titles, bodies)

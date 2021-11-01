@@ -9,6 +9,7 @@ from django.views.generic import TemplateView, DetailView, ListView, CreateView,
 from press.models import Post, PostStatus, Category, CoolUser
 
 from press.forms import PostForm, CategoryForm
+from press.stats_manager import extract_stats_from_single_post
 
 
 def index(request):
@@ -35,7 +36,8 @@ def get_html_from_post(post):
 
 def post_detail(request, post_id):
     post = get_object_or_404(Post, pk=post_id)
-    return render(request, 'posts_detail.html', {'post_obj': post})
+    stats = extract_stats_from_single_post(post)
+    return render(request, 'posts_detail.html', {'post_obj': post, 'stats': stats})
 
 
 def post_list(request):

@@ -7,7 +7,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 
 from press.models import Category, CoolUser, Post
-from press.stats_manager import StatsDict
+from press.stats_manager import StatsDict, extract_stats_from_single_post
 from press.user_management import get_gravatar_link, extract_github_repositories
 
 
@@ -163,3 +163,14 @@ class StatsManager(TestCase):
         self.assertEqual(sd.top(10), {'a': 10, 'of': 10, 'art': 7, 'cats': 7, 'science': 3, '': 1})
         from_sd = sd.top(5)
         self.assertEqual(from_sd.top(2), {'a': 10, 'of': 10})
+
+    def test_single_post(self):
+        title = 'Applied Python Module because python is awesome, yes it is'
+        body = 'This is a description of the module just for fun and to sew how it looks ' \
+               'like like like like or subscribe'
+        sample_post = Post(title=title, body=body)
+        stats = extract_stats_from_single_post(sample_post)
+
+        self.assertEqual(stats.titles.top(2), {'is': 2, 'python': 2})
+        self.assertEqual(stats.bodies.top(1), {'like': 4})
+        self.assertEqual(stats.all.top(1), {'like': 4})
