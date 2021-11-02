@@ -6,3 +6,5 @@ pip~=21.3
 beautifulsoup4~=4.10.0
 wordcloud~=1.8.1
 djangorestframework
+gunicorn
+django-heroku
