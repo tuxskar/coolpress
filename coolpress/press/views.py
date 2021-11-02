@@ -1,3 +1,4 @@
+from django.conf.global_settings import EMAIL_HOST_USER
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -13,7 +14,7 @@ from django.views.generic import TemplateView, ListView, FormView, CreateView, U
 
 from rest_framework import viewsets
 
-from coolpress.settings import EMAIL_HOST_USER, HOME_INDEX
+from coolpress.settings import HOME_INDEX
 from .serializers import PostSerializer
 
 from press.forms import PostForm, CategoryForm, CoolUserForm
