@@ -50,6 +50,12 @@ class Stats:
         return StatsDict({**self.titles, **self.bodies})
 
 
+def extract_single_post_stats(post: Post):
+    titles_stats = StatsDict.from_msg(post.title)
+    bodies_stats = StatsDict.from_msg(post.body)
+    return Stats(titles=titles_stats, bodies=bodies_stats)
+
+
 def extract_posts_stats(posts: QuerySet[Post]):
     titles = posts.values_list('title', flat=True)
     bodies = posts.values_list('body', flat=True)

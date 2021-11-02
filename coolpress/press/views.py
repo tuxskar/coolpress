@@ -1,15 +1,22 @@
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.mail import send_mail
+from django.db.models import Q
 from django.http import HttpResponseRedirect, HttpResponseBadRequest, HttpResponseForbidden, \
     JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.views.generic import TemplateView, ListView, FormView, CreateView, UpdateView, \
     DetailView
-from django.views.generic.detail import SingleObjectMixin, BaseDetailView
 
-from press.forms import PostForm, CategoryForm
-from press.mixin import JSONResponseMixin
+from rest_framework import viewsets
+
+from coolpress.settings import EMAIL_HOST_USER, HOME_INDEX
+from .serializers import PostSerializer
+
+from press.forms import PostForm, CategoryForm, CoolUserForm
 from press.models import PostStatus, Post, CoolUser, Category
 from press.stats_manager import extract_posts_stats
 
@@ -78,6 +85,7 @@ class PostClassFilteringListView(PostClassBasedPaginatedListView):
 
     def get_context_data(self, *args, **kwargs):
         context = super(PostClassFilteringListView, self).get_context_data(*args, **kwargs)
+        context['category'] = Category.objects.get(slug=self.kwargs['category_slug']).label
         stats = extract_posts_stats(context['object_list'])
         context['stats'] = stats
         return context
@@ -117,3 +125,63 @@ def categories_list(request):
     return JsonResponse(
         cats
     )
+
+
+def search_posts(search_text: str, limit=15):
+    if not search_text:
+        return []
+    is_in_title = Q(title__icontains=search_text)
+    is_in_body = Q(body__icontains=search_text)
+    is_in_username = Q(author__user__username__icontains=search_text)
+    is_in_name = Q(author__user__first_name__icontains=search_text)
+    return Post.objects.filter(is_in_title | is_in_body | is_in_username | is_in_name)[:limit]
+
+
+def search_post(request):
+    search_text = request.GET.get('search-text')
+    post_list = search_posts(search_text)
+    return render(request, 'posts_list.html', {'post_list': post_list, 'search_text': search_text})
+
+
+class PostViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Post.objects.all().filter(status=PostStatus.PUBLISHED.value).order_by(
+        '-creation_date')
+    serializer_class = PostSerializer
+
+
+def test_send_email(request):
+    send_mail('Testing subject',
+              'This is just a test of how would looks like an email from django',
+              recipient_list=['tuxskar@gmail.com', 'oramirezpublic@gmail.com'],
+              from_email=EMAIL_HOST_USER)
+    return render(request, 'sent_email.html')
+
+
+def signup(request):
+    if request.method == 'POST':
+        user_form = UserCreationForm(request.POST)
+        cooluser_form = CoolUserForm(request.POST)
+        if user_form.is_valid() and cooluser_form.is_valid():
+            user = user_form.save(commit=False)
+            user.email = cooluser_form.cleaned_data.get('email')
+            user.save()
+            user.refresh_from_db()  # load the profile instance created by the signal
+
+            cooluser_form = CoolUserForm(request.POST, instance=user.cooluser)
+            cooluser_form.full_clean()
+            _ = cooluser_form.save()
+
+            password = user_form.cleaned_data.get('password1')
+            user = authenticate(username=user.username, password=password)
+            login(request, user)
+            return redirect(HOME_INDEX)
+    else:
+        user_form = UserCreationForm()
+        cooluser_form = CoolUserForm()
+    return render(request, 'signup.html', {
+        'user_form': user_form,
+        'cooluser_form': cooluser_form
+    })
