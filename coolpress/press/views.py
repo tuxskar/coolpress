@@ -111,10 +111,28 @@ class PostList(ListView):
         return queryset.filter(category=category)
 
 
+class PostFilteredByText(PostList):
+    def get_queryset(self):
+        queryset = super(PostList, self).get_queryset()
+        search_text = self.request.GET.get('q')
+        return queryset.filter(title__icontains=search_text)
+
+
 def category_api(request, slug):
     cat = get_object_or_404(Category, slug=slug)
     return JsonResponse(
         dict(slug=cat.slug, label=cat.label)
+    )
+
+
+def search_ajax(request):
+    query_search = request.GET.get('q')
+    posts = Post.objects.filter(title__icontains=query_search).values('id', 'title', 'body',
+                                                                      'author__user__username',
+                                                                      'category__label')
+    ret = {p['id']: p for p in posts}
+    return JsonResponse(
+        ret
     )
 
 

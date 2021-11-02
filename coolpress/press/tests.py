@@ -239,3 +239,34 @@ In order to have some rules to have kind of similar code in Python when develope
 
     The code examples are written in Java but they are simple and clear, so they can be followed by any programmer. Although it is recommended to make a slow and careful reading because the there are many details showed on each example, so grab a coffee and crush the book """
 ]
+
+
+class SearchBoxManager(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        category = Category.objects.create(slug='random', label='Random News')
+        cls.category = category
+        cls.juan = User.objects.create(first_name='juanito', is_active=True, username='juanito')
+        author = CoolUser.objects.create(user=cls.juan)
+        cls.author = author
+        for title, body in zip(TITLES, BODIES):
+            _ = Post.objects.create(author=author, category=category, title=title, body=body)
+
+    def setUp(self):
+        self.client = Client()
+
+    def test_search_box(self):
+        search_text = 'python'
+        url = reverse('post-filtered')
+        response = self.client.get(url, data=dict(q=search_text))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context['post_list']), 2)
+
+        self.assertEqual(Post.objects.count(), 3)
+
+        search_text = 'oscar'
+        response = self.client.get(url, data=dict(q=search_text))
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context['post_list']), 3)
+
+        self.assertEqual(Post.objects.count(), 3)
