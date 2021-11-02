@@ -1,8 +1,9 @@
 from django.contrib.auth.models import User
 from django.core import mail
-from django.test import TestCase
+from django.test import TestCase, Client
 from django.urls import reverse
 
+from coolpress.settings import HOME_INDEX
 from press.management.commands._api_sample import response_sample_info
 from press.management.commands.get_api_news import insert_post, get_and_insert_posts, \
     insert_posts_response_data
@@ -266,3 +267,35 @@ class SendPostEmailsManager(TestCase):
         url_to_post = reverse('posts-detail', kwargs={'post_id': post_triggering.id})
         email = mail.outbox[-1]
         self.assertTrue(url_to_post in email.body)
+
+
+class SignUpManager(TestCase):
+    def setUp(self):
+        self.client = Client()
+
+    def test_create_new_user(self):
+        params = {'username': 'testing_brand_new_username',
+                  'password1': '172h3sjdkwiruey846JKsy!',
+                  'password2': '172h3sjdkwiruey846JKsy!',
+                  'email': 'tuxskar@gmail.com',
+                  'github_profile': 'tuxskar'
+                  }
+        url = reverse('signup')
+        user_cnt = User.objects.count()
+        cuser_cnt = CoolUser.objects.count()
+        response = self.client.post(url, data=params)
+
+        new_user_cnt = User.objects.count()
+        new_cuser_cnt = CoolUser.objects.count()
+        self.assertEqual(user_cnt + 1, new_user_cnt)
+        self.assertEqual(cuser_cnt + 1, new_cuser_cnt)
+
+        cooluser = CoolUser.objects.get(user__username=params['username'])
+        self.assertIsNotNone(cooluser)
+        self.assertIsNotNone(cooluser.gravatar_link)
+        self.assertIsNotNone(cooluser.gh_repositories)
+
+        self.assertEqual(response.status_code, 302)
+        # going to index
+        redirect_url = reverse(HOME_INDEX)
+        self.assertEqual(redirect_url, response.url)
