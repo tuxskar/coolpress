@@ -7,7 +7,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 
 from press.models import Category, CoolUser, Post
-from press.stats_manager import StatsDict, extract_stats_from_single_post
+from press.stats_manager import StatsDict, extract_stats_from_single_post, extract_stats_from_posts
 from press.user_management import get_gravatar_link, extract_github_repositories
 
 
@@ -155,6 +155,16 @@ class GithubManager(TestCase):
 
 
 class StatsManager(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        category = Category.objects.create(slug='random', label='Random News')
+        cls.category = category
+        cls.juan = User.objects.create(first_name='juanito', is_active=True, username='juanito')
+        author = CoolUser.objects.create(user=cls.juan)
+        cls.author = author
+        for title, body in zip(TITLES, BODIES):
+            _ = Post.objects.create(author=author, category=category, title=title, body=body)
+
     def test_stats_sample(self):
         msg = 'science ' * 3 + 'art ' * 7 + 'cats ' * 7 + 'of ' * 10 + 'a ' * 10
         sd = StatsDict.from_msg(msg)
@@ -168,9 +178,49 @@ class StatsManager(TestCase):
         title = 'Applied Python Module because python is awesome, yes it is'
         body = 'This is a description of the module just for fun and to sew how it looks ' \
                'like like like like or subscribe'
-        sample_post = Post(title=title, body=body)
+        sample_post = Post.objects.create(title=title, body=body, author=self.author,
+                                          category=self.category)
         stats = extract_stats_from_single_post(sample_post)
 
         self.assertEqual(stats.titles.top(2), {'is': 2, 'python': 2})
         self.assertEqual(stats.bodies.top(1), {'like': 4})
         self.assertEqual(stats.all.top(1), {'like': 4})
+
+    def test_multi_posts(self):
+        posts = Post.objects.filter(category=self.category)
+        stats = extract_stats_from_posts(posts)
+
+        self.assertEqual(stats.titles.top(2), {'of': 2, 'python': 2})
+        self.assertEqual(stats.bodies.top(5), {'to': 23, 'and': 16, 'the': 16, 'a': 13, '': 10})
+        self.assertEqual(stats.all.top(7),
+                         {'to': 23, 'and': 16, 'the': 16, 'a': 13, '': 10, 'of': 10, 'is': 9})
+
+
+TITLES = [
+    'Python IDEs in 2021',
+    'Zen of Python PEP 20',
+    'Review of Clean Code Robert Martin'
+]
+
+BODIES = [
+    """An Integrated Development Environment (IDE) is a tool that helps to develop software applications. Each IDE is focused on some areas and most of them are designed to develop on a specific programming language. It is the tool to create applications easily.
+
+The main features that each developer would seek when choosing an IDE are:
+
+Ability to edit code.
+Code execution on the same IDE.
+Intuitive and user-friendly UI (User Interface).
+Good support to find documentation of the libraries and frameworks used.
+As you may already know, there are as many IDEs as tastes and there are language like Python that doesn’t even require an IDE to develop some application due that just writing a simple module, it can be run and have a small application, but when developing some extra features or big projects, a proper IDE is your best friend.
+
+The main purpose of an IDE should be to help developers to develop faster, more efficient, more confident and in a more efective way.""",
+    """Like in any other discipline, building software is in many cases, a matter of tastes. Depending on the developer background and the experiences it has, the code produced would be different in many aspects, leading usually to a heterogeneous styles to resolve the same problems using code.
+
+In order to have some rules to have kind of similar code in Python when developers are trying to resolve the same kind of issues, it was written the Zen of Python, that is a set of rules to help developers to decide how to write code as a proper Pythonista.""",
+    """Review and summary of Clean Code
+    Clean Code has become a reference book for the programmers around the world. It explains some techniques and concepts that would allow us to improve our programming skills making our code more maintainable and scalable. Also it provides many examples on how to improve some code and pieces of code on how to transform it.
+
+    Robert C Martin has dedicated several decades to study the rules to create clean code, helping programming teams and managing big applications to be maintainable so his knowledge on the field is quite extensive and it is shown on this book.
+
+    The code examples are written in Java but they are simple and clear, so they can be followed by any programmer. Although it is recommended to make a slow and careful reading because the there are many details showed on each example, so grab a coffee and crush the book """
+]

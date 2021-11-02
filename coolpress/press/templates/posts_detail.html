@@ -34,24 +34,4 @@
 </div>
 
 
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th scope="col">Word</th>
-        <th scope="col">Count</th>
-
-    </tr>
-    </thead>
-    <tbody>
-    {% for word, cnt in stats.all.top.items %}
-    <tr>
-        <th>{{word}}</th>
-        <th>{{cnt}}</th>
-    </tr>
-    {% endfor %}
-
-    </tbody>
-</table>
-
-
 {% endblock %}

@@ -9,7 +9,7 @@ from django.views.generic import TemplateView, DetailView, ListView, CreateView,
 from press.models import Post, PostStatus, Category, CoolUser
 
 from press.forms import PostForm, CategoryForm
-from press.stats_manager import extract_stats_from_single_post
+from press.stats_manager import extract_stats_from_single_post, extract_stats_from_posts
 
 
 def index(request):
@@ -42,7 +42,8 @@ def post_detail(request, post_id):
 
 def post_list(request):
     post_list = Post.objects.filter(status=PostStatus.PUBLISHED.value).order_by('-pk')[:20]
-    return render(request, 'posts_list.html', {'post_list': post_list})
+    stats = extract_stats_from_posts(post_list)
+    return render(request, 'posts_list.html', {'post_list': post_list, 'stats': stats})
 
 
 @login_required
@@ -73,6 +74,14 @@ class AboutView(TemplateView):
 
 class CategoryDetail(DetailView):
     model = Category
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(CategoryDetail, self).get_context_data(*args, **kwargs)
+        category = context['object']
+        posts_filtered = Post.objects.filter(category=category)
+        stats = extract_stats_from_posts(posts_filtered)
+        context['stats'] = stats
+        return context
 
 
 class CategoryList(ListView):

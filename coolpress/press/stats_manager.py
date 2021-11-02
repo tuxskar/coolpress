@@ -1,6 +1,8 @@
 from collections import Counter
 from dataclasses import dataclass
 
+from django.db.models import QuerySet
+
 from press.models import Post
 
 
@@ -25,6 +27,7 @@ class StatsDict(dict):
         tokens = msg.casefold().split(' ')
         return cls(**Counter(tokens))
 
+
 @dataclass
 class Stats:
     titles: StatsDict
@@ -36,6 +39,15 @@ class Stats:
 
 
 def extract_stats_from_single_post(post: Post) -> Stats:
-    titles = StatsDict.from_msg(post.title)
-    bodies = StatsDict.from_msg(post.body)
+    posts_query = Post.objects.filter(id=post.id)
+    return extract_stats_from_posts(posts_query)
+
+
+def extract_stats_from_posts(qs_post: QuerySet[Post]) -> Stats:
+    titles_list = qs_post.values_list('title', flat=True)
+    titles_msg = ' '.join(titles_list)
+    bodies_list = qs_post.values_list('body', flat=True)
+    bodies_msg = ' '.join(bodies_list)
+    titles = StatsDict.from_msg(titles_msg)
+    bodies = StatsDict.from_msg(bodies_msg)
     return Stats(titles, bodies)
