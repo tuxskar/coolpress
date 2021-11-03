@@ -1,3 +1,4 @@
+import json
 import os
 
 from django.contrib.auth.models import User
@@ -6,6 +7,7 @@ from django.test import TestCase, Client
 # Create your tests here.
 from django.urls import reverse
 
+from press.mediastack_manager import insert_post_from_mediastack
 from press.models import Category, CoolUser, Post
 from press.stats_manager import StatsDict, extract_stats_from_single_post, extract_stats_from_posts
 from press.user_management import get_gravatar_link, extract_github_repositories
@@ -198,7 +200,6 @@ class StatsManager(TestCase):
         svg_generated = stats.titles.to_svg()
         self.assertIsNotNone(svg_generated)
 
-
     def test_multi_posts(self):
         posts = Post.objects.filter(category=self.category)
         stats = extract_stats_from_posts(posts)
@@ -207,8 +208,6 @@ class StatsManager(TestCase):
         self.assertEqual(stats.bodies.top(5), {'to': 23, 'and': 16, 'the': 16, 'a': 13, '': 10})
         self.assertEqual(stats.all.top(7),
                          {'to': 23, 'and': 16, 'the': 16, 'a': 13, '': 10, 'of': 10, 'is': 9})
-
-
 
 
 TITLES = [
@@ -270,3 +269,101 @@ class SearchBoxManager(TestCase):
         self.assertEqual(len(response.context['post_list']), 3)
 
         self.assertEqual(Post.objects.count(), 3)
+
+
+class MediaStackManager(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        dir_path = os.path.dirname(os.path.realpath(__file__))
+        sample_path = '__tests_data__/news_sample.json'
+        full_path = os.path.join(dir_path, sample_path)
+        with open(full_path, 'r') as fr:
+            cls.ms_json = json.load(fr)
+
+    def test_insert_staff_post(self):
+        content = {"author": "CBS Sports Staff",
+                   "title": "2021 Fantasy football draft prep: Tips, rankings, advice, rookies, strategy, top 150 by dialed-in experts",
+                   "description": "SportsLine's 2021 Fantasy football draft bible can give you a huge edge in your league",
+                   "url": "https://www.cbssports.com/fantasy/football/news/2021-fantasy-football-draft-prep-tips-rankings-advice-rookies-strategy-top-150-by-dialed-in-experts/",
+                   "source": "CBSSports.com",
+                   "image": None,
+                   "category": "sports",
+                   "language": "en",
+                   "country": "us",
+                   "published_at": "2021-08-03T15:26:41+00:00"
+                   }
+        post = insert_post_from_mediastack(content)
+        expected_username = 'staff@cbssports.com'
+        self.assertGreater(post.id, 0)
+        self.assertEqual(post.author.user.username, expected_username)
+        self.assertEqual(post.image_link, None)
+
+    def test_insert_no_author(self):
+        content = {
+            "author": None,
+            "title": "Colts lose OG Nelson to same injury as Wentz",
+            "description": "Colts All-Pro guard Quenton Nelson will miss the next five to 12 weeks after suffering the same foot injury as quarterback Carson Wentz.",
+            "url": "https://www.espn.com/nfl/story/_/id/31950239/indianapolis-colts-ol-quenton-nelson-5-12-weeks-foot-injury",
+            "source": "ESPN",
+            "image": "https://a.espncdn.com/photo/2019/0315/r514924_600x600_1-1.jpg",
+            "category": "sports",
+            "language": "en",
+            "country": "us",
+            "published_at": "2021-08-03T16:35:14+00:00"
+        }
+        post = insert_post_from_mediastack(content)
+        expected_username = 'anonymous@coolpress.com'
+        self.assertGreater(post.id, 0)
+        self.assertEqual(post.author.user.username, expected_username)
+        self.assertEqual(post.image_link,
+                         "https://a.espncdn.com/photo/2019/0315/r514924_600x600_1-1.jpg")
+
+    def test_insert_named_author_post(self):
+        content = {
+            "author": "Divya Chaturvedi",
+            "title": "Biles Says She Is Proud To Bring The Topic of Mental Health This Olympics",
+            "description": "Simone Arianne Biles is an American artistic gymnast. Having a combined total of 32 Olympic and World Championship medals, Biles has tied with Larisa Latynina as the most decorated gymnast of all time. Biles made her long-awaited return to the Olympic Games on Tuesday, taking bronze in the beam final won by Chinese teenager Guan&#8230;The post Biles Says She Is Proud To Bring The Topic of Mental Health This Olympics appeared first on EssentiallySports.",
+            "url": "https://www.essentiallysports.com/tokyo-olympics-gymnastics-news-2020-biles-says-she-is-proud-to-bring-the-topic-of-mental-health-this-olympics/",
+            "source": "Essentially Sports",
+            "image": "https://image-cdn.essentiallysports.com/wp-content/uploads/2021-07-28T044235Z_1862452368_SP1EH7R0VYFUZ_RTRMADP_3_OLYMPICS-2020-GAR-W-TEAM-FNL-411x315.jpg",
+            "category": "sports",
+            "language": "en",
+            "country": "us",
+            "published_at": "2021-08-03T17:03:36+00:00"
+        }
+        post = insert_post_from_mediastack(content)
+        expected_username = 'dchaturvedi@coolpress.com'
+        self.assertGreater(post.id, 0)
+        self.assertEqual(post.author.user.username, expected_username)
+        self.assertEqual(post.image_link,
+                         "https://image-cdn.essentiallysports.com/wp-content/uploads/2021-07-28T044235Z_1862452368_SP1EH7R0VYFUZ_RTRMADP_3_OLYMPICS-2020-GAR-W-TEAM-FNL-411x315.jpg")
+
+    def test_insert_named_with_3_author_post(self):
+        content = {
+            "author": "Divya Chaturvedi SecondLast",
+            "title": "Biles Says She Is Proud To Bring The Topic of Mental Health This Olympics",
+            "description": "Simone Arianne Biles is an American artistic gymnast. Having a combined total of 32 Olympic and World Championship medals, Biles has tied with Larisa Latynina as the most decorated gymnast of all time. Biles made her long-awaited return to the Olympic Games on Tuesday, taking bronze in the beam final won by Chinese teenager Guan&#8230;The post Biles Says She Is Proud To Bring The Topic of Mental Health This Olympics appeared first on EssentiallySports.",
+            "url": "https://www.essentiallysports.com/tokyo-olympics-gymnastics-news-2020-biles-says-she-is-proud-to-bring-the-topic-of-mental-health-this-olympics/",
+            "source": "Essentially Sports",
+            "image": "https://image-cdn.essentiallysports.com/wp-content/uploads/2021-07-28T044235Z_1862452368_SP1EH7R0VYFUZ_RTRMADP_3_OLYMPICS-2020-GAR-W-TEAM-FNL-411x315.jpg",
+            "category": "sports",
+            "language": "en",
+            "country": "us",
+            "published_at": "2021-08-03T17:03:36+00:00"
+        }
+        post = insert_post_from_mediastack(content)
+        expected_username = 'dsecondlast@coolpress.com'
+        self.assertGreater(post.id, 0)
+        self.assertEqual(post.author.user.username, expected_username)
+        self.assertEqual(post.image_link,
+                         "https://image-cdn.essentiallysports.com/wp-content/uploads/2021-07-28T044235Z_1862452368_SP1EH7R0VYFUZ_RTRMADP_3_OLYMPICS-2020-GAR-W-TEAM-FNL-411x315.jpg")
+
+    def test_get_mediastack_sport_posts(self):
+        categories = ['sports', 'health']
+        languages = ['en']
+        limit = 10
+        posts_created = gather_and_create_news(categories, languages, limit)
+        self.assertEqual(len(posts_created), 10)
+
+        posts_created = gather_and_create_news(categories, languages, limit)
+        self.assertEqual(len(posts_created), 0)
