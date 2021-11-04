@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>List of CoolUser</h1>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Github Profile</th>
+      <th scope="col">Github Repositories</th>
+      <th scope="col">Posts</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for cuser in object_list %}
+    <tr>
+      <th scope="row">{{cuser.id}}</th>
+      <th><a href="{% url 'cooluser-detail' cuser.pk %}">{{cuser.user.username}}</a></th>
+      <th>{{cuser.user.email|default:''}}</th>
+      <th>{{cuser.github_profile|default:'-'}}</th>
+      <th>{{cuser.gh_repositories|default:'-'}}</th>
+      <th>{{cuser.post_set.count|default:'0'}}</th>
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}

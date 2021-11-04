@@ -1,33 +1,36 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="{% url 'index' %}">CoolPress</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <a class="navbar-brand" href="{% url 'index' %}">CoolPress</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
     {% if subtitle %}
-{{subtitle}}
-{% endif %}
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav ml-auto justify-content-end">
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'posts-list' %}">News</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Cates
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            {% for category in categories %}
-                <a class="dropdown-item" href="#">{{category.label}}</a>
-            {% endfor %}
+    {{subtitle}}
+    {% endif %}
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto justify-content-end">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'posts-list' %}">News</span></a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Cates
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    {% for category in categories %}
+                    <a class="dropdown-item" href="{% url 'category-detail' category.pk %}">{{category.label}}</a>
+                    {% endfor %}
 
 
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="{% url 'category-list' %}">Category List</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{% url 'category-list' %}">Category List</a>
 
-        </div>
-      </li>
+                </div>
+            </li>
 
-        {% if user.is_authenticated %}
+            {% if user.is_authenticated %}
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navUser" role="button"
                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,12 +43,17 @@
                     <a class="btn btn-danger" href="{% url 'logout' %}">Log Out</a>
                 </div>
             </li>
-        {% else %}
+            {% else %}
             <li class="nav-item">
                 <a class="btn btn-primary" href="{% url 'login' %}">Log In</a>
             </li>
             {% endif %}
+            <form class="form-inline my-2 my-lg-0" action="{% url 'post-filtered' %}">
+                <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search"
+                       aria-label="Search" value="{{search_data}}">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
 
-    </ul>
-  </div>
+        </ul>
+    </div>
 </nav>

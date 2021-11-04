@@ -15,4 +15,8 @@ urlpatterns = [
     path('category/update/<int:pk>', views.CategoryUpdate.as_view(), name='category-update'),
     path('new-posts/<str:category_slug>', views.PostList.as_view(), name='post-list'),
     path('category-json/<str:slug>', views.category_api, name='category-json'),
+    path('user/<int:pk>', views.CooluserDetail.as_view(), name='cooluser-detail'),
+    path('users/', views.CooluserList.as_view(), name='cooluser-list'),
+    path('posts-filtered/', views.search_ajax, name='search-ajax'),
+    path('post-filtered/', views.PostFilteredByText.as_view(), name='post-filtered'),
 ]

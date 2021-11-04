@@ -1,3 +1,6 @@
 django
+libgravatar
+beautifulsoup4
+wordcloud
 django-heroku
 gunicorn
