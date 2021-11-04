@@ -4,7 +4,7 @@ from typing import List
 import requests
 from django.contrib.auth.models import User
 
-from press.models import Post, Category, CoolUser
+from press.models import Post, Category, CoolUser, PostStatus
 
 
 def insert_post_from_mediastack(single_post):
@@ -19,7 +19,8 @@ def insert_post_from_mediastack(single_post):
     else:
         image_link = single_post.get('image')
         return Post.objects.create(category=category, author=author, title=title,
-                                   body=body, image_link=image_link)
+                                   body=body, image_link=image_link,
+                                   status=PostStatus.PUBLISHED.value)
 
 
 def get_or_create_category(ms_category) -> Category:

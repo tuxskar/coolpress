@@ -8,7 +8,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 
 from press.mediastack_manager import insert_post_from_mediastack, gather_and_create_news
-from press.models import Category, CoolUser, Post
+from press.models import Category, CoolUser, Post, PostStatus
 from press.stats_manager import StatsDict, extract_stats_from_single_post, extract_stats_from_posts
 from press.user_management import get_gravatar_link, extract_github_repositories
 
@@ -297,6 +297,7 @@ class MediaStackManager(TestCase):
         self.assertGreater(post.id, 0)
         self.assertEqual(post.author.user.username, expected_username)
         self.assertEqual(post.image_link, None)
+        self.assertEqual(post.status, PostStatus.PUBLISHED.value)
 
     def test_insert_no_author(self):
         content = {
@@ -317,6 +318,7 @@ class MediaStackManager(TestCase):
         self.assertEqual(post.author.user.username, expected_username)
         self.assertEqual(post.image_link,
                          "https://a.espncdn.com/photo/2019/0315/r514924_600x600_1-1.jpg")
+        self.assertEqual(post.status, PostStatus.PUBLISHED.value)
 
     def test_insert_named_author_post(self):
         content = {
@@ -337,6 +339,7 @@ class MediaStackManager(TestCase):
         self.assertEqual(post.author.user.username, expected_username)
         self.assertEqual(post.image_link,
                          "https://image-cdn.essentiallysports.com/wp-content/uploads/2021-07-28T044235Z_1862452368_SP1EH7R0VYFUZ_RTRMADP_3_OLYMPICS-2020-GAR-W-TEAM-FNL-411x315.jpg")
+        self.assertEqual(post.status, PostStatus.PUBLISHED.value)
 
     def test_insert_named_with_3_author_post(self):
         content = {
@@ -357,6 +360,7 @@ class MediaStackManager(TestCase):
         self.assertEqual(post.author.user.username, expected_username)
         self.assertEqual(post.image_link,
                          "https://image-cdn.essentiallysports.com/wp-content/uploads/2021-07-28T044235Z_1862452368_SP1EH7R0VYFUZ_RTRMADP_3_OLYMPICS-2020-GAR-W-TEAM-FNL-411x315.jpg")
+        self.assertEqual(post.status, PostStatus.PUBLISHED.value)
 
     def test_get_mediastack_sport_posts(self):
         categories = ['sports', 'health']
