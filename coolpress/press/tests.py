@@ -7,7 +7,7 @@ from django.test import TestCase, Client
 # Create your tests here.
 from django.urls import reverse
 
-from press.mediastack_manager import insert_post_from_mediastack
+from press.mediastack_manager import insert_post_from_mediastack, gather_and_create_news
 from press.models import Category, CoolUser, Post
 from press.stats_manager import StatsDict, extract_stats_from_single_post, extract_stats_from_posts
 from press.user_management import get_gravatar_link, extract_github_repositories
@@ -361,9 +361,9 @@ class MediaStackManager(TestCase):
     def test_get_mediastack_sport_posts(self):
         categories = ['sports', 'health']
         languages = ['en']
-        limit = 10
+        limit = 20
         posts_created = gather_and_create_news(categories, languages, limit)
-        self.assertEqual(len(posts_created), 10)
+        self.assertEqual(len(posts_created), limit)
 
-        posts_created = gather_and_create_news(categories, languages, limit)
-        self.assertEqual(len(posts_created), 0)
+        posts_created_twice = gather_and_create_news(categories, languages, limit)
+        self.assertLess(len(posts_created_twice), limit)
