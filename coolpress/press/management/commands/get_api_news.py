@@ -68,7 +68,6 @@ def insert_post(post_info):
     category = get_or_create_category(post_info)
     already_exist = Post.objects.filter(title=title, author=author, category=category).exists()
     if not already_exist:
-        author = get_or_create_author(post_info)
         post = Post(title=title, author=author, body=post_info['description'],
                     source_label=post_info['source'], image_link=post_info['image'],
                     category=category, source_link=post_info['url'],
@@ -116,7 +115,5 @@ def get_or_create_cool_user_from_author(author_info):
     except CoolUser.DoesNotExist:
         user = User(first_name=first_name, email=email, username=username, last_name=last_name,
                     is_staff=False, is_active=False)
-    cu = CoolUser(user=user)
-    user.save()
-    cu.save()
-    return cu
+        user.save()
+        return user.cooluser

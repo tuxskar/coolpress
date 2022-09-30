@@ -115,6 +115,12 @@ Remember to add the CoolUser associated to the superuser, otherwise there will b
 
 Now you can check the information at: https://coolpress.herokuapp.com/
 
+## Deploy on PythonEverywhere
+
+https://help.pythonanywhere.com/pages/DeployExistingDjangoProject/
+
+
+
 ## Testing and coverage
 
 In order to run the tests you can run the next command:
