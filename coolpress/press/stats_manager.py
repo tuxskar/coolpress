@@ -26,14 +26,14 @@ class StatsDict(dict):
 
     @classmethod
     def from_msg(cls, msg: str):
-        tokens = msg.casefold().split(' ')
+        tokens = [x for x in msg.casefold().split(' ') if len(x) > 0]
         return cls(**Counter(tokens))
 
 
     def weighted_dict(self):
         new_dict = {}
         for word, cnt in self.items():
-            if word not in STOPWORDS:
+            if word not in STOPWORDS and len(word) > 0 and cnt > 0:
                 new_weight = len(word) * cnt
                 new_word = word.replace(',', '')
                 new_dict[new_word] = new_weight
