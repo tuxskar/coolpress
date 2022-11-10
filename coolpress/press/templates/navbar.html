@@ -1,0 +1,30 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light" id="main-navbar">
+    <a class="navbar-brand" href="#">CoolPress</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'posts-list' %}">News</span></a>
+            </li>
+
+            {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navUser" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ user.username }}
+                        {% if cooluser.gravatar_link %}
+                            <img class="gravatar-navbar-icon" src="{{ cooluser.gravatar_link }}"
+                                 alt="">
+                        {% endif %}
+                    </a>
+                </li>
+            {% endif %}
+
+        </ul>
+    </div>
+</nav>

@@ -6,7 +6,7 @@ class CoolUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     gravatar_link = models.URLField(null=True, blank=True)
     github_profile = models.URLField(null=True, blank=True)
-    gh_repositories = models.IntegerField(null=True)
+    gh_repositories = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         return f'{self.user.username}'
