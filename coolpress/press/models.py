@@ -111,3 +111,13 @@ def update_user_cooluser(sender, instance, created, **kwargs):
     instance.cooluser.save()
 
 
+class Comment(models.Model):
+    body = models.CharField(max_length=200)
+    votes = models.IntegerField()
+    creation_date = models.DateTimeField(auto_now_add=True)
+
+    author = models.OneToOneField(CoolUser, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.DO_NOTHING)
+
+    def __str__(self):
+        return f'{self.body[:10]} - from: {self.author.user.username}'

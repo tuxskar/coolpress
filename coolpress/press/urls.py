@@ -14,6 +14,7 @@ urlpatterns = [
     path('post/<int:post_id>/', views.post_detail, name='posts-detail'),
     path('post/add/', views.post_update, name='post-add'),
     path('post/update/<int:post_id>', views.post_update, name='post-update'),
+    path('post/<int:post_id>/newcomment', views.add_post_comment, name='comment-add'),
     path('about/', AboutView.as_view()),
     path('categories/', CategoryListView.as_view(), name='category-list'),
     path('posts/', PostClassBasedListView.as_view(), name='post-class-list'),

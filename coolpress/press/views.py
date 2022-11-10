@@ -16,8 +16,8 @@ from rest_framework import viewsets
 from coolpress.settings import EMAIL_HOST_USER, HOME_INDEX
 from .serializers import PostSerializer
 
-from press.forms import PostForm, CategoryForm, CoolUserForm
-from press.models import PostStatus, Post, CoolUser, Category
+from press.forms import PostForm, CategoryForm, CoolUserForm, CommentForm
+from press.models import PostStatus, Post, CoolUser, Category, Comment
 from press.stats_manager import extract_posts_stats
 
 
@@ -32,6 +32,21 @@ def post_detail(request, post_id):
     qs_post = Post.objects.filter(pk=post_id)
     stats = extract_posts_stats(qs_post)
     return render(request, 'posts_detail.html', {'post_obj': post, 'stats': stats})
+
+
+@login_required
+def add_post_comment(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    data = request.POST or {'votes': 10}
+    form = CommentForm(data)
+    if request.method == 'POST':
+        if form.is_valid():
+            votes = form.cleaned_data.get('votes')
+            body = form.cleaned_data.get('body')
+            Comment.objects.create(votes=votes, body=body, author=request.user.cooluser, post=post)
+            return HttpResponseRedirect(reverse('posts-detail', kwargs={'post_id': post.id}))
+
+    return render(request, 'comment-add.html', {'form': form, 'post': post})
 
 
 @login_required

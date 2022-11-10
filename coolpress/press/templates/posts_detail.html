@@ -25,6 +25,7 @@
 {% endif %}
 
 
+
 <div class="row">
     <div class="col-md-6"><small class="text-muted">Created at:
         {{post_obj.creation_date|date:'Y-d-m'}}</small></div>
@@ -36,6 +37,31 @@
 
 <p class="text-right"><a href="{% url 'posts-list-by-category' post_obj.category.slug %}">Category:
     <strong>{{post_obj.category.label}}</strong></a></p>
+
+{% if user.is_authenticated %}
+<div class="text-right">
+    <a class="btn btn-info new-post-btn mb-2" role="button"
+       target='_blank' href="{% url 'comment-add' post_obj.id %}">Add a comment</a>
+</div>
+{% endif %}
+
+
+{% for comment in post_obj.comment_set.all %}
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Comment: {{ forloop.counter }}</h5>
+    <p class="card-text">{{comment.body}}</p>
+    <p class="card-text text-right">
+        <small class="text-muted text-right">
+            From: {{comment.author.user.username}} - votes: {{comment.votes}} Created at: {{comment.creation_date|date:'Y-d-m'}}
+        </small>
+    </p>
+  </div>
+</div>
+{% empty %}}
+<p>No comments added yet<p>
+{% endfor %}
+
 
 {% if stats %}
     <table class="table table-striped text-center">
@@ -58,6 +84,8 @@
 <div class="text-center">
     {{stats.all.word_cloud_svg|safe}}
 </div>
+
+
 
 
 {% endblock %}
