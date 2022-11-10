@@ -50,6 +50,22 @@ def add_post_comment(request, post_id):
 
 
 @login_required
+def custom_category_edit(request, category_id=None):
+    category = None
+    if category_id:
+        category = get_object_or_404(Category, pk=category_id)
+    if request.method == 'POST':
+        form = CategoryForm(request.POST, instance=category)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('posts-list'))
+        form = CategoryForm(request.POST, instance=category)
+    else:
+        form = CategoryForm(instance=category)
+    return render(request, 'press/category_form.html', {'form': form})
+
+
+@login_required
 def post_update(request, post_id=None):
     post = None
     if post_id:
