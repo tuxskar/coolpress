@@ -25,4 +25,32 @@
         {{post_obj.last_update|date:'Y-d-m'}}</small></div>
 </div>
 
+    {% for comment in comments %}
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">{{comment.body}}</p>
+    <p class="card-text text-right">
+        <small class="text-muted text-right">
+            From: {{comment.author.user.username}} - votes: {{comment.votes}} Created at: {{comment.creation_date}}
+        </small>
+    </p>
+  </div>
+</div>
+{% empty %}}
+<p>No comments added yet<p>
+{% endfor %}
+
+
+
+    <form method="post" action="{% url 'comment-add' post_obj.id %}">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ comment_form }}
+    </div>
+
+    <div class="text-center">
+        <input class="btn btn-success mt-3" type="submit" value="Submit">
+    </div>
+</form>
+
 {% endblock %}

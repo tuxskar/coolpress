@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+Awesome coolpress app login page
+{% endblock %}
+
+{% block content %}
+    <form method="post" action="{% url 'login' %}" class="text-center">
+        {% csrf_token %}
+        <div>
+            <div>
+                <div>{{ form.username.label_tag }}</div>
+                <div>{{ form.username }}</div>
+            </div>
+            <div>
+                <div>{{ form.password.label_tag }}</div>
+                <div>{{ form.password }}</div>
+            </div>
+        </div>
+        <div>
+            <input class="btn btn-primary mt-3" type="submit" value="login">
+            <input type="hidden" name="next" value="{{ next }}">
+        </div>
+    </form>
+
+{% endblock %}

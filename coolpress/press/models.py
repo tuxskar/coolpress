@@ -45,3 +45,26 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class CommentStatus:
+    PUBLISHED = 'PUBLISHED'
+    NON_PUBLISHED = 'NON_PUBLISHED'
+
+
+class Comment(models.Model):
+    body = models.TextField()
+    status = models.CharField(max_length=32,
+                              choices=[(CommentStatus.PUBLISHED, 'Published'),
+                                       (CommentStatus.NON_PUBLISHED, 'Non Published')],
+                              default=CommentStatus.PUBLISHED)
+    votes = models.IntegerField()
+
+    author = models.ForeignKey(CoolUser, on_delete=models.DO_NOTHING)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+    creation_date = models.DateTimeField(auto_now_add=True)
+    last_update = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.body[:10]} - from: {self.author.user.username}'

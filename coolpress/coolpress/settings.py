@@ -63,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                 "press.context_processors.categories_processor",
             ],
         },
     },
@@ -124,3 +125,9 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+HOME_INDEX = 'posts-list'
+LOGIN_REDIRECT_URL = HOME_INDEX
+LOGOUT_REDIRECT_URL = HOME_INDEX
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
