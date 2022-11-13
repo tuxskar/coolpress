@@ -104,11 +104,11 @@ class Post(models.Model):
             mail_admins(subject, body)
 
 
-@receiver(post_save, sender=User)
-def update_user_cooluser(sender, instance, created, **kwargs):
-    if created:
-        CoolUser.objects.create(user=instance)
-    instance.cooluser.save()
+#@receiver(post_save, sender=User)
+#def update_user_cooluser(sender, instance, created, **kwargs):
+#    if created:
+#        CoolUser.objects.create(user=instance)
+    # instance.cooluser.save()
 
 
 class Comment(models.Model):

@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.http import HttpResponseRedirect, HttpResponseBadRequest, HttpResponseForbidden, \
     JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
@@ -11,10 +11,12 @@ from django.urls import reverse
 from django.views.generic import TemplateView, ListView, FormView, CreateView, UpdateView, \
     DetailView
 
-from rest_framework import viewsets
+from rest_framework import viewsets, permissions, mixins
+from rest_framework.viewsets import GenericViewSet
 
 from coolpress.settings import EMAIL_HOST_USER, HOME_INDEX
-from .serializers import PostSerializer
+from .serializers import PostSerializer, CategorySerializer, AuthorSerializer
+
 
 from press.forms import PostForm, CategoryForm, CoolUserForm, CommentForm
 from press.models import PostStatus, Post, CoolUser, Category, Comment
@@ -85,6 +87,33 @@ def post_update(request, post_id=None):
         form = PostForm(instance=post)
 
     return render(request, 'posts_update.html', {'form': form})
+
+
+def signup(request):
+    if request.method == 'POST':
+        user_form = UserCreationForm(request.POST)
+        cooluser_form = CoolUserForm(request.POST)
+        if user_form.is_valid() and cooluser_form.is_valid():
+            user = user_form.save(commit=False)
+            user.email = cooluser_form.cleaned_data.get('email')
+            user.save()
+            user.refresh_from_db()  # load the profile instance created by the signal
+
+            cooluser_form = CoolUserForm(request.POST, instance=user.cooluser)
+            cooluser_form.full_clean()
+            _ = cooluser_form.save()
+
+            password = user_form.cleaned_data.get('password1')
+            user = authenticate(username=user.username, password=password)
+            login(request, user)
+            return redirect(HOME_INDEX)
+    else:
+        user_form = UserCreationForm()
+        cooluser_form = CoolUserForm()
+    return render(request, 'signup.html', {
+        'user_form': user_form,
+        'cooluser_form': cooluser_form
+    })
 
 
 class AboutView(TemplateView):
@@ -174,6 +203,21 @@ def search_post(request):
     return render(request, 'posts_list.html', {'post_list': post_list, 'search_text': search_text})
 
 
+class IsOwnerOrReadOnly(permissions.BasePermission):
+    """
+    Custom permission to only allow owners of an object to edit it.
+    """
+
+    def has_object_permission(self, request, view, obj):
+        # Read permissions are allowed to any request,
+        # so we'll always allow GET, HEAD or OPTIONS requests.
+        if request.method in permissions.SAFE_METHODS:
+            return True
+
+        # Write permissions are only allowed to the owner of the snippet.
+        return obj.author == request.user.cooluser
+
+
 class PostViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
@@ -181,6 +225,38 @@ class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all().filter(status=PostStatus.PUBLISHED.value).order_by(
         '-creation_date')
     serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly,
+                          IsOwnerOrReadOnly]
+
+    def perform_create(self, serializer):
+        serializer.save(author=self.request.user.cooluser)
+
+
+class ModelNonDeletableViewSet(mixins.CreateModelMixin,
+                               mixins.RetrieveModelMixin,
+                               mixins.UpdateModelMixin,
+                               # mixins.DestroyModelMixin,
+                               mixins.ListModelMixin,
+                               GenericViewSet):
+    pass
+
+
+class CategoryViewSet(ModelNonDeletableViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+class AuthorsViewSet(viewsets.ReadOnlyModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = CoolUser.objects.alias(posts=Count('post')).filter(posts__gt=1)
+    serializer_class = AuthorSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
 
 def test_send_email(request):
@@ -189,30 +265,3 @@ def test_send_email(request):
               recipient_list=['tuxskar@gmail.com', 'oramirezpublic@gmail.com'],
               from_email=EMAIL_HOST_USER)
     return render(request, 'sent_email.html')
-
-
-def signup(request):
-    if request.method == 'POST':
-        user_form = UserCreationForm(request.POST)
-        cooluser_form = CoolUserForm(request.POST)
-        if user_form.is_valid() and cooluser_form.is_valid():
-            user = user_form.save(commit=False)
-            user.email = cooluser_form.cleaned_data.get('email')
-            user.save()
-            user.refresh_from_db()  # load the profile instance created by the signal
-
-            cooluser_form = CoolUserForm(request.POST, instance=user.cooluser)
-            cooluser_form.full_clean()
-            _ = cooluser_form.save()
-
-            password = user_form.cleaned_data.get('password1')
-            user = authenticate(username=user.username, password=password)
-            login(request, user)
-            return redirect(HOME_INDEX)
-    else:
-        user_form = UserCreationForm()
-        cooluser_form = CoolUserForm()
-    return render(request, 'signup.html', {
-        'user_form': user_form,
-        'cooluser_form': cooluser_form
-    })

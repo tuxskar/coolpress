@@ -67,3 +67,8 @@ class PostListTest(TestCase):
             reverse('posts-detail',
                     kwargs=dict(post_id=self.posts[0].id)))
         self.assertEqual(response.status_code, 200)
+
+    # Check non published posts are not shown
+    # Check that non-authenticated users can reach the creation posts page
+    # Check that non-published comments are hidden from the post-detail
+    # Check that the comments are passed to the context of the post-detail

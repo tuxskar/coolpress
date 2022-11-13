@@ -41,3 +41,9 @@ class PostModelTest(TestCase):
         user = self.user
         expected_object_name = f'{user.first_name} {user.last_name} ({user.username})'
         self.assertEquals(expected_object_name, str(self.cu))
+
+    # Test default Draft when created new post
+    # Test default PUBLISHED status when created new comment
+    # Check that the posts related with a user are accesible
+    # Check that filtering by a category you can get the correct number of posts
+    # Tests queries to gather information and having them here as a documentation
