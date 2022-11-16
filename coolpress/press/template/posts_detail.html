@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{post_obj.title}}</h1>
+
+{% if post_obj.image_link %}
+<div class="post-detail-image">
+    <img src="{{post_obj.image_link}}" alt="{{post_obj.title}}">
+</div>
+{% endif %}
+<p class="post-detail-body text-center">{{post_obj.body|urlize}}</p>
+
+{% if post_obj.source_link and post_obj.source_label %}
+<div class="text-center">
+    <a class="btn btn-info " role="button" target='_blank' href="{{post_obj.source_link}}">Check
+        at: {{post_obj.source_label}}</a>
+</div>
+{% endif %}
+
+
+<div class="row">
+    <div class="col-md-6"><small class="text-muted">Created at:
+        {{post_obj.creation_date|date:'Y-d-m'}}</small></div>
+    <div class="col-md-6 text-right"><small class="text-muted">Updated at:
+        {{post_obj.last_update|date:'Y-d-m'}}</small></div>
+</div>
+
+    {% for comment in comments %}
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">{{comment.body}}</p>
+    <p class="card-text text-right">
+        <small class="text-muted text-right">
+            From: {{comment.author.user.username}} - votes: {{comment.votes}} Created at: {{comment.creation_date}}
+        </small>
+    </p>
+  </div>
+</div>
+{% empty %}}
+<p>No comments added yet<p>
+{% endfor %}
+
+
+
+    <form method="post" action="{% url 'comment-add' post_obj.id %}">
+    {% csrf_token %}
+    <div class="form-group">
+        {{ comment_form }}
+    </div>
+
+    <div class="text-center">
+        <input class="btn btn-success mt-3" type="submit" value="Submit">
+    </div>
+</form>
+
+{% endblock %}
