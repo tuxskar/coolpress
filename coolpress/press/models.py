@@ -44,7 +44,7 @@ class Post(models.Model):
     last_update = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.title
+        return f'{self.category.label}: {self.title}'
 
 
 class CommentStatus:

@@ -31,7 +31,7 @@ def render_a_post(post):
 
 
 def posts_list(request):
-    objects = Post.objects.all()[:20]
+    objects = Post.objects.filter(status=PostStatus.PUBLISHED)[:20]
     return render(request, 'posts_list.html', {'posts_list': objects})
 
 
