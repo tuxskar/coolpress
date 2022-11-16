@@ -3,6 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/coolpress.iml" filepath="$PROJECT_DIR$/.idea/coolpress.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coolpress/django-rest-framework/.idea/django-rest-framework.iml" filepath="$PROJECT_DIR$/coolpress/django-rest-framework/.idea/django-rest-framework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coolpress/rest/.idea/rest.iml" filepath="$PROJECT_DIR$/coolpress/rest/.idea/rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coolpress/rest_framework/.idea/rest_framework.iml" filepath="$PROJECT_DIR$/coolpress/rest_framework/.idea/rest_framework.iml" />
     </modules>
   </component>
 </project>
