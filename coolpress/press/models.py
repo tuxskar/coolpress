@@ -1,3 +1,5 @@
+from enum import Enum
+
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -23,7 +25,7 @@ class Category(models.Model):
         return f'{self.label} ({self.id})'
 
 
-class PostStatus:
+class PostStatus(Enum):
     DRAFT = 'DRAFT'
     PUBLISHED = 'PUBLISHED'
 
@@ -33,8 +35,8 @@ class Post(models.Model):
     body = models.TextField(null=True)
     image_link = models.URLField(null=True)
     status = models.CharField(max_length=32,
-                              choices=[(PostStatus.DRAFT, 'Draft'),
-                                       (PostStatus.PUBLISHED, 'Pasdfasdfublished Post')],
+                              choices=[(PostStatus.DRAFT, 'DRAFT'),
+                                       (PostStatus.PUBLISHED, 'PUBLISHED')],
                               default=PostStatus.DRAFT)
 
     author = models.ForeignKey(CoolUser, on_delete=models.CASCADE)

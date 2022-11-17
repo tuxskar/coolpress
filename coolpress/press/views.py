@@ -1,6 +1,6 @@
 import datetime
-
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
 from django.db.models import Count
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest, JsonResponse
 from django.shortcuts import render, get_object_or_404
@@ -9,41 +9,16 @@ from django.views.generic import TemplateView, ListView
 from rest_framework import mixins, viewsets
 from rest_framework import permissions
 
-from press.forms import CommentForm, PostForm
+from press.forms import PostForm, CoolUserForm, CommentForm
 from press.models import Category, Post, Comment, CoolUser, PostStatus
 from press.serializers import CategorySerializer, PostSerializer, AuthorSerializer
 from rest_framework.viewsets import GenericViewSet
 
 
-def home(request):
-    now = datetime.datetime.now()
-    msg = 'Welcome to Coolpres'
-    categories = Category.objects.all()
-    user = request.user
-    li_cats = [f'<li>{cat.label}</li>' for cat in categories]
-    cats_ul = f'<ul>{"".join(li_cats)}</ul>'
-
-    html = f"<html><head><title>{msg}</title><body><h1>{msg}</h1><div>{user}</div><p>It is now {now}.<p>{cats_ul}</body></html>"
-    return HttpResponse(html)
 
 
 def render_a_post(post):
     return f'<div style="margin: 20px;padding-bottom: 10px;"><h2>{post.title}</h2><p style="color: gray;">{post.body}</p><p>{post.author.user.username}</p></div>'
-
-
-def posts_list(request):
-    objects = Post.objects.all()[:20]
-    return render(request, 'posts_list.html', {'posts_list': objects})
-
-
-def post_detail(request, post_id):
-    post = Post.objects.get(id=post_id)
-    data = request.POST or {'votes': 10}
-    form = CommentForm(data)
-
-    comments = post.comment_set.order_by('-creation_date')
-    return render(request, 'posts_detail.html',
-                  {'post_obj': post, 'comment_form': form, 'comments': comments})
 
 
 @login_required
@@ -93,9 +68,9 @@ class CategoryListView(ListView):
 
 class PostClassBasedListView(ListView):
     paginate_by = 20
-    queryset = Post.objects.filter(status=PostStatus.PUBLISHED).order_by('-last_update')
-    context_object_name = 'posts_list'
-    template_name = 'posts_list.html'
+    queryset = Post.objects.filter(status='PUBLISHED').order_by('-last_update')
+    context_object_name = "post_list"
+    template_name = "post_list.html"
 
 
 class PostClassFilteringListView(PostClassBasedListView):
@@ -113,6 +88,15 @@ def category_api(request, slug):
         dict(slug=cat.slug, label=cat.label)
     )
 
+
+def post_detail(request, post_id):
+    post = Post.objects.get(id=post_id)
+    data = request.POST or {'votes': 10}
+    form = CommentForm(data)
+
+    comments = post.comment_set.order_by('-creation_date')
+    return render(request, 'posts_detail.html',
+                  {'post_obj': post, 'comment_form': form, 'comments': comments})
 
 def categories_api(request):
     cats = {}
@@ -174,6 +158,7 @@ class PostViewSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(author=self.request.user.cooluser)
 
+
 class AuthorsViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
@@ -181,3 +166,74 @@ class AuthorsViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = CoolUser.objects.alias(posts=Count('post')).filter(posts__gte=1)
     serializer_class = AuthorSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+class PostViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = Post.objects.all().filter(status=PostStatus.PUBLISHED.value).order_by(
+        '-creation_date')
+    serializer_class = PostSerializer
+
+
+def test_send_email(request):
+    send_mail('Testing subject',
+              'This is just a test of how would looks like an email from django',
+              recipient_list=['tuxskar@gmail.com', 'oramirezpublic@gmail.com'],
+              from_email=EMAIL_HOST_USER)
+    return render(request, 'sent_email.html')
+
+
+def signup(request):
+    if request.method == 'POST':
+        user_form = UserCreationForm(request.POST)
+        cooluser_form = CoolUserForm(request.POST)
+        if user_form.is_valid() and cooluser_form.is_valid():
+            user = user_form.save(commit=False)
+            user.email = cooluser_form.cleaned_data.get('email')
+            user.save()
+            user.refresh_from_db()  # load the profile instance created by the signal
+
+            cooluser_form = CoolUserForm(request.POST, instance=user.cooluser)
+            cooluser_form.full_clean()
+            _ = cooluser_form.save()
+
+            password = user_form.cleaned_data.get('password1')
+            user = authenticate(username=user.username, password=password)
+            login(request, user)
+            return redirect(HOME_INDEX)
+    else:
+        user_form = UserCreationForm()
+        cooluser_form = CoolUserForm()
+    return render(request, 'signup.html', {
+        'user_form': user_form,
+        'cooluser_form': cooluser_form
+    })
+
+
+class PostClassBasedPaginatedListView(PostClassBasedListView):
+    paginate_by = 2
+    queryset = Post.objects.filter(status=PostStatus.PUBLISHED.value).order_by('-last_update')
+
+
+class PostClassFilteringListView(PostClassBasedPaginatedListView):
+    def get_queryset(self):
+        queryset = super(PostClassFilteringListView, self).get_queryset()
+        category = get_object_or_404(Category, slug=self.kwargs['category_slug'])
+        return queryset.filter(category=category)
+
+def search_posts(search_text: str, limit=15):
+    if not search_text:
+        return []
+    is_in_title = Q(title__icontains=search_text)
+    is_in_body = Q(body__icontains=search_text)
+    is_in_username = Q(author__user__username__icontains=search_text)
+    is_in_name = Q(author__user__first_name__icontains=search_text)
+    return Post.objects.filter(is_in_title | is_in_body | is_in_username | is_in_name)[:limit]
+
+
+def search_post(request):
+    search_text = request.GET.get('search-text')
+    post_list = search_posts(search_text)
+    return render(request, 'posts_list.html', {'posts_list': posts_list, 'search_text': search_text})
