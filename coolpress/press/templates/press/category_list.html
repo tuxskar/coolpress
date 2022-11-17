@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Categories</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>Slug</th>
+        <th>Label</th>
+        <th>Number of Posts</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for category in object_list %}
+    <tr scope="row">
+        <td>{{category.id}}</td>
+        <td>{{category.slug}}</td>
+        <td>{{category.label}}</td>
+        <td>
+            {{category.post_set.count}}
+
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

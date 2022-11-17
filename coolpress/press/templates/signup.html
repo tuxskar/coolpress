@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="text-center mt-3">
+
+    {% if user_form.errors or cooluser_form.errors %}
+    <div class="alert alert-dark" role="alert">
+        <ul>{{user_form.errors}}</ul>
+        <ul>{{cooluser_form.errors}}</ul>
+    </div>
+    {% endif %}
+
+    <form method="post" action="{% url 'signup' %}" class="text-center">
+        {% csrf_token %}
+        <div>
+            <div>
+                <div>{{ user_form.username.label_tag }}</div>
+                <div>{{ user_form.username }}</div>
+            </div>
+            <div>
+                <div>{{ user_form.password1.label_tag }}</div>
+                <div>{{ user_form.password1 }}</div>
+            </div>
+            <div>
+                <div>{{ user_form.password2.label_tag }}</div>
+                <div>{{ user_form.password2 }}</div>
+            </div>
+            <div>
+                <div>{{ cooluser_form.email.label_tag }}</div>
+                <div>{{ cooluser_form.email }}</div>
+            </div>
+            <div>
+                <div>{{ cooluser_form.github_profile.label_tag }}</div>
+                <div>{{ cooluser_form.github_profile }}</div>
+            </div>
+        </div>
+        <div>
+            <input class="btn btn-primary mt-3" type="submit" value="signup">
+        </div>
+    </form>
+</div>
+
+{% endblock %}

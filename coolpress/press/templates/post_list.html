@@ -2,7 +2,7 @@
 
 {% block content %}
 
-{% for post in posts_list %}
+{% for post in post_list %}
 <div class="card mb-3 post">
     <div class="row no-gutters">
         {% if post.image_link %}
@@ -33,6 +33,6 @@
     There are no posts yet for this category, let's create some :D
 </p>
 
-{% end-for %}
+{% endfor %}
 
-{% end-block %}
+{% endblock %}
