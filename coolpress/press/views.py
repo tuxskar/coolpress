@@ -65,14 +65,19 @@ class AboutView(TemplateView):
 class CategoryListView(ListView):
     model = Category
 
-
+class AuthorListView(ListView):
+    model = CoolUser
 class PostClassBasedListView(ListView):
     paginate_by = 20
     queryset = Post.objects.filter(status='PUBLISHED').order_by('-last_update')
     context_object_name = "post_list"
     template_name = "post_list.html"
 
-
+class PostClassBasedListView(ListView):
+    paginate_by = 20
+    queryset = Post.objects.filter(status='PUBLISHED').order_by('-last_update')
+    context_object_name = "post_list"
+    template_name = "post_list.html"
 class PostClassFilteringListView(PostClassBasedListView):
     paginate_by = 5
 
@@ -80,6 +85,12 @@ class PostClassFilteringListView(PostClassBasedListView):
         queryset = super(PostClassFilteringListView, self).get_queryset()
         category = get_object_or_404(Category, slug=self.kwargs['category_slug'])
         return queryset.filter(category=category)
+
+class AuthorClassFilteringListView(PostClassBasedListView):
+    def get_queryset(self):
+        queryset = super(AuthorClassFilteringListView, self).get_queryset()
+        author = get_object_or_404(CoolUser, user=self.kwargs['username'])
+        return queryset.filter(author=author.id)
 
 
 def category_api(request, slug):

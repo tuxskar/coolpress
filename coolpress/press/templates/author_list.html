@@ -21,7 +21,6 @@
                 <p class="card-text"><a href=""><small
                         class="text-muted">Written by {{post.author.user.username}}</small></a></p>
                 <a href="{% url 'posts-detail' post.id %}" class="btn btn-primary">Details</a>
-                <a class="btn btn-secondary" href="{% url 'author_list' username=post.author.id %}"> More of {{post.author.user.username}} posts</a>
             </div>
         </div>
     </div>
