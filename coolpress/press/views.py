@@ -152,6 +152,10 @@ class PostSearchListView(PostClassBasedListView):
 
         return queryset
 
+    @property
+    def search_text(self):
+        return self.request.GET.get('search-text')
+
 
 def category_api(request, slug):
     cat = get_object_or_404(Category, slug=slug)
