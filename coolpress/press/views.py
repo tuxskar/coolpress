@@ -1,7 +1,7 @@
 import datetime
 
 from django.contrib.auth.decorators import login_required
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest, JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
@@ -37,15 +37,41 @@ def posts_list(request):
     return render(request, 'posts_list.html', {'posts_list': objects})
 
 
+def author_details(request, author_id):
+    author = get_object_or_404(CoolUser, pk=author_id)
+    cat_stats = {}
+    author_posts = author.post_set.all()
+    author_char_cnt = 0
+    for post in author_posts:
+        category_id = post.category_id
+        if category_id not in cat_stats:
+            cat_stats[category_id] = 0
+        cat_stats[category_id] += 1
+
+        author_char_cnt += len(post.title)
+        author_char_cnt += len(post.body)
+
+    author_stats = posts_analyzer(author_posts)
+
+    return render(request, 'author_details.html',
+                  {'cat_stats': cat_stats,
+                   'most_used_words': author_stats.top(10),
+                   'user_characters': author_char_cnt,
+                   'author': author
+                   })
+
+
 def post_detail(request, post_id):
     post = Post.objects.get(id=post_id)
     data = request.POST or {'votes': 10}
     form = CommentForm(data)
-    stats = posts_analyzer(Post.objects.filter(id=post.id)).top(10)
+    stats = posts_analyzer(Post.objects.filter(id=post.id))
+    stats_list = stats.top(10)
 
     comments = post.comment_set.order_by('-creation_date')
     return render(request, 'posts_detail.html',
-                  {'post_obj': post, 'comment_form': form, 'comments': comments, 'stats': stats})
+                  {'post_obj': post, 'comment_form': form, 'comments': comments, 'stats': stats,
+                   'stats_list': stats_list})
 
 
 @login_required
@@ -107,6 +133,24 @@ class PostClassFilteringListView(PostClassBasedListView):
         queryset = super(PostClassFilteringListView, self).get_queryset()
         category = get_object_or_404(Category, slug=self.kwargs['category_slug'])
         return queryset.filter(category=category)
+
+
+def filtered_search(queryset, search_text):
+    is_in_title = Q(title__icontains=search_text)
+    is_in_body = Q(body__icontains=search_text)
+    is_in_username = Q(author__user__username__icontains=search_text)
+    is_in_name = Q(author__user__first_name__icontains=search_text)
+    return queryset.filter(is_in_title | is_in_body | is_in_username | is_in_name)
+
+
+class PostSearchListView(PostClassBasedListView):
+    def get_queryset(self):
+        queryset = super(PostSearchListView, self).get_queryset()
+        search_text = self.request.GET.get('search-text')
+        if search_text:
+            return filtered_search(queryset, search_text)
+
+        return queryset
 
 
 def category_api(request, slug):

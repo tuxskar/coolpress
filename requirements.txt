@@ -8,3 +8,4 @@ uritemplate
 libgravatar
 requests
 bs4
+wordcloud

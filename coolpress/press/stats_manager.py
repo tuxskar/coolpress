@@ -3,6 +3,7 @@ import os.path
 from collections import Counter
 
 from django.db.models import QuerySet
+from wordcloud import WordCloud
 
 from press.models import Post
 
@@ -32,6 +33,11 @@ class Stats:
         results = sorted(analyzed.items(),
                          key=lambda key_val: (-key_val[1], key_val[0]))
         return results[:limit]
+
+    @property
+    def word_cloud(self):
+        top_words = self.top(20)
+        return WordCloud(colormap='Greens').generate_from_frequencies(dict(top_words))
 
 
 def posts_analyzer(qs_post: QuerySet[Post], limit=1):

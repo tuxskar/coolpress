@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="text-center">
+
+        <h2>Username: {{ author.user.username }}</h2>
+        <div class="row">
+            <div class="{% if author.gravatar_link %}col-8{% else %}col-12{% endif %}">
+                <p><strong>First name:</strong> {{ author.user.first_name }}</p>
+                <p><strong>Last name:</strong> {{ author.user.last_name }}</p>
+                <p><strong>Email:</strong> {{ author.user.email }}</p>
+                <p><strong>Total characters:</strong> {{ user_characters }}</p>
+            </div>
+
+            <div class="col-8">
+                {% for cat_id, cnt in cat_stats.items %}
+                    <p><strong>Category:</strong> {{ cat_id }} written {{ cnt }} posts</p>
+                {% endfor %}
+            </div>
+
+            {% if author.gravatar_link %}
+                <div class="col-4">
+                    <img src="{{ author.gravatar_link }}" alt=""/>
+                </div>
+            {% endif %}
+        </div>
+
+        {% if author.github_profile %}
+            <div class="mt-5">
+                <h2>Github information</h2>
+                <p><strong>Github Username:</strong> {{ author.github_profile }}</p>
+                <p><strong>Amount of repositories:</strong>
+                    {{ author.gh_repositories|default:'Unknown'}}
+                </p>
+                <div>
+                    <div class="pt-2">
+                        <img src="https://img.shields.io/github/stars/{{ author.github_profile }}.svg"
+                             alt="">
+                    </div>
+                    <div class="pt-2">
+
+                        <img src="https://img.shields.io/github/followers/{{ author.github_profile }}.svg?style=social&label=Follow&maxAge=2592000"
+                             alt="Github profile">
+                    </div>
+                    <div class="pt-2">
+                        <a class="btn btn-info" target="_blank"
+                           href="https://github.com/{{ author.github_profile }}/">Check
+                            on
+                            github</a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+    {% if most_used_words %}
+    <table class="table table-striped text-center">
+        <thead>
+        <th>Word</th>
+        <th>Cardinality</th>
+        </thead>
+        <tbody>
+        {% for word, count in most_used_words %}
+        <tr>
+            <td>{{word}}</td>
+            <td>{{count}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endif %}
+
+{% endblock %}

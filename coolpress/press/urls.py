@@ -12,6 +12,7 @@ router.register(r'authors', views.AuthorsViewSet)
 urlpatterns = [
     path('home/', views.home),
     path('posts-old/', views.posts_list, name='posts-list'),
+    path('author/<int:author_id>', views.author_details, name='author-detail'),
     path('post_details/<int:post_id>', views.post_detail, name='posts-detail'),
     path('post/<int:post_id>/comment-add/', views.add_post_comment, name='comment-add'),
     path('post/update/<int:post_id>', views.post_update, name='post-update'),
@@ -21,6 +22,9 @@ urlpatterns = [
     path('posts/', views.PostClassBasedListView.as_view(), name='post-list'),
     path('posts/<slug:category_slug>', views.PostClassFilteringListView.as_view(), name='post-list-filtered-by-category'),
     path('api-category/<slug:slug>', views.category_api, name='category-api'),
+
+    path('posts-search/', views.PostSearchListView.as_view(), name='posts-search'),
+
 
     path('api-categories/', views.categories_api, name='categories-api'),
 

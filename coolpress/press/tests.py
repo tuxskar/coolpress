@@ -1,10 +1,22 @@
+import os
+from os.path import exists
+
 from django.test import TestCase
 
 from django.contrib.auth.models import User
 
 # Create your tests here.
+from wordcloud import WordCloud
+
 from press.models import CoolUser, Post, Category
 from press.stats_manager import Stats, posts_analyzer
+
+from django.test import TestCase, Client
+
+from django.contrib.auth.models import User
+from django.urls import reverse
+
+from press.models import Category, Post, CoolUser, PostStatus
 
 
 class UserManagementTest(TestCase):
@@ -106,3 +118,93 @@ class PostStatsManager(TestCase):
         stats = posts_analyzer(post_queryset)
 
         self.assertEqual(stats.top(1), expected)
+
+
+class AuthorDetailPage(TestCase):
+    def test_get_author_info(self):
+        user = User.objects.create(username='oscar')
+        cu = CoolUser.objects.create(user=user)
+        first_category = Category.objects.create(id=1, label='Tech', slug='tech')
+        second_category = Category.objects.create(id=2, label='General', slug='general')
+        _ = Post.objects.create(category=first_category,
+                                title=create_sentence('Hello', 10),
+                                body='Cats',
+                                author=cu)
+        _ = Post.objects.create(category=first_category,
+                                title=create_sentence('CAts', 2),
+                                body='Company',
+                                author=cu)
+        _ = Post.objects.create(category=second_category,
+                                title=create_sentence('Company', 4),
+                                body='Company',
+                                author=cu)
+
+        client = Client()
+        response = client.get(reverse('author-detail', kwargs={'author_id': cu.id}))
+        self.assertEqual(response.status_code, 200)
+        cat_stats = {1: 2, 2: 1}
+        self.assertEqual(response.context['cat_stats'], cat_stats)
+        words_used = [('hello', 10), ('company', 6), ('cats', 3)]
+        self.assertEqual(response.context['most_used_words'], words_used)
+        user_characters = 117
+        self.assertEqual(response.context['user_characters'], user_characters)
+        self.assertEqual(response.context['author'], cu)
+
+
+def create_sentence(word, times=1):
+    words = [word] * times
+    return ' '.join(words)
+
+
+class WordCloudManager(TestCase):
+    def test_get_word_cloud_info(self):
+        user = User.objects.create(username='oscar')
+        cu = CoolUser.objects.create(user=user)
+        first_category = Category.objects.create(id=1, label='Sport', slug='sport')
+        new_post = Post.objects.create(category=first_category,
+                                       title="Argentina v Saudi Arabia | Group C | FIFA World Cup Qatar 2022™ | Highlights",
+                                       body="""
+                                A bold and brilliant Saudi Arabia pulled off one of the biggest shocks in World Cup history as they came from behind to stun two-time winners Argentina in a fantastic Group C opener in Lusail.
+
+Ranked 51st in the world, Saudi Arabia could have been done and dusted in the first half as Lionel Messi opened the scoring from the penalty spot before Argentina had three goals ruled out for offside.
+
+But the Green Falcons flipped the game on its head in a stunning 10-minute period after half-time, Saleh Al Shehri levelling with a low effort and Salem Al Dawsari firing them ahead to spark pandemonium in the stands.
+
+Having shown their ruthlessness at one end, they demonstrated a ruggedness at the other, holding a stellar Argentina front line at bay to secure only their fourth World Cup win and throw the group wide open.
+
+Lionel Scaloni's Argentina came into the tournament among the favourites, on the back of a 36-game unbeaten run that included winning the 2021 Copa America.
+
+They now have it all to do to keep alive their hopes of a first global triumph since 1986 and give Messi a fitting ending to what is very likely his World Cup swansong.
+
+They face Mexico on Saturday, while Saudi Arabia take on Poland.
+                                """,
+                                       author=cu)
+        post_queryset = Post.objects.filter(id=new_post.id)
+        stats = posts_analyzer(post_queryset)
+        wc = stats.word_cloud
+        filename = os.path.join(os.path.dirname(__file__), 'testing.jpg')
+        wc.to_file(filename)
+        self.assertTrue(exists(filename))
+
+
+class SearchBox(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        user = User.objects.create(username='oscar')
+        cu = CoolUser.objects.create(user=user)
+        cat = Category.objects.create(label='Tech', slug='tech')
+        for _ in range(3):
+            _ = Post.objects.create(category=cat,
+                                    title='Python',
+                                    status=PostStatus.PUBLISHED,
+                                    author=cu)
+
+    def test_search_no_results(self):
+        response = self.client.get(reverse('posts-search'), data={'search-text': 'pocahontas'})
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context['posts_list']), 0)
+
+    def test_search_with_results(self):
+        response = self.client.get(reverse('posts-search'), data={'search-text': 'python'})
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(response.context['posts_list']), 3)
