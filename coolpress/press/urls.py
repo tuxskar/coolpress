@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path, include, re_path
 from rest_framework import routers
 
 from press import views
@@ -25,6 +25,8 @@ urlpatterns = [
     path('api-categories/', views.categories_api, name='categories-api'),
 
     path('api/', include(router.urls)),
+    path('api/authors-by-category/<slug:cat_slug>/', views.CategoryAuthors.as_view()),
+
     path('api-auth/', include('rest_framework.urls')),
 
 ]

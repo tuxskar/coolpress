@@ -6,12 +6,14 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadReque
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views.generic import TemplateView, ListView
-from rest_framework import viewsets, mixins, permissions
+from rest_framework import viewsets, mixins, permissions, filters, generics
 from rest_framework.viewsets import GenericViewSet
+from rest_framework.response import Response
 
 from press.forms import CommentForm, PostForm
 from press.models import Category, Post, Comment, CoolUser, PostStatus
 from press.serializers import CategorySerializer, PostSerializer, AuthorSerializer
+from press.stats_manager import posts_analyzer
 
 
 def home(request):
@@ -39,10 +41,11 @@ def post_detail(request, post_id):
     post = Post.objects.get(id=post_id)
     data = request.POST or {'votes': 10}
     form = CommentForm(data)
+    stats = posts_analyzer(Post.objects.filter(id=post.id)).top(10)
 
     comments = post.comment_set.order_by('-creation_date')
     return render(request, 'posts_detail.html',
-                  {'post_obj': post, 'comment_form': form, 'comments': comments})
+                  {'post_obj': post, 'comment_form': form, 'comments': comments, 'stats': stats})
 
 
 @login_required
@@ -169,14 +172,32 @@ class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly]
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['category__id']
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user.cooluser)
 
-class AuthorsViewSet(viewsets.ReadOnlyModelViewSet):
+
+class AuthorsViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
     queryset = CoolUser.objects.alias(posts=Count('post')).filter(posts__gte=1)
     serializer_class = AuthorSerializer
     permission_classes = [permissions.IsAuthenticated]
+
+
+class CategoryAuthors(generics.ListAPIView):
+    serializer_class = AuthorSerializer
+
+    def get_queryset(self):
+        if self.kwargs.__len__() > 0:
+            cslug_or_id = self.kwargs['pk']
+            try:
+                author_id = int(cslug_or_id)
+                return self.queryset.filter(id=author_id)
+            except:
+                cat = Category.objects.get(slug=cslug_or_id)
+                return self.queryset.filter(post__category=cat)
+        return self.queryset

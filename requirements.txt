@@ -1,6 +1,10 @@
 django==3.2.7
 djangorestframework
 
+django-filter
 
 pyyaml
 uritemplate
+libgravatar
+requests
+bs4
