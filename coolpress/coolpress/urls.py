@@ -1,3 +1,4 @@
+from django.contrib import admin
 from django.urls import path, include
 
 from press import views
@@ -26,5 +27,6 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('author/<int:author_id>', views.author_details, name='author-detail'),
+    path('admin/', admin.site.urls),
 
 ]

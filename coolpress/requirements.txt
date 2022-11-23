@@ -3,3 +3,4 @@ libgravatar
 requests
 wordcloud
 BeautifulSoup4
+bs4

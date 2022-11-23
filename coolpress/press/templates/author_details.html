@@ -21,7 +21,7 @@
             {% if author.gravatar_link %}
                 <div class="col-4">
                     <img src="{{ author.gravatar_link }}" alt=""/>
-                    <p> Last update was on: {{author.last_update|date:'Y-d-m'}}</p>
+                    <p> Last update was on: {{author.gravatar_updated_at|date:'Y-d-m'}}</p>
                 </div>
             {% endif %}
         </div>
@@ -31,7 +31,10 @@
                 <h2>Github information</h2>
                 <p><strong>Github Username:</strong> {{ author.github_profile }}</p>
                 <p><strong>Amount of repositories:</strong>
-                    {{ author.gh_repositories|default:'Unknown'}}
+                    {{ author.gh_repositories}}
+                </p>
+                <p><strong>Amount of stars:</strong>
+                    {{ author.gh_stars}}
                 </p>
                 <div>
                     <div class="pt-2">
