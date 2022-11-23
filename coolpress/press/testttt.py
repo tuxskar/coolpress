@@ -1,2 +1,3 @@
-from coolpress.press.models import CoolUser
+from press.models import CoolUser
+
 

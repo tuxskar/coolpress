@@ -14,11 +14,47 @@ from press.models import Category, Post, Comment, CoolUser, PostStatus
 from press.serializers import CategorySerializer, PostSerializer, AuthorSerializer
 from rest_framework.viewsets import GenericViewSet
 
+from press.stats_manager import posts_analyzer
 
+
+def home(request):
+    now = datetime.datetime.now()
+    msg = 'Welcome to Coolpres'
+    categories = Category.objects.all()
+    user = request.user
+    li_cats = [f'<li>{cat.label}</li>' for cat in categories]
+    cats_ul = f'<ul>{"".join(li_cats)}</ul>'
+
+    html = f"<html><head><title>{msg}</title><body><h1>{msg}</h1><div>{user}</div><p>It is now {now}.<p>{cats_ul}</body></html>"
+    return HttpResponse(html)
 
 
 def render_a_post(post):
     return f'<div style="margin: 20px;padding-bottom: 10px;"><h2>{post.title}</h2><p style="color: gray;">{post.body}</p><p>{post.author.user.username}</p></div>'
+
+
+def author_details(request, author_id):
+    author = get_object_or_404(CoolUser, pk=author_id)
+    cat_stats = {}
+    author_posts = author.post_set.all()
+    author_char_cnt = 0
+    for post in author_posts:
+        category_id = post.category_id
+        if category_id not in cat_stats:
+            cat_stats[category_id] = 0
+        cat_stats[category_id] += 1
+
+        author_char_cnt += len(post.title)
+        author_char_cnt += len(post.body)
+
+    author_stats = posts_analyzer(author_posts)
+
+    return render(request, 'author_details.html',
+                  {'cat_stats': cat_stats,
+                   'most_used_words': author_stats.top(10),
+                   'user_characters': author_char_cnt,
+                   'author': author
+                   })
 
 
 @login_required
@@ -65,19 +101,25 @@ class AboutView(TemplateView):
 class CategoryListView(ListView):
     model = Category
 
+
 class AuthorListView(ListView):
     model = CoolUser
-class PostClassBasedListView(ListView):
-    paginate_by = 20
-    queryset = Post.objects.filter(status='PUBLISHED').order_by('-last_update')
-    context_object_name = "post_list"
-    template_name = "post_list.html"
+
 
 class PostClassBasedListView(ListView):
     paginate_by = 20
     queryset = Post.objects.filter(status='PUBLISHED').order_by('-last_update')
     context_object_name = "post_list"
     template_name = "post_list.html"
+
+
+class PostClassBasedListView(ListView):
+    paginate_by = 20
+    queryset = Post.objects.filter(status='PUBLISHED').order_by('-last_update')
+    context_object_name = "post_list"
+    template_name = "post_list.html"
+
+
 class PostClassFilteringListView(PostClassBasedListView):
     paginate_by = 5
 
@@ -85,6 +127,7 @@ class PostClassFilteringListView(PostClassBasedListView):
         queryset = super(PostClassFilteringListView, self).get_queryset()
         category = get_object_or_404(Category, slug=self.kwargs['category_slug'])
         return queryset.filter(category=category)
+
 
 class AuthorClassFilteringListView(PostClassBasedListView):
     def get_queryset(self):
@@ -108,6 +151,7 @@ def post_detail(request, post_id):
     comments = post.comment_set.order_by('-creation_date')
     return render(request, 'posts_detail.html',
                   {'post_obj': post, 'comment_form': form, 'comments': comments})
+
 
 def categories_api(request):
     cats = {}
@@ -196,33 +240,6 @@ def test_send_email(request):
     return render(request, 'sent_email.html')
 
 
-def signup(request):
-    if request.method == 'POST':
-        user_form = UserCreationForm(request.POST)
-        cooluser_form = CoolUserForm(request.POST)
-        if user_form.is_valid() and cooluser_form.is_valid():
-            user = user_form.save(commit=False)
-            user.email = cooluser_form.cleaned_data.get('email')
-            user.save()
-            user.refresh_from_db()  # load the profile instance created by the signal
-
-            cooluser_form = CoolUserForm(request.POST, instance=user.cooluser)
-            cooluser_form.full_clean()
-            _ = cooluser_form.save()
-
-            password = user_form.cleaned_data.get('password1')
-            user = authenticate(username=user.username, password=password)
-            login(request, user)
-            return redirect(HOME_INDEX)
-    else:
-        user_form = UserCreationForm()
-        cooluser_form = CoolUserForm()
-    return render(request, 'signup.html', {
-        'user_form': user_form,
-        'cooluser_form': cooluser_form
-    })
-
-
 class PostClassBasedPaginatedListView(PostClassBasedListView):
     paginate_by = 2
     queryset = Post.objects.filter(status=PostStatus.PUBLISHED.value).order_by('-last_update')
@@ -233,6 +250,7 @@ class PostClassFilteringListView(PostClassBasedPaginatedListView):
         queryset = super(PostClassFilteringListView, self).get_queryset()
         category = get_object_or_404(Category, slug=self.kwargs['category_slug'])
         return queryset.filter(category=category)
+
 
 def search_posts(search_text: str, limit=15):
     if not search_text:

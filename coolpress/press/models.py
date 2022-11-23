@@ -1,5 +1,5 @@
 from enum import Enum
-
+from libgravatar import Gravatar
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -7,11 +7,15 @@ from django.db import models
 class CoolUser(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     gravatar_link = models.URLField(null=True, blank=True)
-    github_profile = models.URLField(null=True, blank=True)
+    github_profile = models.CharField(max_length=300, null=True, blank=True)
     gh_repositories = models.IntegerField(null=True, blank=True)
-
-    def __str__(self):
-        return f'{self.user.username}'
+    last_update = models.DateTimeField(auto_now=True)
+    def save(self, *args, **kwargs):
+        if self.user.email is not None:
+            self.gravatar_link = Gravatar(self.user.email).get_image()
+        self.gh_repositories = self.get_github_repos()
+        self.last_update = models.DateTimeField(auto_now=True)
+        super(CoolUser, self).save(*args, **kwargs)
 
 
 class Category(models.Model):
