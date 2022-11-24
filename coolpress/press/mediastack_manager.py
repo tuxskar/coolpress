@@ -53,8 +53,8 @@ def serialize_from_mediastack(response_json) -> Post:
 
 
 def get_mediastack_posts(sources: List[str] = None, date: datetime.datetime = None,
-                         languages: List[str] = None, keywords: List[str] = None,
-                        categories: List[str] = None,
+                         languages: List[str] = ['en'], keywords: List[str] = None,
+                         categories: List[str] = None,
                          access_key=MEDIASTACK_ACCESS_KEY):
     params = {}
     if sources:
