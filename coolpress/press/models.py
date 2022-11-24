@@ -17,6 +17,7 @@ class CoolUser(models.Model):
     gh_stars = models.IntegerField(null=True, blank=True)
 
     gravatar_updated_at = models.DateTimeField(auto_now=False, blank=True)
+
     def save(self, *args, **kwargs):
         if self.user.email is not None:
             gravatar_link = Gravatar(self.user.email).get_image()
@@ -42,6 +43,7 @@ class CoolUser(models.Model):
             repositories_info = soup.select_one(css_selector)
             repos_text = repositories_info.text
             return int(repos_text)
+
     def get_github_stars(self):
         url = self.get_github_url()
         if url:
@@ -51,6 +53,7 @@ class CoolUser(models.Model):
             stars_info = soup.select_one(css_selector)
             repos_text = stars_info.text
             return int(repos_text)
+
 
 class Category(models.Model):
     class Meta:
@@ -82,10 +85,14 @@ class Post(models.Model):
 
     creation_date = models.DateTimeField(auto_now_add=True)
     last_update = models.DateTimeField(auto_now=True)
+    commentcounter = 0
+
+
+    def CommentCounter(self):
+        self.commentcounter += 1
 
     def __str__(self):
         return self.title
-
 
 class CommentStatus:
     PUBLISHED = 'PUBLISHED'
@@ -99,12 +106,12 @@ class Comment(models.Model):
                                        (CommentStatus.NON_PUBLISHED, 'Non Published')],
                               default=CommentStatus.PUBLISHED)
     votes = models.IntegerField()
-
     author = models.ForeignKey(CoolUser, on_delete=models.DO_NOTHING)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-
     creation_date = models.DateTimeField(auto_now_add=True)
     last_update = models.DateTimeField(auto_now=True)
+
+
 
     def __str__(self):
         return f'{self.body[:10]} - from: {self.author.user.username}'

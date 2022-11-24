@@ -1,7 +1,7 @@
 import datetime
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest, JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
@@ -14,7 +14,7 @@ from press.models import Category, Post, Comment, CoolUser, PostStatus
 from press.serializers import CategorySerializer, PostSerializer, AuthorSerializer
 from rest_framework.viewsets import GenericViewSet
 
-from press.stats_manager import posts_analyzer
+from press.stats_manager import posts_analyzer, comments_analyzer
 
 
 def home(request):
@@ -68,7 +68,6 @@ def add_post_comment(request, post_id):
             body = form.cleaned_data['body']
             Comment.objects.create(votes=votes, body=body, post=post, author=request.user.cooluser)
             return HttpResponseRedirect(reverse('posts-detail', kwargs={'post_id': post_id}))
-
     return render(request, 'comment-add.html', {'form': form, 'post': post})
 
 
@@ -136,6 +135,14 @@ class AuthorClassFilteringListView(PostClassBasedListView):
         return queryset.filter(author=author.id)
 
 
+class CommentsClassFilteringListView(ListView):
+    paginate_by = 20
+
+    context_object_name = "post_list"
+    template_name = "trending-posts.html"
+
+
+
 def category_api(request, slug):
     cat = get_object_or_404(Category, slug=slug)
     return JsonResponse(
@@ -143,15 +150,19 @@ def category_api(request, slug):
     )
 
 
+
 def post_detail(request, post_id):
     post = Post.objects.get(id=post_id)
     data = request.POST or {'votes': 10}
     form = CommentForm(data)
-
+    stats = posts_analyzer(Post.objects.filter(id=post.id))
+    stats_list = stats.top(10)
     comments = post.comment_set.order_by('-creation_date')
+    comments_stat = comments_analyzer(Comment.objects.filter(post_id=post.id))
+    comments_stat_list = comments_stat.top(10)
     return render(request, 'posts_detail.html',
-                  {'post_obj': post, 'comment_form': form, 'comments': comments})
-
+                  {'post_obj': post, 'comment_form': form, 'comments': comments, 'stats': stats,
+                   'stats_list': stats_list, 'comments_stat_list': comments_stat_list, 'comments_stat': comments_stat})
 
 def categories_api(request):
     cats = {}

@@ -7,6 +7,7 @@ from wordcloud import WordCloud
 
 from press.models import Post
 
+from press.models import Comment
 
 with open(os.path.join(os.path.dirname(__file__), 'stopwords.json')) as fr:
     file_stopwords = json.load(fr)
@@ -14,6 +15,7 @@ with open(os.path.join(os.path.dirname(__file__), 'stopwords.json')) as fr:
     STOPWORDS.add('"')
     STOPWORDS.add('.')
     STOPWORDS.add('-')
+
 
 class Stats:
     def __init__(self, text):
@@ -35,9 +37,11 @@ class Stats:
         return results[:limit]
 
     @property
-    def word_cloud(self):
+    def word_cloud(self, limit=0):
         top_words = self.top(20)
-        return WordCloud(colormap='Greens').generate_from_frequencies(dict(top_words))
+        if len(top_words) != 0:
+            return WordCloud(colormap='Greens').generate_from_frequencies(dict(top_words))
+        return
 
 
 def posts_analyzer(qs_post: QuerySet[Post], limit=1):
@@ -48,3 +52,10 @@ def posts_analyzer(qs_post: QuerySet[Post], limit=1):
     full_msg = f'{post_titles} {post_bodies}'
     st = Stats(full_msg)
     return st
+
+
+def comments_analyzer(qs_comments: QuerySet[Comment], limit=0):
+    comment_body = qs_comments.values_list("body", flat=True)
+    comment_bodies = ' '.join(comment_body)
+    comment_stats = Stats(comment_bodies)
+    return comment_stats

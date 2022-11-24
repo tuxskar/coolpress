@@ -28,5 +28,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('author/<int:author_id>', views.author_details, name='author-detail'),
     path('admin/', admin.site.urls),
+    path('trending/', views.CommentsClassFilteringListView.as_view(), name='trending-posts'),
 
 ]
