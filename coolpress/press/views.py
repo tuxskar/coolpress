@@ -6,6 +6,7 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadReque
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views.generic import TemplateView, ListView
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets, mixins, permissions, filters, generics
 from rest_framework.viewsets import GenericViewSet
 from rest_framework.response import Response
