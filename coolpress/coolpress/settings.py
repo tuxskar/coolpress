@@ -20,6 +20,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -27,7 +28,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'press',
-    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -122,3 +122,5 @@ LOGIN_REDIRECT_URL = HOME_INDEX
 LOGOUT_REDIRECT_URL = HOME_INDEX
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+MEDIASTACK_ACCESS_KEY = 'beecae97e6a25b2c2e0fbf79b7039510'
