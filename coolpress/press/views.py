@@ -1,9 +1,10 @@
 import datetime
 
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.db.models import Count, Q
 from django.http import HttpResponse, HttpResponseRedirect, HttpResponseBadRequest, JsonResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse
 from django.views.generic import TemplateView, ListView
 from django_filters.rest_framework import DjangoFilterBackend
@@ -11,7 +12,10 @@ from rest_framework import viewsets, mixins, permissions, filters, generics
 from rest_framework.viewsets import GenericViewSet
 from rest_framework.response import Response
 
-from press.forms import CommentForm, PostForm
+from django.contrib.auth.forms import UserCreationForm
+
+from coolpress.settings import HOME_INDEX
+from press.forms import CommentForm, PostForm, CoolUserForm
 from press.models import Category, Post, Comment, CoolUser, PostStatus
 from press.serializers import CategorySerializer, PostSerializer, AuthorSerializer
 from press.stats_manager import posts_analyzer
@@ -234,7 +238,7 @@ class AuthorsViewSet(viewsets.ModelViewSet):
     """
     queryset = CoolUser.objects.alias(posts=Count('post')).filter(posts__gte=1)
     serializer_class = AuthorSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    #permission_classes = [permissions.IsAuthenticated]
 
 
 class CategoryAuthors(generics.ListAPIView):
@@ -250,3 +254,30 @@ class CategoryAuthors(generics.ListAPIView):
                 cat = Category.objects.get(slug=cslug_or_id)
                 return self.queryset.filter(post__category=cat)
         return self.queryset
+
+
+def signup(request):
+    if request.method == 'POST':
+        user_form = UserCreationForm(request.POST)
+        cooluser_form = CoolUserForm(request.POST)
+        if user_form.is_valid() and cooluser_form.is_valid():
+            user = user_form.save(commit=False)
+            user.email = cooluser_form.cleaned_data.get('email')
+            user.save()
+
+            cu = CoolUser(user=user)
+            cooluser_form = CoolUserForm(request.POST, instance=cu)
+            # cooluser_form.full_clean()
+            _ = cooluser_form.save()
+
+            password = user_form.cleaned_data.get('password1')
+            user = authenticate(username=user.username, password=password)
+            login(request, user)
+            return redirect(HOME_INDEX)
+    else:
+        user_form = UserCreationForm()
+        cooluser_form = CoolUserForm()
+    return render(request, 'signup.html', {
+        'user_form': user_form,
+        'cooluser_form': cooluser_form
+    })

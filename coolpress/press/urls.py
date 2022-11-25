@@ -6,8 +6,8 @@ from press import views
 
 router = routers.DefaultRouter()
 router.register(r'categories', views.CategoryViewSet)
-router.register(r'posts', views.PostViewSet)
-router.register(r'authors', views.AuthorsViewSet)
+router.register(r'posts', views.PostViewSet, basename='api-posts')
+router.register(r'authors', views.AuthorsViewSet, basename='api-authors')
 
 urlpatterns = [
     path('home/', views.home),
@@ -33,4 +33,5 @@ urlpatterns = [
 
     path('api-auth/', include('rest_framework.urls')),
 
+    path('signup/', views.signup, name='signup'),
 ]

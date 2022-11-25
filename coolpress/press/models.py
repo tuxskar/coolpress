@@ -69,7 +69,7 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     creation_date = models.DateTimeField(auto_now_add=True)
-    publish_date = models.DateTimeField(blank=True)
+    publish_date = models.DateTimeField(null=True, blank=True)
     last_update = models.DateTimeField(auto_now=True)
 
     def __str__(self):

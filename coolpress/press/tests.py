@@ -1,18 +1,10 @@
 import datetime
 import os
 from os.path import exists
-
-import pytz
-from django.test import TestCase
-
-from django.contrib.auth.models import User
-
-# Create your tests here.
-from wordcloud import WordCloud
-
+from coolpress.settings import HOME_INDEX
 from press.mediastack_manager import serialize_from_mediastack, get_mediastack_posts
-from press.models import CoolUser, Post, Category
 from press.stats_manager import Stats, posts_analyzer
+from rest_framework.test import APIRequestFactory, APIClient, APITestCase
 
 from django.test import TestCase, Client
 
@@ -153,6 +145,17 @@ class AuthorDetailPage(TestCase):
         self.assertEqual(response.context['user_characters'], user_characters)
         self.assertEqual(response.context['author'], cu)
 
+        response_raw = client.get('/posts/')
+        print(response_raw.content)
+        response = client.get(reverse('posts-list'))
+        print(response.content)
+
+        response2 = client.get('/api/posts/')
+        print(response2.contet)
+
+        response_obj = client.get('/api/posts/1/')
+        print(response_obj.contet)
+
 
 def create_sentence(word, times=1):
     words = [word] * times
@@ -265,3 +268,56 @@ class MediaStackImports(TestCase):
     def test_get_media_posts_failing(self):
         posts = get_mediastack_posts(sources=['cnn'])
         self.assertTrue(len(posts) > 0)
+
+
+class TestAPI(TestCase):
+
+    def test_get_first_post(self):
+        url = '/api/posts/1/'
+        user = User.objects.create(username='oscar')
+        cu = CoolUser.objects.create(user=user)
+        post = Post.objects.create(category=Category.objects.create(label='Tech', slug='tech'),
+                                   title='Hello this is our first test',
+                                   body='In this particular test we are counting the words',
+                                   status=PostStatus.PUBLISHED,
+                                   author=cu)
+        actual = {'author': 1, 'title': 'Hello this is our first test', 'id': 1, 'category': 1,
+                  'body': 'In this particular test we are counting the words'}
+
+        client = Client()
+        response = client.get(url)
+        res_json = response.json()
+        del res_json['creation_date']
+        self.assertEqual(res_json, actual)
+
+
+class SignUpManager(TestCase):
+    def setUp(self):
+        self.client = Client()
+
+    def test_create_new_user(self):
+        params = {'username': 'testing_brand_new_username',
+                  'password1': '172h3sjdkwiruey846JKsy!',
+                  'password2': '172h3sjdkwiruey846JKsy!',
+                  'email': 'oramirez+test@gmail.com',
+                  'github_profile': 'tuxskar'
+                  }
+        url = reverse('signup')
+        user_cnt = User.objects.count()
+        cuser_cnt = CoolUser.objects.count()
+        response = self.client.post(url, data=params)
+
+        new_user_cnt = User.objects.count()
+        new_cuser_cnt = CoolUser.objects.count()
+        self.assertEqual(user_cnt + 1, new_user_cnt)
+        self.assertEqual(cuser_cnt + 1, new_cuser_cnt)
+
+        cooluser = CoolUser.objects.get(user__username=params['username'])
+        self.assertIsNotNone(cooluser)
+        self.assertIsNotNone(cooluser.gravatar_link)
+        self.assertIsNotNone(cooluser.gh_repositories)
+
+        self.assertEqual(response.status_code, 302)
+        # going to index
+        redirect_url = reverse(HOME_INDEX)
+        self.assertEqual(redirect_url, response.url)
